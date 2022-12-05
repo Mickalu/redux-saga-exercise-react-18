@@ -1,1 +1,1 @@
-# -redux-saga-exercise-react-18
+# redux-saga-exercise-react-18
