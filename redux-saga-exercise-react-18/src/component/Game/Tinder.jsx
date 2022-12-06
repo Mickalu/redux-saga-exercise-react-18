@@ -8,6 +8,6 @@ const Tinder = props => (
     <BeerContainer />
     <Actions />
   </>
-)
+);
 
-export default Tinder
+export default Tinder;

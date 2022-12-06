@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
+import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
-import Container from 'react-bootstrap/Container';
 
 const Actions = (props) => {
   return (
@@ -10,8 +10,6 @@ const Actions = (props) => {
       <ul inline className="list-unstyled list-inline text-center game-actions">
         <li>
           <button
-            // ref={node => this.dislikeButton = node}
-            // onClick={this.props.dislike}
             type="button"
             className="btn btn-danger btn-circle btn-xl"
             name="dislikeBtn"
@@ -22,8 +20,6 @@ const Actions = (props) => {
         <li />
         <li>
           <button
-            // ref={node => this.likeButton = node}
-            // onClick={this.props.like}
             type="button"
             className="btn btn-success btn-circle btn-xl"
             name="likeBtn"

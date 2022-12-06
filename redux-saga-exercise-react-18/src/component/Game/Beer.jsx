@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from "react-bootstrap/Row";
 
-import BeerAttributes from './BeerAttributes'
+import BeerAttributes from './BeerAttributes';
 
 const Beer = () => {
   return (
@@ -12,7 +12,7 @@ const Beer = () => {
           <Row>
             <div className="col-sm-4" />
               <div className="col-sm-4 text-center beer-col">
-                {/* <div ref={node => this.beerImgWrapper = node} className="beer-img">
+                <div ref={node => this.beerImgWrapper = node} className="beer-img">
                   <img
                     height={`${this.img_height}px`} style={{ height: this.img_height, color: 'red' }}
                     className="img-responsive"
@@ -27,8 +27,8 @@ const Beer = () => {
                     name="beerImg"
                   />
                   { loadingBeerComponent }
-                </div> */}
-                {/* <h3 className="beer_title" name="beerTitle">{beer.product_name}</h3> */}
+                </div>
+                <h3 className="beer_title" name="beerTitle">{beer.product_name}</h3>
                 <h3 className="beer_title" name="beerTitle">Test</h3>
               </div>
             <div className="col-sm-4 hidden-xs hidden-sm">
@@ -39,7 +39,7 @@ const Beer = () => {
           </Row>
       </Container>
     </div>
-  )
-}
+  );
+};
 
-export default Beer
+export default Beer;
