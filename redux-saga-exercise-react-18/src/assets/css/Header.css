@@ -1,0 +1,8 @@
+.hr-title {
+  opacity: 1;
+
+}
+
+.hr-title::after {
+  opacity: 0;
+}

@@ -2,11 +2,12 @@ import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+import Container from 'react-bootstrap/Container';
 
 const Actions = (props) => {
   return (
-    <div className="container" style={{ background: 'white', borderRadius: '0 0 25px 25px' }}>
-      <ul className="list-unstyled list-inline text-center game-actions">
+    <Container style={{ background: 'white', borderRadius: '0 0 25px 25px' }}>
+      <ul inline className="list-unstyled list-inline text-center game-actions">
         <li>
           <button
             // ref={node => this.dislikeButton = node}
@@ -31,7 +32,7 @@ const Actions = (props) => {
           </button>
         </li>
       </ul>
-    </div>
+    </Container>
   );
 };
 

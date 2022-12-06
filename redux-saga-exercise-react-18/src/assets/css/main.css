@@ -459,3 +459,9 @@ h3.beer_title {
     background-color: transparent !important;
   }
 }
+
+.list-inline>li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
