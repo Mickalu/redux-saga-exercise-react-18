@@ -1,18 +1,24 @@
-import React from 'react'
+import React from 'react';
+
+import "../assets/css/main.css";
+
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Image from 'react-bootstrap/Image';
 
 const Header = () => (
   <header>
-    <div className="container">
-      <div className="row">
+    <Container>
+      <Row>
         <div className="col-lg-12">
-          <img className="img-responsive logo-academy" alt='beer' role="presentation" src="/public/img/logo.png" />
+          <Image className="img-responsive logo-academy" alt='beer' role="presentation" src={"/img/logo.png"} />
           <div className="intro-text">
             <span className="name">Beer Game</span>
             <hr className="star-light" />
           </div>
         </div>
-      </div>
-    </div>
+      </Row>
+    </Container>
   </header>
 )
 
