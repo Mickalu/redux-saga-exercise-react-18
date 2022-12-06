@@ -63,13 +63,13 @@ const Main = () => {
                   <h3>Around the Web</h3>
                   <ul className="list-inline">
                     <li>
-                      <a target="_blank" href="https://github.com/reactjs-academy" className="btn-social btn-outline" rel="noopener noreferrer"><FontAwesomeIcon icon={['fa', 'github']} /></a>
+                      <a target="_blank" href="https://github.com/reactjs-academy" className="btn-social btn-outline" rel="noopener noreferrer"> <FontAwesomeIcon icon={solid('heart')} /></a>
                     </li>
                     <li>
-                      <a target="_blank" href="https://twitter.com/reactjsacademy" className="btn-social btn-outline" rel="noopener noreferrer"><FontAwesomeIcon icon={["fa", "twitter"]} /></a>
+                      <a target="_blank" href="https://twitter.com/reactjsacademy" className="btn-social btn-outline" rel="noopener noreferrer"> <FontAwesomeIcon icon={solid('hashtag')} /></a>
                     </li>
                     <li>
-                      <a target="_blank" href="https://www.instagram.com/reactjsacademy/" className="btn-social btn-outline" rel="noopener noreferrer"><FontAwesomeIcon icon={["fa", "instagram"]} /></a>
+                      <a target="_blank" href="https://www.instagram.com/reactjsacademy/" className="btn-social btn-outline" rel="noopener noreferrer"> <FontAwesomeIcon icon={solid('hashtag')} /></a>
                     </li>
                   </ul>
                 </div>
