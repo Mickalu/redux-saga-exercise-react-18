@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
+
 import Header from './Header';
-import Menu from './Navigation/Menu'
+import Menu from './Navigation/Menu';
+import TinderContainer from '../container/TinderContainer';
 
 const Main = (props) => {
 
@@ -25,7 +29,7 @@ const Main = (props) => {
           <ul className="nav navbar-nav pull-right">
             <li>
               <button onClick={toggleMenu} className="btn btn-lg btn-outline">
-                <i className="fa fa-heart" />
+                <FontAwesomeIcon icon={solid('heart')} />
               </button>
             </li>
           </ul>
@@ -34,6 +38,11 @@ const Main = (props) => {
 
       <Header />
 
+      <section id="beers">
+        <div className="container">
+          <TinderContainer />
+        </div>
+      </section>
     </div>
   );
 };
