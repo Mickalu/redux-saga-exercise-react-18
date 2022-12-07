@@ -42,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/Mickalu/redux-saga-exercise-react-18.git",
+  "author": "Micka <lucasmichaeli95@gmail.com>",
+  "license": "MIT"
 }

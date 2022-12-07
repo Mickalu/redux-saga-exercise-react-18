@@ -7,7 +7,7 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 const Actions = (props) => {
   return (
     <Container style={{ background: 'white', borderRadius: '0 0 25px 25px' }}>
-      <ul inline className="list-unstyled list-inline text-center game-actions">
+      <ul className="list-unstyled list-inline text-center game-actions">
         <li>
           <button
             type="button"
