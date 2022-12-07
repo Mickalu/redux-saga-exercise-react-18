@@ -1,4 +1,4 @@
-import {call, put} from "redux-saga/effects";
+import { call, put } from "redux-saga/effects";
 
 import { startSessionSaga } from "../slice/sessionSlice";
 import { startSessionApi } from "../api";

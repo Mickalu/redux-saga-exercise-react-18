@@ -17,3 +17,13 @@ export const startSessionApi = () => (
   .then(response => response.json())
   .then(session => session)
 );
+
+export const getBeers = (session) => (
+  fetch(`${API_BASE_URL}/data/beers.json`, {
+    method: 'GET',
+    headers: defaultHeaders
+  }).then(response => (
+    response.json()
+  ))
+  .then(beers => beers)
+);
