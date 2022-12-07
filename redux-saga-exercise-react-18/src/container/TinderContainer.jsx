@@ -9,7 +9,7 @@ const TinderContainer = () => {
   const dispach = useDispatch();
 
   useEffect(() => {
-    if (session.id){
+    if (session.session.id){
       console.log("connected");
     }
     else {
