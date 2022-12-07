@@ -4,9 +4,7 @@ import Beer from '../component/Game/Beer';
 
 const BeerContainer = () => {
   return (
-    <>
-      <Beer />
-    </>
+    <Beer />
   );
 };
 
