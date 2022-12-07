@@ -10,11 +10,11 @@ export const beersSlice = createSlice({
   initialState,
   reducers: {
     addBeers: (state, action) => {
-      state.data = [...state.data, action.beers];
+      state.data = [...state.data, action.payload.beers];
     },
   },
 });
 
-export const { addBeers } = beersSlice.actions
+export const { addBeers } = beersSlice.actions;
 
-export default beersSlice.reducer
+export default beersSlice.reducer;
