@@ -13,12 +13,9 @@ export const sessionSlice = createSlice({
     startSessionSaga: (state, action) => {
       handleStartSession(state, action);
     },
-    getSession: (state) => {
-      return state.session;
-    }
   },
 });
 
-export const { startSessionSaga, getSession } = sessionSlice.actions;
+export const { startSessionSaga } = sessionSlice.actions;
 
 export default sessionSlice.reducer;

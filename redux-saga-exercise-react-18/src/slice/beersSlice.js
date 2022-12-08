@@ -9,7 +9,6 @@ const handleUpdateIsFetching = (state, action) => {
   state.isFetching = action.payload;
 };
 
-
 export const beersSlice = createSlice({
   name: "beers",
   initialState,

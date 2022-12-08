@@ -6,19 +6,19 @@ import { sessionActions } from '../action/sessionAction';
 import { beersActions } from "../action/beersActions";
 
 const TinderContainer = () => {
-  const session = useSelector((state) => state.session);
-  const beers = useSelector((state) => state.beers);
   const dispach = useDispatch();
+  const session = useSelector((state) => state.session);
 
   useEffect(() => {
-    console.log('firsdedt')
     if (session.session.id){
-      dispach({type: beersActions.FETCH_BERRS});
-    }
-    else {
-      dispach({type: sessionActions.SESSION_START});
-    }
-  });
+        dispach({type: beersActions.FETCH_BERRS});
+      }
+      else {
+        dispach({type: sessionActions.SESSION_START});
+      }
+    },
+    [session.session],
+  );
 
   return (
     <Tinder />
