@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
+import Container from 'react-bootstrap/Container';
+
 import Header from './Header';
 import Menu from './Navigation/Menu';
 import TinderContainer from '../container/TinderContainer';
@@ -39,9 +41,9 @@ const Main = () => {
       <Header />
 
       <section id="beers">
-        <div className="container">
+        <Container>
           <TinderContainer />
-        </div>
+        </Container>
       </section>
 
       <footer className="text-center">

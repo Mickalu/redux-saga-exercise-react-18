@@ -25,9 +25,7 @@ const BeerContainer = () => {
   }
 
   return (
-    <>
-      <Beer beer={beer} />
-    </>
+    <Beer beer={beer} />
   );
 };
 

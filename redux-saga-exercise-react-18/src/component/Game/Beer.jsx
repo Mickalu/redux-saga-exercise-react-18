@@ -17,7 +17,7 @@ const Beer = ({ beer }) => {
   let beerImg = useRef(null);
 
   useEffect(() => {
-    beerImgWrapper.current.style.minHeight = `${beerImgWrapper.current.offsetWidth}px`;
+    beerImg.current.style.width = `${beerImgWrapper.current.offsetWidth}px`;
   });
 
   if (loadingBeer){
@@ -34,36 +34,33 @@ const Beer = ({ beer }) => {
   };
 
   return (
-    <div>
-      <Container>
-          <Row>
-            <div className="col-sm-4" />
-              <div className="col-sm-4 text-center beer-col">
-                <div ref={beerImgWrapper} className="beer-img">
-                  <img
-                    height={`${img_height}px`} style={{ height: img_height, color: 'red' }}
-                    className="img-responsive"
-                    ref={beerImg}
-                    src={beer.photo_link}
-                    onLoad={imageLoaded}
-                    onError={({ currentTarget }) => {
-                      dispach(updateLoadingBeer(false));
-                      currentTarget.src = "";
-                    }}
-                    role="presentation"
-                    name="beerImg"
-                  />
-                  { loadingBeerComponent }
-                </div>
-                <h3 className="beer_title" name="beerTitle">{beer.title}</h3>
-              </div>
-            <div className="col-sm-4 hidden-xs hidden-sm">
-              <BeerAttributes beer={beer} />
+    <Container>
+      <Row>
+        <div className="col-sm-4" />
+          <div className="col-sm-4 text-center beer-col">
+            <div ref={beerImgWrapper} className="beer-img">
+              <img
+                height={`${img_height}px`} style={{ height: img_height, color: 'red' }}
+                className="img-responsive"
+                ref={beerImg}
+                src={beer.photo_link}
+                onLoad={imageLoaded}
+                onError={({ currentTarget }) => {
+                  dispach(updateLoadingBeer(false));
+                  currentTarget.src = "";
+                }}
+                role="presentation"
+                name="beerImg"
+              />
+              {loadingBeerComponent}
             </div>
-
-          </Row>
-      </Container>
-    </div>
+            <h3 className="beer_title" name="beerTitle">{beer.title}</h3>
+          </div>
+        <div className="col-sm-4 hidden-xs hidden-sm">
+          <BeerAttributes beer={beer} />
+        </div>
+      </Row>
+    </Container>
   );
 };
 
