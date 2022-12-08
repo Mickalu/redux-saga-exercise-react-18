@@ -27,7 +27,6 @@ const Beer = ({ beer }) => {
   const imageLoaded = () => {
     if (img_height === 'auto'){
       img_height = beerImg.current.style.height;
-      console.log(img_height);
     }
 
     dispach(updateLoadingBeer(false));

@@ -21,6 +21,6 @@ const Header = () => (
       </Row>
     </Container>
   </header>
-)
+);
 
-export default Header
+export default Header;

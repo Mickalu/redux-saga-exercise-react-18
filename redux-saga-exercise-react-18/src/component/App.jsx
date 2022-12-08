@@ -4,12 +4,12 @@ import { Route, Routes } from "react-router-dom";
 import "../assets/css/main.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Main from "./Main";
+import Home from "./Home";
 
 const App = () => (
   <>
     <Routes>
-      <Route path="/" element={<Main />} />
+      <Route path="/" element={<Home />} />
     </Routes>
   </>
 );

@@ -9,17 +9,16 @@ import Header from './Header';
 import Menu from './Navigation/Menu';
 import TinderContainer from '../container/TinderContainer';
 
-const Main = () => {
+const Home = () => {
+  const [menu, setMenu] = useState(true);
 
-  const [menu, setMenu] = useState({ open: true });
-
-  const toggleMenu = () => (setMenu({open: !menu.open}));
+  const toggleMenu = () => (setMenu(!menu));
 
   return (
     <div id="page-wrap">
       <Menu
         pageWrapId={"page-wrap"}
-        isOpen={menu.open}
+        isOpen={menu}
         toggleMenu={toggleMenu}
       />
 
@@ -101,4 +100,4 @@ const Main = () => {
   );
 };
 
-export default Main
+export default Home ;
