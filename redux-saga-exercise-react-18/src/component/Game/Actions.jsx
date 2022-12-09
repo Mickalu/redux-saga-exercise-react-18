@@ -29,7 +29,7 @@ const Actions = (props) => {
             type="button"
             className="btn btn-success btn-circle btn-xl"
             name="likeBtn"
-            onClick={() => dispach({type: currentIndexActions.INCREMENT_CURRENT_INDEX})}
+            onClick={() => dispach({type: currentIndexActions.ADD_BEER_LIKED_BEERS})}
           >
             <FontAwesomeIcon icon={solid('heart')} />
           </button>
