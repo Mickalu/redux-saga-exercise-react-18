@@ -8,12 +8,15 @@ export const currentIndexSlice = createSlice({
   name: "currentIndex",
   initialState,
   reducers: {
-    updateCurrentIndex: (state) => {
+    incrementCurrentIndex: (state) => {
       state.currentIndex += 1;
     },
+    resetCurrentIndex: (state) => {
+      state.currentIndex = 0;
+    }
   },
 });
 
-export const { updateCurrentIndex } = currentIndexSlice.actions;
+export const { incrementCurrentIndex, resetCurrentIndex } = currentIndexSlice.actions;
 
 export default currentIndexSlice.reducer;
