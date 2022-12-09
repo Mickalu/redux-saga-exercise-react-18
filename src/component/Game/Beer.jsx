@@ -10,6 +10,7 @@ import BeerAttributes from './BeerAttributes';
 const Beer = ({ beer }) => {
   const dispach = useDispatch();
   const loadingBeer = useSelector((state) => state.loadingBeer);
+  const currentIndexReducer= useSelector((state) => state.currentIndexReducer);
   let img_height = "auto";
   let loadingBeerComponent;
 
@@ -18,7 +19,8 @@ const Beer = ({ beer }) => {
 
   useEffect(() => {
     beerImg.current.style.width = `${beerImgWrapper.current.offsetWidth}px`;
-  });
+  },
+  [currentIndexReducer]);
 
   if (loadingBeer){
     loadingBeerComponent = (<span><i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw" /></span>);
