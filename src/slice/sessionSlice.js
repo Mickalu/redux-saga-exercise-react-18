@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {session: {}};
 
-const handleStartSession = (state, action) => {
+const startSessionFunction = (state, action) => {
   state.session = action.payload;
 };
 
@@ -11,7 +11,7 @@ export const sessionSlice = createSlice({
   initialState,
   reducers: {
     startSessionSaga: (state, action) => {
-      handleStartSession(state, action);
+      startSessionFunction(state, action);
     },
   },
 });
