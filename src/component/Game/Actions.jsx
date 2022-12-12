@@ -7,7 +7,7 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 import { currentIndexActions } from '../../action/currentIndexActions';
 
-const Actions = (props) => {
+const Actions = () => {
   const dispach = useDispatch();
 
   return (

@@ -4,7 +4,7 @@ import { getBeers } from "../api";
 import { session } from "../selector/session";
 import { updateIsFetching, addBeers } from "../slice/beersSlice";
 
-export function* fetchBeersSaga(action) {
+export function* fetchBeersSaga() {
   try{
     const sessionInfo = yield select(session);
     yield put(updateIsFetching(true));
