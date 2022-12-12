@@ -1,14 +1,12 @@
-import { call, put, select } from "redux-saga/effects";
+import { call, put } from "redux-saga/effects";
 import { getBeers } from "../api";
 
-import { session } from "../selector/session";
 import { updateIsFetching, addBeers } from "../slice/beersSlice";
 
 export function* fetchBeersSaga() {
   try{
-    const sessionInfo = yield select(session);
     yield put(updateIsFetching(true));
-    const beers = yield call(getBeers, sessionInfo.session.id);
+    const beers = yield call(getBeers);
     try {
       yield put(updateIsFetching(false));
       yield put(addBeers(beers));
@@ -18,6 +16,7 @@ export function* fetchBeersSaga() {
     }
   }
   catch(error){
+    yield put(updateIsFetching(false));
     console.log(error);
   }
 };
