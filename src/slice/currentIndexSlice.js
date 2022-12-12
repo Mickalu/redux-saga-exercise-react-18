@@ -12,7 +12,7 @@ export const currentIndexSlice = createSlice({
   name: "currentIndex",
   initialState,
   reducers: {
-    updateCurrentIndex: (state) => {
+    incrementCurrentIndex: (state) => {
       handleUpdateCurrentIndex(state);
     },
     resetCurrentIndex: (state) => {
