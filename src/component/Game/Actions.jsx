@@ -7,18 +7,19 @@ import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 import { currentIndexActions } from '../../action/currentIndexActions';
 
-const Actions = (props) => {
+const Actions = () => {
   const dispach = useDispatch();
 
   return (
     <Container style={{ background: 'white', borderRadius: '0 0 25px 25px' }}>
-      <ul className="list-unstyled list-inline text-center game-actions">
+      <ul  className="list-unstyled list-inline text-center game-actions">
         <li>
           <button
             type="button"
             className="btn btn-danger btn-circle btn-xl"
             name="dislikeBtn"
             onClick={() => dispach({type: currentIndexActions.INCREMENT_CURRENT_INDEX})}
+            data-testid="like-button"
           >
             <FontAwesomeIcon icon={solid("xmark")} />
           </button>

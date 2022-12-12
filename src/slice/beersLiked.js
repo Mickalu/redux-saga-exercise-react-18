@@ -6,7 +6,7 @@ const initialState = {
 
 const addLikedBeersFunction = (state, action) => (
   state.data = [...state.data, action.payload.beerId]
- );
+);
 
 export const beersLikedSlice = createSlice({
   name:"beersLiked",

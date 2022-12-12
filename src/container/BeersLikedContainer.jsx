@@ -1,8 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { v4 } from "uuid";
 
-import { findBeerById } from '../utils/findBeerById';
+import BeersLiked from '../component/Game/BeersLiked';
 
 export const BeersLikedContainer = () => {
   const beerslikedState = useSelector((state) => state.beersLiked);
@@ -10,14 +9,10 @@ export const BeersLikedContainer = () => {
 
   return (
     <>
-      {beerslikedState.data.map((beerId) => {
-        if (beerId !== "undefined"){
-          const beerTitle = findBeerById(beerId, beersState.data).title;
-          return (
-            <div data-testid="beer-title" key={`div-beer-liked-${v4()}`}> {beerTitle} </div>
-          );
-        }
-      })}
+      <BeersLiked
+        beersLiked={beerslikedState}
+        beers={beersState}
+      />
     </>
   );
 };
