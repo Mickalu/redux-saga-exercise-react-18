@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import createSagaMiddleware from "redux-saga";
 
 import rootSaga from "../saga";
@@ -9,13 +9,15 @@ import loadingBeerReducer from "../slice/loadingBeer";
 
 const sagaMiddleWare = createSagaMiddleware();
 
+const rootReducer = combineReducers({
+  beers: beersReducer,
+  session: sessionReducer,
+  currentIndex: currentIndexReducer,
+  loadingBeer: loadingBeerReducer,
+});
+
 export const store = configureStore({
-  reducer: {
-    beers: beersReducer,
-    session: sessionReducer,
-    currentIndex: currentIndexReducer,
-    loadingBeer: loadingBeerReducer,
-  },
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware({ thunk: false }).prepend(sagaMiddleWare);
   }

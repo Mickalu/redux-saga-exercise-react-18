@@ -4,12 +4,16 @@ const initialState = {
   currentIndex: 0,
 };
 
+const handleUpdateCurrentIndex = (state) => {
+  state.currentIndex += 1;
+};
+
 export const currentIndexSlice = createSlice({
   name: "currentIndex",
   initialState,
   reducers: {
     updateCurrentIndex: (state) => {
-      state.currentIndex += 1;
+      handleUpdateCurrentIndex(state);
     },
   },
 });

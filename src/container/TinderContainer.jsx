@@ -7,17 +7,17 @@ import { beersActions } from "../action/beersActions";
 
 const TinderContainer = () => {
   const dispach = useDispatch();
-  const session = useSelector((state) => state.session);
+  const session = useSelector((state) => state.session).session;
 
   useEffect(() => {
-    if (session.session.id){
+    if (session.id){
         dispach({type: beersActions.FETCH_BERRS});
       }
       else {
         dispach({type: sessionActions.SESSION_START});
       }
     },
-    [session.session],
+    [session],
   );
 
   return (

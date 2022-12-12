@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export const loadingBeerSlice = createSlice({
-  name: "liadingBeer",
+  name: "loadingBeer",
   initialState,
   reducers: {
     updateLoadingBeer: (state, action) => {
