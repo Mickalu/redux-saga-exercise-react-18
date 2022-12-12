@@ -13,11 +13,12 @@ const Beer = ({ beer }) => {
   const currentIndex = useSelector((state) => state.currentIndex);
 
   let img_height = "auto";
-  let loadingBeerComponent;
   let beerImage;
 
   let beerImgWrapper = useRef(null);
   let beerImg = useRef(null);
+
+  const loadingBeerComponent = (<span><i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw" /></span>);
 
   useEffect(() => {
     if (beerImg.current) {
@@ -25,10 +26,6 @@ const Beer = ({ beer }) => {
     }
   },
   [currentIndex]);
-
-  if (loadingBeer){
-    loadingBeerComponent = (<span><i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw" /></span>);
-  };
 
   const imageLoaded = () => {
     if (img_height === 'auto'){
