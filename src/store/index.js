@@ -15,7 +15,7 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   currentIndex: currentIndexReducer,
   loadingBeer: loadingBeerReducer,
-  beersLikded: beersLikedReducer,
+  beersLiked: beersLikedReducer,
 });
 
 export const store = configureStore({
