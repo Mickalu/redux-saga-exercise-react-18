@@ -21,21 +21,21 @@ const Beer = ({ beer }) => {
   const loadingBeerComponent = (<span><i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw" /></span>);
 
   useEffect(() => {
-    if (beerImg.current) {
+    if(beerImg.current) {
       beerImg.current.style.width = `${beerImgWrapper.current.offsetWidth}px`;
     }
   },
   [currentIndex]);
 
   const imageLoaded = () => {
-    if (img_height === 'auto'){
+    if(img_height === 'auto') {
       beerImg.current.style.width = `${beerImgWrapper.current.offsetWidth}px`;
       img_height = beerImg.current.style.height;
     }
     dispach(updateLoadingBeer(false));
   };
 
-  if (beer.photo_link){
+  if(beer.photo_link) {
     beerImage = (
       <img
         height={`${img_height}px`} style={{ height: img_height, color: 'red' }}
