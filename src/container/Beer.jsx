@@ -33,7 +33,7 @@ const Beer = ({ beer }) => {
     dispach(updateLoadingBeer(false));
   };
 
-  const imageBeerDisplayed = (beer) => {
+  const imageBeerDisplayed = () => {
     if (beer.photo_link){
       return (
         <img
