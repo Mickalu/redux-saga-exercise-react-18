@@ -1,32 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import Beer from '../component/Game/Beer';
+import Beer from './Beer';
 
 const BeerContainer = () => {
   const beers = useSelector((state) => state.beers);
   const currentIndex = useSelector((state) => state.currentIndex);
   let beer = beers.data[currentIndex.currentIndex];
 
-  if (typeof(beer) === "undefined"){
-    beer = {
-      "id": "",
-      "title": "",
-      "description": "",
-      "country": "",
-      "type_beer": "",
-      "company": "",
-      "colour": "",
-      "graduation": "",
-      "size": "",
-      "price": "",
-      "photo_link": "",
-    };
+  if (beer){
+    return (
+      <Beer beer={beer} />
+    );
   }
-
-  return (
-    <Beer beer={beer} />
-  );
+  else {
+    return null;
+  }
 };
 
 export default BeerContainer;

@@ -6,22 +6,22 @@ Promise.polyfill();
 const defaultHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Request-Method': 'POST',
-  'Content-Type': 'application/json'
+  'Content-Type': 'application/json',
 }
 
 export const startSessionApi = () => (
   fetch(`${API_BASE_URL}/data/session.json`, {
     method: 'GET',
-    headers: defaultHeaders
+    headers: defaultHeaders,
   })
   .then(response => response.json())
   .then(session => session)
 );
 
-export const getBeers = (session) => (
+export const getBeers = () => (
   fetch(`${API_BASE_URL}/data/beers.json`, {
     method: 'GET',
-    headers: defaultHeaders
+    headers: defaultHeaders,
   }).then(response => (
     response.json()
   ))
