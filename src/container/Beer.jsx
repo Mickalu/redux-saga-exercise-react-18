@@ -63,7 +63,7 @@ const Beer = ({ beer }) => {
         <div className="col-sm-4" />
           <div className="col-sm-4 text-center beer-col">
             <div ref={_beerImgWrapperRef} className="beer-img">
-             {imageBeerDisplayed(beer)}
+             {imageBeerDisplayed()}
             </div>
             <h3 className="beer_title" name="beerTitle">{beer.title}</h3>
           </div>
