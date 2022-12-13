@@ -22,12 +22,12 @@ const Beer = ({ beer }) => {
   },
   [currentIndexReducer]);
 
-  if (loadingBeer){
+  if(loadingBeer) {
     loadingBeerComponent = (<span><i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw" /></span>);
   };
 
   const imageLoaded = () => {
-    if (img_height === 'auto'){
+    if(img_height === 'auto') {
       img_height = beerImg.current.style.height;
     }
 

@@ -11,7 +11,7 @@ export const BeersLikedContainer = () => {
   return (
     <>
       {beerslikedState.data.map((beerId) => {
-        if (beerId !== "undefined"){
+        if(beerId !== "undefined") {
           const beerTitle = findBeerById(beerId, beersState.data).title;
           return (
             <div data-testid="beer-title" key={`div-beer-liked-${v4()}`}> {beerTitle} </div>

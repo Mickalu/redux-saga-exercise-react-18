@@ -5,6 +5,10 @@ const initialState = {
   isFetching: false,
 };
 
+const handleAddBeers = (state, action) => {
+  state.data = action.payload;
+};
+
 const handleUpdateIsFetching = (state, action) => {
   state.isFetching = action.payload;
 };
@@ -14,7 +18,7 @@ export const beersSlice = createSlice({
   initialState,
   reducers: {
     addBeers: (state, action) => {
-      state.data = action.payload;
+      handleAddBeers(state, action);
     },
     updateIsFetching: (state, action) => {
       handleUpdateIsFetching(state, action);
