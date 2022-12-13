@@ -8,25 +8,14 @@ const BeerContainer = () => {
   const currentIndex = useSelector((state) => state.currentIndex);
   let beer = beers.data[currentIndex.currentIndex];
 
-  if (!beer){
-    beer = {
-      id: "",
-      title: "",
-      description: "",
-      country: "",
-      type_beer: "",
-      company: "",
-      colour: "",
-      graduation: "",
-      size: "",
-      price: "",
-      photo_link: "",
-    };
+  if (beer){
+    return (
+      <Beer beer={beer} />
+    );
   }
-
-  return (
-    <Beer beer={beer} />
-  );
+  else {
+    return null;
+  }
 };
 
 export default BeerContainer;

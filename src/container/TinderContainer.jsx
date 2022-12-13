@@ -12,11 +12,11 @@ const TinderContainer = () => {
   useEffect(() => {
     if (session.id){
         dispach({type: beersActions.FETCH_BERRS});
-      }
-      else {
-        dispach({type: sessionActions.SESSION_START});
-      }
-    },
+    }
+    else {
+      dispach({type: sessionActions.SESSION_START});
+    }
+  },
     [session],
   );
 
