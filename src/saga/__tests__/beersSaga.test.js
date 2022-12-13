@@ -4,21 +4,12 @@ import { getBeers } from "../../api";
 import { session } from "../../selector/session";
 import { updateIsFetching, addBeers } from "../../slice/beersSlice";
 import { fetchBeersSaga } from "../beersSaga";
-import { initSessionState, initBeersState } from "../../utils/__testsTools__/initValues";
-
-it("fetchBeersSaga first function should be selsect session", () => {
-  const beersSagaGenerator = fetchBeersSaga();
-
-  const selectSession = beersSagaGenerator.next();
-
-  expect(selectSession.value).toStrictEqual(select(session));
-});
+import { initBeersState } from "../../utils/__testsTools__/initValues";
 
 it("fetchBeersSaga second function be put updateIsFetching", () => {
   const beersSagaGenerator = fetchBeersSaga();
-  beersSagaGenerator.next();
 
-  const putUpdateIsFetching = beersSagaGenerator.next(initSessionState);
+  const putUpdateIsFetching = beersSagaGenerator.next();
 
   expect(putUpdateIsFetching.value).toStrictEqual(put(updateIsFetching(true)));
 });
@@ -26,17 +17,15 @@ it("fetchBeersSaga second function be put updateIsFetching", () => {
 it("fetchBeersSaga third function be call getBeers", () => {
   const beersSagaGenerator = fetchBeersSaga();
   beersSagaGenerator.next();
-  beersSagaGenerator.next(initSessionState);
 
   const callGettBeers = beersSagaGenerator.next();
 
-  expect(callGettBeers.value).toStrictEqual(call(getBeers, "1"));
+  expect(callGettBeers.value).toStrictEqual(call(getBeers));
 });
 
 it("fetchBeersSaga fourth function is updating isFetching", () => {
   const beersSagaGenerator = fetchBeersSaga();
   beersSagaGenerator.next();
-  beersSagaGenerator.next(initSessionState);
   beersSagaGenerator.next();
 
   const putUpdateIsFetching = beersSagaGenerator.next(initBeersState);
@@ -47,7 +36,6 @@ it("fetchBeersSaga fourth function is updating isFetching", () => {
 it("fetchBeersSaga fifth function is put addBeers", () => {
   const beersSagaGenerator = fetchBeersSaga();
   beersSagaGenerator.next();
-  beersSagaGenerator.next(initSessionState);
   beersSagaGenerator.next();
   beersSagaGenerator.next(initBeersState);
 

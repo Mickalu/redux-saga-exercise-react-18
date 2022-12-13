@@ -7,17 +7,17 @@ import { sessionActions } from '../action/sessionAction';
 
 const TinderContainer = () => {
   const dispach = useDispatch();
-  const session = useSelector((state) => state.session);
+  const session = useSelector((state) => state.session).session;
 
   useEffect(() => {
-    if (session.session.id){
+    if(session.id) {
         dispach({type: beersActions.FETCH_BEERS});
-      }
-      else {
-        dispach({type: sessionActions.SESSION_START});
-      }
-    },
-    [session.session],
+    }
+    else {
+      dispach({type: sessionActions.SESSION_START});
+    }
+  },
+    [session],
   );
 
   return (

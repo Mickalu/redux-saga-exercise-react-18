@@ -10,7 +10,7 @@ import beersLikedReducer from "../slice/beersLiked";
 
 const sagaMiddleWare = createSagaMiddleware();
 
-const reducersCombined = combineReducers({
+const rootReducer = combineReducers({
   beers: beersReducer,
   session: sessionReducer,
   currentIndex: currentIndexReducer,
@@ -19,7 +19,7 @@ const reducersCombined = combineReducers({
 });
 
 export const store = configureStore({
-  reducer: reducersCombined,
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware({ thunk: false }).prepend(sagaMiddleWare);
   }

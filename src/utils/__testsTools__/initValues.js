@@ -173,8 +173,6 @@ export const initListBeers = {
     ],
 };
 
-export const initSessionState = { session: { id: "1" } };
-
 export const initBeersState = {
   beers: {
     data: [
