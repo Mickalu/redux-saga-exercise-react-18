@@ -1,9 +1,16 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Provider } from "react-redux";
-import { BrowserRouter as Router } from "react-router-dom";
 
 import { store } from "../../../store";
+
+const getByTextCustom = (text) => (
+  screen.getByText(text)
+);
+
+const queryAllByRoleCustom = (role, options) => (
+  screen.queryAllByRole(role, options)
+)
 
 const renderWithProviders = ({ children }) => (
   <Provider store={store}>
@@ -17,3 +24,5 @@ export const renderCustom = (ui, options = {}) => render(ui, { wrapper: renderWi
 export * from '@testing-library/react';
 
 export { renderCustom as render };
+export { getByTextCustom as getByText };
+export { queryAllByRoleCustom as queryAllByRole };

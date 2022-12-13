@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen,  } from "../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 
-import BeersLiked from "../BeersLiked";
+import BeersLiked from "../../Game/BeersLiked";
 import { initListBeers } from "../../../utils/__testsTools__/initValues";
 
 it("Should as number of title as beer in likedBeer ", () => {
