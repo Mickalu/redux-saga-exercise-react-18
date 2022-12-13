@@ -9,7 +9,6 @@ import BeerAttributes from '../component/Game/BeerAttributes';
 
 const Beer = ({ beer }) => {
   const dispach = useDispatch();
-  const loadingBeer = useSelector((state) => state.loadingBeer);
   const currentIndex = useSelector((state) => state.currentIndex);
 
   let img_height = "auto";
@@ -49,6 +48,7 @@ const Beer = ({ beer }) => {
         }}
         role="presentation"
         name="beerImg"
+         alt="beer"
       />
     );
   }

@@ -8,7 +8,7 @@ export function* incrementCurrentIndexBeers() {
   const beers = yield select(beersSelector);
   const currentIndex = yield select(currentIndexSelector);
 
-  if( currentIndex.currentIndex + 1 > beers.data.length - 1 ) {
+  if(currentIndex.currentIndex + 1 > beers.data.length - 1) {
     yield put(resetCurrentIndex());
   }
   else {
