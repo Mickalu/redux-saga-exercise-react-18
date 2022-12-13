@@ -1,6 +1,6 @@
 import { call, put, select } from "redux-saga/effects";
-import { getBeers } from "../api";
 
+import { getBeers } from "../api";
 import { session } from "../selector/session";
 import { updateIsFetching, addBeers } from "../slice/beersSlice";
 
