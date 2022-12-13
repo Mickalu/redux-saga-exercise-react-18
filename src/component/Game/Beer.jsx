@@ -17,8 +17,6 @@ const Beer = ({ beer }) => {
   let beerImgWrapper = useRef(null);
   let beerImg = useRef(null);
 
-  const beerLiked = useSelector((state) => state.beersLiked);
-
   useEffect(() => {
     beerImg.current.style.width = `${beerImgWrapper.current.offsetWidth}px`;
   },
