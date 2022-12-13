@@ -8,7 +8,7 @@ const BeerContainer = () => {
   const currentIndex = useSelector((state) => state.currentIndex);
   let beer = beers.data[currentIndex.currentIndex];
 
-  if(beer) {
+  if (beer){
     return (
       <Beer beer={beer} />
     );

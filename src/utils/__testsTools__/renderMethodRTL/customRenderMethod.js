@@ -10,7 +10,15 @@ const getByTextCustom = (text) => (
 
 const queryAllByRoleCustom = (role, options) => (
   screen.queryAllByRole(role, options)
-)
+);
+
+const queryByTestIdCustom = (testId) => (
+  screen.queryByTestId(testId)
+);
+
+const getByTestIdCustom = (testId) => (
+  screen.getByTestId(testId)
+);
 
 const renderWithProviders = ({ children }) => (
   <Provider store={store}>
@@ -26,3 +34,5 @@ export * from '@testing-library/react';
 export { renderCustom as render };
 export { getByTextCustom as getByText };
 export { queryAllByRoleCustom as queryAllByRole };
+export { queryByTestIdCustom as queryBytestId };
+export { getByTestIdCustom as getByTestId };
