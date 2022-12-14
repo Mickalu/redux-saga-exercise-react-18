@@ -1,7 +1,10 @@
 import React from "react";
 
 import BeerContainer from "../BeerContainer";
-import { render, queryBytestId } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
+import { render, queryBytestId, getByText } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
+import { initListBeers  } from "../../utils/__testsTools__/initValues";
+import { store } from "../../store";
+import { addBeers } from "../../slice/beersSlice";
 
 it("Should not display Beer.jsx if no state.beers", () => {
   render(<BeerContainer />);
@@ -9,4 +12,21 @@ it("Should not display Beer.jsx if no state.beers", () => {
   expect(queryBytestId("beer-container")).not.toBeInTheDocument();
 });
 
+it("Should display the first beer at the beginning", () => {
+  const infoFirstBeer = initListBeers.data[0];
+  store.dispatch(addBeers(initListBeers.data));
 
+  render(<BeerContainer />);
+  expect(getByText(infoFirstBeer.title));
+});
+
+it("Should change beer informations after click on like button", () => {
+  const infoSecondBeer = initListBeers.data[1];
+
+  store.dispatch(addBeers(initListBeers.data));
+  store.dispatch({ type: "ADD_BEER_LIKED_BEERS" });
+
+  render(<BeerContainer />);
+
+  expect(getByText(infoSecondBeer.title));
+});
