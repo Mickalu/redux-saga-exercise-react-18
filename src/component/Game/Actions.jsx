@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from 'react-bootstrap/Container';
-import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
+import { faHeart, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { currentIndexActions } from '../../action/currentIndexActions';
 
@@ -19,9 +19,9 @@ const Actions = () => {
             className="btn btn-danger btn-circle btn-xl"
             name="dislikeBtn"
             onClick={() => dispach({type: currentIndexActions.INCREMENT_CURRENT_INDEX})}
-            data-testid="like-button"
+            data-testid="dislike-button"
           >
-            <FontAwesomeIcon icon={solid("xmark")} />
+            <FontAwesomeIcon icon={faXmark} />
           </button>
         </li>
         <li />
@@ -31,8 +31,9 @@ const Actions = () => {
             className="btn btn-success btn-circle btn-xl"
             name="likeBtn"
             onClick={() => dispach({type: currentIndexActions.ADD_BEER_LIKED_BEERS})}
+            data-testid="like-button"
           >
-            <FontAwesomeIcon icon={solid('heart')} />
+            <FontAwesomeIcon icon={faHeart} />
           </button>
         </li>
       </ul>

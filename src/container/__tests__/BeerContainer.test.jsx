@@ -8,3 +8,5 @@ it("Should not display Beer.jsx if no state.beers", () => {
 
   expect(queryBytestId("beer-container")).not.toBeInTheDocument();
 });
+
+
