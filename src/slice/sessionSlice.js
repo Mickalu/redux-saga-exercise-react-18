@@ -10,9 +10,7 @@ export const sessionSlice = createSlice({
   name: "session",
   initialState,
   reducers: {
-    startSessionSaga: (state, action) => {
-      startSessionFunction(state, action);
-    },
+    startSessionSaga: (state, action) => startSessionFunction(state, action),
   },
 });
 
