@@ -1,10 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
-import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Container from 'react-bootstrap/Container';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
-const Actions = (props) => {
+import { currentIndexActions } from '../../action/currentIndexActions';
+
+const Actions = () => {
+  const dispach = useDispatch();
+
   return (
     <Container style={{ background: 'white', borderRadius: '0 0 25px 25px' }}>
       <ul className="list-unstyled list-inline text-center game-actions">
@@ -13,6 +18,7 @@ const Actions = (props) => {
             type="button"
             className="btn btn-danger btn-circle btn-xl"
             name="dislikeBtn"
+            onClick={() => dispach({type: currentIndexActions.INCREMENT_CURRENT_INDEX})}
           >
             <FontAwesomeIcon icon={solid("xmark")} />
           </button>
@@ -23,6 +29,7 @@ const Actions = (props) => {
             type="button"
             className="btn btn-success btn-circle btn-xl"
             name="likeBtn"
+            onClick={() => dispach({type: currentIndexActions.INCREMENT_CURRENT_INDEX})}
           >
             <FontAwesomeIcon icon={solid('heart')} />
           </button>

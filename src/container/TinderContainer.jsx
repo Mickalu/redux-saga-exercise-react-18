@@ -10,7 +10,7 @@ const TinderContainer = () => {
   const session = useSelector((state) => state.session).session;
 
   useEffect(() => {
-    if (session.id){
+    if(session.id) {
         dispach({type: beersActions.FETCH_BERRS});
     }
     else {

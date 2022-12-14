@@ -19,14 +19,14 @@ const Beer = ({ beer }) => {
   const loadingBeerComponent = (<span><i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw" /></span>);
 
   useEffect(() => {
-    if (_beerImgRef.current) {
+    if(_beerImgRef.current) {
       _beerImgRef.current.style.width = `${_beerImgWrapperRef.current.offsetWidth}px`;
     }
   },
   [currentIndex]);
 
   const imageLoaded = () => {
-    if (img_height === 'auto'){
+    if(img_height === 'auto'){
       _beerImgRef.current.style.width = `${_beerImgWrapperRef.current.offsetWidth}px`;
       img_height = _beerImgRef.current.style.height;
     }
@@ -34,7 +34,7 @@ const Beer = ({ beer }) => {
   };
 
   const imageBeerDisplayed = () => {
-    if (beer.photo_link){
+    if(beer.photo_link){
       return (
         <img
           height={`${img_height}px`} style={{ height: img_height, color: 'red' }}
@@ -63,7 +63,7 @@ const Beer = ({ beer }) => {
         <div className="col-sm-4" />
           <div className="col-sm-4 text-center beer-col">
             <div ref={_beerImgWrapperRef} className="beer-img">
-             {imageBeerDisplayed(beer)}
+             {imageBeerDisplayed()}
             </div>
             <h3 className="beer_title" name="beerTitle">{beer.title}</h3>
           </div>
