@@ -11,7 +11,7 @@ const Actions = () => {
   const dispach = useDispatch();
 
   return (
-    <Container style={{ background: 'white', borderRadius: '0 0 25px 25px' }}>
+    <Container data-testid="actions-container" style={{ background: 'white', borderRadius: '0 0 25px 25px' }}>
       <ul  className="list-unstyled list-inline text-center game-actions">
         <li>
           <button
