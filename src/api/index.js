@@ -7,7 +7,7 @@ const defaultHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Request-Method': 'POST',
   'Content-Type': 'application/json',
-}
+};
 
 export const startSessionApi = () => (
   fetch(`${API_BASE_URL}/data/session.json`, {
