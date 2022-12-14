@@ -4,24 +4,20 @@ const initialState = {
   currentIndex: 0,
 };
 
-const handleUpdateCurrentIndex = (state) => (
+const handleUpdateCurrentIndex = (state) => {
   state.currentIndex += 1
-);
+};
 
-const resetCurrentIndexFunction = (state) => (
+const resetCurrentIndexFunction = (state) => {
   state.currentIndex = 0
-)
+};
 
 export const currentIndexSlice = createSlice({
   name: "currentIndex",
   initialState,
   reducers: {
-    incrementCurrentIndex: (state) => {
-      handleUpdateCurrentIndex(state);
-    },
-    resetCurrentIndex: (state) => {
-      resetCurrentIndexFunction(state);
-    }
+    incrementCurrentIndex: (state) => handleUpdateCurrentIndex(state),
+    resetCurrentIndex: (state) => resetCurrentIndexFunction(state),
   },
 });
 
