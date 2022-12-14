@@ -4,7 +4,7 @@ import { render, screen,  } from "../../../utils/__testsTools__/renderMethodRTL/
 import BeersLiked from "../../Game/BeersLiked";
 import { initListBeers } from "../../../utils/__testsTools__/initValues";
 
-it("Should as number of title as beer in likedBeer ", () => {
+it("Should as number of title as beer in likedBeer", () => {
   const beersLiked = {data: [initListBeers.data[0].id]};
 
   render(
@@ -17,7 +17,7 @@ it("Should as number of title as beer in likedBeer ", () => {
 });
 
 it("Should not have any beer title if no liked beer", () => {
-  const beersLiked = {data: []};
+  const beersLiked = { data: [] };
 
   render(
     <BeersLiked
