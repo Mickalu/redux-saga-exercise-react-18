@@ -12,9 +12,7 @@ export const loadingBeerSlice = createSlice({
   name: "loadingBeer",
   initialState,
   reducers: {
-    updateLoadingBeer: (state, action) => {
-      handleUpdateLoadingBeer(state, action);
-    },
+    updateLoadingBeer: (state, action) => handleUpdateLoadingBeer(state, action),
   },
 });
 
