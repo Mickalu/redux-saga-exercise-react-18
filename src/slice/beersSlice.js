@@ -17,12 +17,8 @@ export const beersSlice = createSlice({
   name: "beers",
   initialState,
   reducers: {
-    addBeers: (state, action) => {
-      handleAddBeers(state, action);
-    },
-    updateIsFetching: (state, action) => {
-      handleUpdateIsFetching(state, action);
-    },
+    addBeers: (state, action) => handleAddBeers(state, action),
+    updateIsFetching: (state, action) => handleUpdateIsFetching(state, action),
   },
 });
 
