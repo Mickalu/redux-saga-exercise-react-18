@@ -20,6 +20,10 @@ const getByTestIdCustom = (testId) => (
   screen.getByTestId(testId)
 );
 
+const getByDisplayValueCustom = (displayValue) => (
+  screen.getByDisplayValue(displayValue)
+);
+
 const renderWithProviders = ({ children }) => (
   <Provider store={store}>
     { children }
@@ -36,3 +40,4 @@ export { getByTextCustom as getByText };
 export { queryAllByRoleCustom as queryAllByRole };
 export { queryByTestIdCustom as queryBytestId };
 export { getByTestIdCustom as getByTestId };
+export { getByDisplayValueCustom as getByDisplayValue };
