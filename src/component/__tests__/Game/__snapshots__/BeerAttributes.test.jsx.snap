@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match with snapShot 1`] = `
+<ul
+  className="beer_details"
+>
+  <li>
+    <span>
+      Belgium
+    </span>
+     Country
+  </li>
+  <li>
+    <span>
+      Tripel
+    </span>
+     Style
+  </li>
+  <li>
+    <span>
+      Blond
+    </span>
+     Colour
+  </li>
+  <li>
+    <span>
+      33 
+    </span>
+     cl
+  </li>
+  <li>
+    <span>
+      6 %
+    </span>
+     °Alcohol
+  </li>
+  <li>
+    <span>
+      2,00
+    </span>
+     
+    <span>
+      £
+    </span>
+  </li>
+</ul>
+`;

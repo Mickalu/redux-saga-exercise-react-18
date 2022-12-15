@@ -1,4 +1,5 @@
 import React from "react";
+import renderer from "react-test-renderer";
 
 import { render, getByText } from "../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 import { initBeerState, initListBeers } from "../../../utils/__testsTools__/initValues";
@@ -64,4 +65,11 @@ it("Should change all information when beer change", () => {
   expect(getByText(secondBeer.size.slice(0, 2))).toBeInTheDocument();
   expect(getByText(secondBeer.graduation)).toBeInTheDocument();
   expect(getByText(parseFloat(secondBeer.price).toFixed(2).toString().replace('.', ",")));
+});
+
+it("Should match with snapShot", () => {
+  const tree = renderer
+    .create(<BeerAttributes beer={initBeerState} />)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });
