@@ -18,7 +18,7 @@ const Actions = () => {
             type="button"
             className="btn btn-danger btn-circle btn-xl"
             name="dislikeBtn"
-            onClick={() => dispach({type: currentIndexActions.INCREMENT_CURRENT_INDEX})}
+            onClick={() => dispach({type: currentIndexActions.REMOVE_BEER_LIKED_BEERS})}
           >
             <FontAwesomeIcon icon={solid("xmark")} />
           </button>

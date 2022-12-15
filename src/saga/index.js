@@ -12,4 +12,5 @@ export default function* rootSaga(){
   yield takeLeading(beersActions.FETCH_BEERS, beersSaga.fetchBeersSaga)
   yield takeLeading(currentIndexActions.INCREMENT_CURRENT_INDEX, currentIndexSaga.incrementCurrentIndexBeers)
   yield takeLeading(currentIndexActions.ADD_BEER_LIKED_BEERS, currentIndexSaga.addBeerToLikedBeers)
+  yield takeLeading(currentIndexActions.REMOVE_BEER_LIKED_BEERS, currentIndexSaga.removeBeerToLikedBeers)
 };
