@@ -5,7 +5,6 @@ const reactRedux = { useDispatch };
 import Actions from "../../Game/Actions";
 import { render, getByTestId } from "../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 
-
 it("Should have a button like", () => {
   render(<Actions />);
 
