@@ -8,6 +8,7 @@ const BeersLiked = ({ beersLiked, beers }) => {
     <>
       {beersLiked.data.map((beerId) => {
           const beerTitle = findBeerById(beerId, beers.data).title;
+          console.log(beerId);
           return (
             <div data-testid="beer-title" key={`div-beer-liked-${v4()}`}> {beerTitle} </div>
           );

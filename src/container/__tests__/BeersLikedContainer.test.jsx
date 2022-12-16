@@ -1,25 +1,49 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-const reactRedux = { useDispatch, useSelector };
+import renderer from "react-test-renderer";
+import { debug } from "jest-preview";
 
-import { render, queryBytestId, getByDisplayValue } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
+import { render, queryBytestId } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 import { store } from "../../store";
 import { addBeers } from "../../slice/beersSlice";
 import { initListBeers } from "../../utils/__testsTools__/initValues";
 import BeersLikedContainer from "../BeersLikedContainer";
 
+const reactRedux = { useDispatch, useSelector };
+
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useSelector: jest.fn()
+}));
+
 it("Should not have beer title at the beginning", () => {
+  useSelector.mockImplementation(callback => {
+    return callback({
+      beersLiked: { data: [] },
+      beers: initListBeers,
+    });
+  });
+
   render(<BeersLikedContainer />);
 
   expect(queryBytestId("beer-title")).not.toBeInTheDocument();
 });
 
-it("Should add beer title when beer is added", () => {
-  store.dispatch(addBeers(initListBeers.data));
-  store.dispatch({ type: "ADD_BEER_LIKED_BEERS" });
+it("beersLikedContainer Should match snapshot", () => {
+  const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
+  const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
 
-  render(<BeersLikedContainer />);
+  useDispatchMock.mockReturnValue(jest.fn());
+  useSelectorMock.mockImplementation(callback => {
+    return callback({
+      beersLiked: { data: ["126"] },
+      beers: initListBeers,
+    });
+  });
 
-  expect(queryBytestId("beer-title")).toBeInTheDocument();
+  const { container } = render(<BeersLikedContainer />);
+
+  debug();
+  expect(container).toMatchSnapshot();
 });
 
