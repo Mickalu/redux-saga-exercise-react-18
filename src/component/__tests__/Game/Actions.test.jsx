@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from 'react-redux';
 
 import Actions from "../../Game/Actions";
 import { render, getByTestId } from "../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";

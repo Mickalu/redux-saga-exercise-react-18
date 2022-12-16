@@ -23,22 +23,3 @@ it("Should add beer title when beer is added", () => {
   expect(queryBytestId("beer-title")).toBeInTheDocument();
 });
 
-// it("Should remove beer title when beer is dislike", () => {
-//   const useSelectorMock = jest.spyOn(reactRedux, 'useSelector');
-//   const useDispachMock = jest.spyOn(reactRedux, 'useDispatch');
-
-//   useSelectorMock.mockReturnValue({
-//     beersLiked: [initListBeers.data[0].id],
-//     beersState: initListBeers
-//   });
-
-//   useDispachMock.mockReturnValue({
-
-//   });
-
-//   store.dispatch({ type: "ADD_BEER_LIKED_BEERS" });
-
-//   render(<BeersLikedContainer />);
-//   expect(getByDisplayValue(initListBeers.data[0].title)).not.toBeInTheDocument();
-// });
-
