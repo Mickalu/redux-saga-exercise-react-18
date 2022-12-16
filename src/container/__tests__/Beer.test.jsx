@@ -1,14 +1,19 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import renderer from "react-test-renderer";
 import { debug } from "jest-preview";
 
 import { render, getByText, queryBytestId, getByTestId } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
-import { initBeerState } from "../../utils/__testsTools__/initValues";
+import { initBeerState, initListBeers } from "../../utils/__testsTools__/initValues";
 import Beer from "../Beer";
 
 const reactRedux = { useDispatch, useSelector };
 const reactHooks = { useEffect };
+
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useSelector: jest.fn(),
+  useDispatch: jest.fn(),
+}));
 
 it("should display all beer informations", () => {
   render(<Beer beer={initBeerState} /> );
@@ -42,15 +47,24 @@ it("image beer should have same height than its parent div", () => {
 });
 
 it("image beer should match snapshot", () => {
+  const currentIndexValue = 2;
+  const beerDictionnary = initListBeers.data[currentIndexValue];
+
   const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
   const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
   const useEffectMock = jest.spyOn(reactHooks, "useEffect");
 
   useDispatchMock.mockReturnValue(jest.fn());
-  useSelectorMock.mockReturnValue({});
   useEffectMock.mockReturnValue(jest.fn());
 
-  const wrapper = render(<Beer beer={initBeerState} />);
+  useSelectorMock.mockImplementation(callback => {
+    return callback({
+      currentIndex: currentIndexValue,
+    });
+  });
 
-  expect(wrapper).toMatchSnapshot();
+  const { container } = render(<Beer beer={beerDictionnary} />);
+
+  debug();
+  expect(container).toMatchSnapshot();
 });
