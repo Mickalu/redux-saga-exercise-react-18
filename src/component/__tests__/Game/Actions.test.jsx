@@ -1,9 +1,10 @@
 import React from "react";
 import { useDispatch } from 'react-redux';
-const reactRedux = { useDispatch };
 
 import Actions from "../../Game/Actions";
 import { render, getByTestId } from "../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
+
+const reactRedux = { useDispatch };
 
 it("Should have a button like", () => {
   render(<Actions />);

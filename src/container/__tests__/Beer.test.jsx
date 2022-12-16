@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import renderer from "react-test-renderer";
+import { debug } from "jest-preview";
 
 import { render, getByText, queryBytestId, getByTestId } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 import { initBeerState } from "../../utils/__testsTools__/initValues";
 import Beer from "../Beer";
+
+const reactRedux = { useDispatch, useSelector };
+const reactHooks = { useEffect };
 
 it("should display all beer informations", () => {
   render(<Beer beer={initBeerState} /> );
@@ -33,4 +39,18 @@ it("image beer should have same height than its parent div", () => {
 
   const parentDiv = getByTestId("div-image-beer");
   expect(getByTestId("beer-image")).toHaveStyle("heigth: "+ parentDiv.style.height);
+});
+
+it("image beer should match snapshot", () => {
+  const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
+  const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
+  const useEffectMock = jest.spyOn(reactHooks, "useEffect");
+
+  useDispatchMock.mockReturnValue(jest.fn());
+  useSelectorMock.mockReturnValue({});
+  useEffectMock.mockReturnValue(jest.fn());
+
+  const wrapper = render(<Beer beer={initBeerState} />);
+
+  expect(wrapper).toMatchSnapshot();
 });
