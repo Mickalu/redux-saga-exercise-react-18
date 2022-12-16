@@ -1,11 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import renderer from "react-test-renderer";
-import { debug } from "jest-preview";
 
 import { render, queryBytestId } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
-import { store } from "../../store";
-import { addBeers } from "../../slice/beersSlice";
 import { initListBeers } from "../../utils/__testsTools__/initValues";
 import BeersLikedContainer from "../BeersLikedContainer";
 
@@ -43,7 +39,6 @@ it("beersLikedContainer Should match snapshot", () => {
 
   const { container } = render(<BeersLikedContainer />);
 
-  debug();
   expect(container).toMatchSnapshot();
 });
 
