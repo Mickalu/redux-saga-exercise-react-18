@@ -87,6 +87,7 @@ module.exports = {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     "uuid": require.resolve('uuid'),
+
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -185,7 +186,7 @@ module.exports = {
   // A map from regular expressions to paths to transformers
   transform: {
     "^.+\\.[t|j]sx?$": "<rootDir>/node_modules/babel-jest",
-    "^.+\\.css$": "<rootDir>/node_modules/jest-transform-css"
+    "^.+\\.css$": "<rootDir>/node_modules/jest-transform-css",
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
@@ -195,7 +196,9 @@ module.exports = {
   ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
-  // unmockedModulePathPatterns: undefined,
+  unmockedModulePathPatterns: [
+    "<rootDir>/node_modules/react-bootstrap"
+  ],
 
   // Indicates whether each individual test should be reported during the run
   verbose: true,
