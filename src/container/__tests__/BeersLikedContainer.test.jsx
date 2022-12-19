@@ -5,6 +5,7 @@ import { render, queryBytestId } from "../../utils/__testsTools__/renderMethodRT
 import { initListBeers } from "../../utils/__testsTools__/initValues";
 import BeersLikedContainer from "../BeersLikedContainer";
 
+
 const reactRedux = { useDispatch, useSelector };
 
 jest.mock("react-redux", () => ({

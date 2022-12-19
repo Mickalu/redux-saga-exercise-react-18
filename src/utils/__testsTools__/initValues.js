@@ -1,3 +1,5 @@
+import { listRandomBeers } from "./factory/models/beer";
+
 export const initListBeers = {
   data:
     [
@@ -198,4 +200,8 @@ export const initBeerState = {
 export const initBeersSliceState = {
   data: [],
   isFetching: false,
+};
+
+export const initRandomBeers = {
+  data: listRandomBeers(20),
 };
