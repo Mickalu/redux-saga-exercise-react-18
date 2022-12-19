@@ -9,30 +9,34 @@ import { addBeers } from "../../slice/beersSlice";
 
 const reactRedux = { useSelector, useDispatch };
 
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useSelector: jest.fn(),
+  useDispatch: jest.fn(),
+}));
+
+const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
+const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
+
 it("Should not display Beer.jsx if no state.beers", () => {
+  useSelectorMock.mockImplementation(callback => {
+    return callback({
+      beers: [],
+      currentIndex: { currentIndex: 0 },
+    });
+  });
+
   render(<BeerContainer />);
 
   expect(queryBytestId("beer-container")).not.toBeInTheDocument();
 });
 
-it("Should change beer informations after click on like button", () => {
-  const infoSecondBeer = initListBeers.data[1];
-
-  store.dispatch(addBeers(initListBeers.data));
-  store.dispatch({ type: "ADD_BEER_LIKED_BEERS" });
-
-  render(<BeerContainer />);
-
-  expect(getByText(infoSecondBeer.title));
-});
-
 it("Should match with the snapshot", () => {
-  const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
-  const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
-
-  useSelectorMock.mockReturnValue({
-    beers: initListBeers.data ,
-    currentIndex: 0,
+  useSelectorMock.mockImplementation(callback => {
+    return callback({
+      beers: initListBeers,
+      currentIndex: { currentIndex: 1 },
+    });
   });
 
   useDispatchMock.mockReturnValue(jest.fn());
