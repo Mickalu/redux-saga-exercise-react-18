@@ -1,6 +1,5 @@
 import React from "react";
 import renderer from "react-test-renderer";
-
 import SideMenu from "../../../Navigation/Menus/SideMenu";
 
 it("Should match snapshot when open", () => {
