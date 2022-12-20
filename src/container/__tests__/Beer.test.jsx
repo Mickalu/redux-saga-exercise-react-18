@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { debug } from "jest-preview";
 
 import { render, getByText, queryBytestId, getByTestId } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 import { initBeerState, initListBeers } from "../../utils/__testsTools__/initValues";
@@ -65,6 +64,5 @@ it("image beer should match snapshot", () => {
 
   const { container } = render(<Beer beer={beerDictionnary} />);
 
-  debug();
   expect(container).toMatchSnapshot();
 });
