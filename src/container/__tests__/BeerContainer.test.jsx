@@ -31,6 +31,19 @@ it("Should not display Beer.jsx if no state.beers", () => {
   expect(queryBytestId("beer-container")).not.toBeInTheDocument();
 });
 
+it("Should not display because beer not existe", () => {
+  useSelectorMock.mockImplementation(callback => {
+    return callback({
+      beers: [],
+      currentIndex: { currentIndex: 10000 },
+    });
+  });
+
+  render(<BeerContainer />);
+
+  expect(queryBytestId("beer-container")).not.toBeInTheDocument();
+});
+
 it("Should match with the snapshot", () => {
   useSelectorMock.mockImplementation(callback => {
     return callback({
