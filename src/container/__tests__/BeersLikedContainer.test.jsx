@@ -43,3 +43,18 @@ it("beersLikedContainer Should match snapshot", () => {
   expect(container).toMatchSnapshot();
 });
 
+it("beersLikedContainer with multiple liked beer should display all title", () => {
+  const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
+  const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
+
+  useDispatchMock.mockReturnValue(jest.fn());
+  useSelectorMock.mockImplementation(callback => {
+    return callback({
+      beersLiked: { data: ["126", "82"] },
+      beers: initListBeers,
+    });
+  });
+
+  const { container } = render(<BeersLikedContainer />);
+  expect(container).toMatchSnapshot();
+});

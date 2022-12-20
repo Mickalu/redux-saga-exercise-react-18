@@ -11,3 +11,22 @@ exports[`beersLikedContainer Should match snapshot 1`] = `
   </div>
 </div>
 `;
+
+exports[`beersLikedContainer with multiple liked beer should display all title 1`] = `
+<div>
+  <div
+    data-testid="beer-title"
+  >
+     
+    Cuvée des trolls
+     
+  </div>
+  <div
+    data-testid="beer-title"
+  >
+     
+    Karmeliet Triple
+     
+  </div>
+</div>
+`;
