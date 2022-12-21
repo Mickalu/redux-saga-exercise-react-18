@@ -26,7 +26,7 @@ it("Should display the beer color", () => {
 it("Should display the beer size", () => {
   render(<BeerAttributes beer={initBeerState} />);
 
-  expect(getByText(initBeerState.size.toLowerCase().replace('cl', '').replace(' ', '')));
+  expect(getByText(initBeerState.size.toString().toLowerCase().replace('cl', '').replace(' ', '')));
 });
 
 it("Should display the beer graduation", () => {

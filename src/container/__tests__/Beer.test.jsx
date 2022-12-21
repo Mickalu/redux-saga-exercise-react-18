@@ -61,7 +61,6 @@ it("image beer should match snapshot", () => {
       currentIndex: currentIndexValue,
     });
   });
-
   const { container } = render(<Beer beer={beerDictionnary} />);
 
   expect(container).toMatchSnapshot();
