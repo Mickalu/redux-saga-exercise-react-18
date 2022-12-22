@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
+
+import "../../assets/css/Register.css";
+import Col from "react-bootstrap/Col";
 
 import FormRegister from '../../component/Authentification/FormsAutentifications/FormRegister';
 import { authentificationAction } from "../../action/authentificationAction.js";
@@ -16,19 +20,23 @@ const Register = () => {
 
   const [formRegisterValues, setFormRegisterValues] = useState(initFormValue);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const submitRegisterUser = (event) => {
     event.preventDefault();
     dispatch({ type: authentificationAction.REGISTER_USER, formRegisterValues })
+    navigate("/home");
   };
 
   return (
-    <div>
-      <FormRegister
-        submitRegisterUser={submitRegisterUser}
-        formRegisterValues={formRegisterValues}
-        setFormRegisterValues={setFormRegisterValues}
-      />
+    <div className='register-container'>
+      <Col lg="5">
+        <FormRegister
+          submitRegisterUser={submitRegisterUser}
+          formRegisterValues={formRegisterValues}
+          setFormRegisterValues={setFormRegisterValues}
+        />
+      </Col>
     </div>
   );
 };

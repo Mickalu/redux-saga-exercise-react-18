@@ -6,3 +6,8 @@
 .hr-title::after {
   opacity: 0;
 }
+
+.row{
+  margin-left: 0%;
+  margin-right: 0%;
+}

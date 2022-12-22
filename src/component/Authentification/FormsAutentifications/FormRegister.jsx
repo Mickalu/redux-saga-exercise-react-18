@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button';
 
@@ -45,38 +46,42 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
 
   return (
       <Form onSubmit={submitRegisterUser}>
-        <Form.Group>
-          <Form.Label>Username : </Form.Label>
-          <Form.Control type='text' onChange={(e) => handleUsernameInput(e.target.value)} required/>
-        </Form.Group>
+        <Row>
+          <Form.Group className='mb-4'>
+            <Form.Label>Username : </Form.Label>
+            <Form.Control type='text' onChange={(e) => handleUsernameInput(e.target.value)} required/>
+          </Form.Group>
 
-        <Form.Group>
-          <Form.Label>Password : </Form.Label>
-          <Form.Control type='password' onChange={(e) => handlePassword(e.target.value)} required/>
-        </Form.Group>
+          <Form.Group className='mb-4'>
+            <Form.Label>Password : </Form.Label>
+            <Form.Control type='password' onChange={(e) => handlePassword(e.target.value)} required/>
+          </Form.Group>
 
-        <Form.Group>
-          <Form.Label>Password again : </Form.Label>
-          <Form.Control type='password' onChange={(e) => handlePassword2(e.target.value)} required/>
-        </Form.Group>
+          <Form.Group className='mb-4'>
+            <Form.Label>Password again : </Form.Label>
+            <Form.Control type='password' onChange={(e) => handlePassword2(e.target.value)} required/>
+          </Form.Group>
 
-        <Form.Group>
-          <Form.Label>Email : </Form.Label>
-          <Form.Control type='email' onChange={(e) => handleEmailInput(e.target.value)} required/>
-        </Form.Group>
+          <Form.Group className='mb-4'>
+            <Form.Label>Email : </Form.Label>
+            <Form.Control type='email' onChange={(e) => handleEmailInput(e.target.value)} required/>
+          </Form.Group>
 
-        <Form.Group>
-          <Form.Label>First name: </Form.Label>
-          <Form.Control type='text' onChange={(e) => handleFirstName(e.target.value)} required/>
-        </Form.Group>
+          <Form.Group className='mb-4'>
+            <Form.Label>First name: </Form.Label>
+            <Form.Control type='text' onChange={(e) => handleFirstName(e.target.value)} required/>
+          </Form.Group>
 
-        <Form.Group>
-          <Form.Label>Last name: </Form.Label>
-          <Form.Control type='text' onChange={(e) => handleLastName(e.target.value)} required/>
-        </Form.Group>
+          <Form.Group className='mb-4'>
+            <Form.Label>Last name: </Form.Label>
+            <Form.Control type='text' onChange={(e) => handleLastName(e.target.value)} required/>
+          </Form.Group>
+        </Row>
 
         <Row>
-          <Button type='submit'> Save </Button>
+          <Col>
+            <Button size="lg" type='submit'> Save </Button>
+          </Col>
         </Row>
       </Form>
   );
