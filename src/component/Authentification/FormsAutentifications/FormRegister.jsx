@@ -1,6 +1,8 @@
 import React from 'react';
 
+import Row from 'react-bootstrap/Row';
 import Form from "react-bootstrap/Form";
+import Button from 'react-bootstrap/Button';
 
 import { changeInputFormIntoState } from '../../../utils/functionGestionInput/gestionFormInput';
 
@@ -11,10 +13,10 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
     changeInputFormIntoState(formRegisterValues, field, inputUsername, setFormRegisterValues);
   };
 
-  const handlePassword1 = (inputPassword1) => {
-    const field = "password1";
+  const handlePassword = (inputPassword) => {
+    const field = "password";
 
-    changeInputFormIntoState(formRegisterValues, field, inputPassword1, setFormRegisterValues);
+    changeInputFormIntoState(formRegisterValues, field, inputPassword, setFormRegisterValues);
   };
 
   const handlePassword2 = (inputPassword2) => {
@@ -42,7 +44,7 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
   };
 
   return (
-      <Form>
+      <Form onSubmit={submitRegisterUser}>
         <Form.Group>
           <Form.Label>Username : </Form.Label>
           <Form.Control type='text' onChange={(e) => handleUsernameInput(e.target.value)} required/>
@@ -50,7 +52,7 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
 
         <Form.Group>
           <Form.Label>Password : </Form.Label>
-          <Form.Control type='password' onChange={(e) => handlePassword1(e.target.value)} required/>
+          <Form.Control type='password' onChange={(e) => handlePassword(e.target.value)} required/>
         </Form.Group>
 
         <Form.Group>
@@ -65,13 +67,17 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
 
         <Form.Group>
           <Form.Label>First name: </Form.Label>
-          <Form.Control type='email' onChange={(e) => handleFirstName(e.target.value)} required/>
+          <Form.Control type='text' onChange={(e) => handleFirstName(e.target.value)} required/>
         </Form.Group>
 
         <Form.Group>
           <Form.Label>Last name: </Form.Label>
-          <Form.Control type='email' onChange={(e) => handleLastName(e.target.value)} required/>
+          <Form.Control type='text' onChange={(e) => handleLastName(e.target.value)} required/>
         </Form.Group>
+
+        <Row>
+          <Button type='submit'> Save </Button>
+        </Row>
       </Form>
   );
 };
