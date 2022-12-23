@@ -8,40 +8,33 @@ import Button from 'react-bootstrap/Button';
 import { changeInputFormIntoState } from '../../../utils/functionGestionInput/gestionFormInput';
 
 const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterValues, apiResponse }) =>{
-
   const handleUsernameInput = (inputUsername) => {
     const field = "username";
-
     changeInputFormIntoState(formRegisterValues, field, inputUsername, setFormRegisterValues);
   };
 
   const handlePassword = (inputPassword) => {
     const field = "password";
-
     changeInputFormIntoState(formRegisterValues, field, inputPassword, setFormRegisterValues);
   };
 
   const handlePassword2 = (inputPassword2) => {
     const field = "password2";
-
     changeInputFormIntoState(formRegisterValues, field, inputPassword2, setFormRegisterValues);
   }
 
   const handleEmailInput = (inputEmail) => {
     const field = "email";
-
     changeInputFormIntoState(formRegisterValues, field, inputEmail, setFormRegisterValues);
   };
 
   const handleFirstName = (inputFirstName) => {
     const field = "first_name";
-
     changeInputFormIntoState(formRegisterValues, field, inputFirstName, setFormRegisterValues);
   };
 
   const handleLastName = (inputLastName) => {
     const field = "last_name";
-
     changeInputFormIntoState(formRegisterValues, field, inputLastName, setFormRegisterValues);
   };
 
@@ -53,6 +46,15 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
     }
     else {
       return (null);
+    }
+  };
+
+  const enableSubmit = () => {
+    if (formRegisterValues.password === formRegisterValues.password2 || formRegisterValues.password === "") {
+      return false;
+    }
+    else {
+      return true;
     }
   };
 
@@ -92,7 +94,7 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
 
       <Row>
         <Col>
-          <Button size="lg" type='submit'> Save </Button>
+          <Button size="lg" type='submit' disabled={enableSubmit()}> Save </Button>
         </Col>
       </Row>
 
