@@ -68,12 +68,12 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
 
         <Form.Group className='mb-4'>
           <Form.Label>Password : </Form.Label>
-          <Form.Control type='password' onChange={(e) => handlePassword(e.target.value)} required/>
+          <Form.Control data-testid="password" type='password' onChange={(e) => handlePassword(e.target.value)} required/>
         </Form.Group>
 
         <Form.Group className='mb-4'>
           <Form.Label>Password again : </Form.Label>
-          <Form.Control type='password' onChange={(e) => handlePassword2(e.target.value)} required/>
+          <Form.Control data-testid="password2" type='password' onChange={(e) => handlePassword2(e.target.value)} required/>
         </Form.Group>
 
         <Form.Group className='mb-4'>
@@ -94,7 +94,7 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
 
       <Row>
         <Col>
-          <Button size="lg" type='submit' disabled={enableSubmit()}> Save </Button>
+          <Button size="lg" type='submit' disabled={enableSubmit()} data-testid="submit-form-button"> Save </Button>
         </Col>
       </Row>
 

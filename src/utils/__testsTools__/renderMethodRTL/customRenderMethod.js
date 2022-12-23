@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
 import { MemoryRouter as Router } from 'react-router-dom';
 
@@ -24,6 +24,10 @@ const getByTestIdCustom = (testId) => (
 const getByDisplayValueCustom = (displayValue) => (
   screen.getByDisplayValue(displayValue)
 );
+
+export const fireEventChange = (input, inputValue) => {
+  fireEvent.change(input, {target: {value: inputValue}})
+};
 
 const renderWithProviders = ({ children }) => (
   <Router>

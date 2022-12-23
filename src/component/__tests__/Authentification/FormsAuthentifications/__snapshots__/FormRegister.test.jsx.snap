@@ -32,6 +32,7 @@ exports[`formRegister should matchsnapshot 1`] = `
         </label>
         <input
           class="form-control"
+          data-testid="password"
           required=""
           type="password"
         />
@@ -46,6 +47,7 @@ exports[`formRegister should matchsnapshot 1`] = `
         </label>
         <input
           class="form-control"
+          data-testid="password2"
           required=""
           type="password"
         />
@@ -101,6 +103,7 @@ exports[`formRegister should matchsnapshot 1`] = `
       >
         <button
           class="btn btn-primary btn-lg"
+          data-testid="submit-form-button"
           type="submit"
         >
            Save 
