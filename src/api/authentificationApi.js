@@ -15,5 +15,4 @@ export const registerUserApi = (valueData) => (
     body: JSON.stringify(valueData),
   })
   .then(response => response.json())
-  .then(user => user)
 );

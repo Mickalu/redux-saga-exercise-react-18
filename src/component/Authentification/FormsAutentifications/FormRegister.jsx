@@ -7,7 +7,8 @@ import Button from 'react-bootstrap/Button';
 
 import { changeInputFormIntoState } from '../../../utils/functionGestionInput/gestionFormInput';
 
-const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterValues }) =>{
+const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterValues, apiResponse }) =>{
+
   const handleUsernameInput = (inputUsername) => {
     const field = "username";
 
@@ -44,46 +45,61 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
     changeInputFormIntoState(formRegisterValues, field, inputLastName, setFormRegisterValues);
   };
 
+  const displayErrorMessage = () => {
+    if (!apiResponse.status) {
+      return (
+        <p style={{color: "red"}}>{apiResponse.data}</p>
+      );
+    }
+    else {
+      return (null);
+    }
+  };
+
   return (
-      <Form onSubmit={submitRegisterUser}>
-        <Row>
-          <Form.Group className='mb-4'>
-            <Form.Label>Username : </Form.Label>
-            <Form.Control type='text' onChange={(e) => handleUsernameInput(e.target.value)} required/>
-          </Form.Group>
+    <Form onSubmit={submitRegisterUser}>
+      <Row>
+        <Form.Group className='mb-4'>
+          <Form.Label>Username : </Form.Label>
+          <Form.Control type='text' onChange={(e) => handleUsernameInput(e.target.value)} required/>
+        </Form.Group>
 
-          <Form.Group className='mb-4'>
-            <Form.Label>Password : </Form.Label>
-            <Form.Control type='password' onChange={(e) => handlePassword(e.target.value)} required/>
-          </Form.Group>
+        <Form.Group className='mb-4'>
+          <Form.Label>Password : </Form.Label>
+          <Form.Control type='password' onChange={(e) => handlePassword(e.target.value)} required/>
+        </Form.Group>
 
-          <Form.Group className='mb-4'>
-            <Form.Label>Password again : </Form.Label>
-            <Form.Control type='password' onChange={(e) => handlePassword2(e.target.value)} required/>
-          </Form.Group>
+        <Form.Group className='mb-4'>
+          <Form.Label>Password again : </Form.Label>
+          <Form.Control type='password' onChange={(e) => handlePassword2(e.target.value)} required/>
+        </Form.Group>
 
-          <Form.Group className='mb-4'>
-            <Form.Label>Email : </Form.Label>
-            <Form.Control type='email' onChange={(e) => handleEmailInput(e.target.value)} required/>
-          </Form.Group>
+        <Form.Group className='mb-4'>
+          <Form.Label>Email : </Form.Label>
+          <Form.Control type='email' onChange={(e) => handleEmailInput(e.target.value)} required/>
+        </Form.Group>
 
-          <Form.Group className='mb-4'>
-            <Form.Label>First name: </Form.Label>
-            <Form.Control type='text' onChange={(e) => handleFirstName(e.target.value)} required/>
-          </Form.Group>
+        <Form.Group className='mb-4'>
+          <Form.Label>First name: </Form.Label>
+          <Form.Control type='text' onChange={(e) => handleFirstName(e.target.value)} required/>
+        </Form.Group>
 
-          <Form.Group className='mb-4'>
-            <Form.Label>Last name: </Form.Label>
-            <Form.Control type='text' onChange={(e) => handleLastName(e.target.value)} required/>
-          </Form.Group>
-        </Row>
+        <Form.Group className='mb-4'>
+          <Form.Label>Last name: </Form.Label>
+          <Form.Control type='text' onChange={(e) => handleLastName(e.target.value)} required/>
+        </Form.Group>
+      </Row>
 
-        <Row>
-          <Col>
-            <Button size="lg" type='submit'> Save </Button>
-          </Col>
-        </Row>
-      </Form>
+      <Row>
+        <Col>
+          <Button size="lg" type='submit'> Save </Button>
+        </Col>
+      </Row>
+
+      <Row>
+        {displayErrorMessage()}
+      </Row>
+    </Form>
   );
 };
 
