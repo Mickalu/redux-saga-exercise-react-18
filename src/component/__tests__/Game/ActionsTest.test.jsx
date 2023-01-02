@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/prefer-screen-queries */
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -58,3 +59,14 @@ it("Should activate disliked beers if click on dislike button", () => {
 
   expect(dislikeBeerFunction).toHaveBeenCalledTimes(1);
 });
+
+it("Should match with snapShot", () => {
+  const useDispatchMock = jest.spyOn(reactRedux, 'useDispatch');
+
+  useDispatchMock.mockReturnValue(jest.fn());
+
+  const view = render(<Actions />);
+
+  expect(view).toMatchSnapshot();
+});
+

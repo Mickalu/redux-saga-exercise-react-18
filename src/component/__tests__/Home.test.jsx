@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { debug } from "jest-preview";
 
 import * as api from "../../api/index";
 import Home from "../Home";
@@ -60,6 +59,5 @@ it("Home should matchsnapshot", () => {
 
   const { container } = render(<Home />);
 
-  debug();
   expect(container).toMatchSnapshot();
 });
