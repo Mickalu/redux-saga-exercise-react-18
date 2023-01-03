@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Actions from "../../Game/Actions";
 import { render, getByTestId, fireEvent } from "../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
-import { currentIndexActions } from "../../../action/currentIndexActions";
 import { initListBeers } from "../../../utils/__testsTools__/initValues";
 
 const reactRedux = { useDispatch, useSelector };
@@ -16,23 +15,11 @@ jest.mock("react-redux", () => ({
 }));
 
 const likeBeerFunction = jest.fn();
-const dislikeBeerFunction = jest.fn();
 const passNextBeer = jest.fn();
 
-const dispatchMock = (value) => {
-  switch (value.type){
-    case currentIndexActions.ADD_BEER_LIKED_BEERS:
-      likeBeerFunction();
-      break;
-
-    case currentIndexActions.REMOVE_BEER_LIKED_BEERS:
-      dislikeBeerFunction();
-      break;
-
-    default:
-      jest.fn();
-  };
-};
+const dispatchMock = (value) => (
+  jest.fn()
+);
 
 const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
 const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
@@ -40,7 +27,6 @@ const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
 useSelectorMock.mockImplementation(callback => {
   return callback({
     beers: initListBeers,
-    currentIndex: { currentIndex: 0 },
     beersLiked: [],
   });
 });

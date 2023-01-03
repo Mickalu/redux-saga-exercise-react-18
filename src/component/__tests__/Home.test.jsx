@@ -4,28 +4,11 @@ import { useDispatch, useSelector } from "react-redux";
 import * as api from "../../api/index";
 import Home from "../Home";
 import { initListBeers } from "../../utils/__testsTools__/initValues";
-import { currentIndexActions } from "../../action/currentIndexActions";
 import { render } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 
 const reactRedux = { useDispatch, useSelector };
 
-const likeBeerFunction = jest.fn();
-const dislikeBeerFunction = jest.fn();
-
-const dispatchMock = (value) => {
-  switch (value.type){
-    case currentIndexActions.ADD_BEER_LIKED_BEERS:
-      likeBeerFunction();
-      break;
-
-    case currentIndexActions.REMOVE_BEER_LIKED_BEERS:
-      dislikeBeerFunction();
-      break;
-
-    default:
-      jest.fn();
-  };
-};
+const dispatchMock = (value) => {jest.fn()};
 
 jest.mock("../../api/index", () => ({
   ...jest.requireActual("../../api/index"),
@@ -51,7 +34,6 @@ it("Home should matchsnapshot", () => {
   useSelectorMock.mockImplementation(callback => {
     return callback({
       beers: initListBeers,
-      currentIndex: { currentIndex: 0 },
       beersLiked: { data: [] },
       session: { session : {} },
       currentBeer: { id: "82" },

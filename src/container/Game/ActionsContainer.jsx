@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Actions from '../../component/Game/Actions';
 import { updateCurrentbeerId } from '../../slice/currentBeerSlice';
-import { currentIndexActions } from '../../action/currentIndexActions';
 import { getNextBeerById } from "../../selector/currentBeer";
 
 const ActionsContainer = () => {
@@ -17,7 +16,6 @@ const ActionsContainer = () => {
    };
 
   const likeBeer = () => {
-    dispatch({type: currentIndexActions.ADD_BEER_LIKED_BEERS});
     passNextBeer();
    }
 
