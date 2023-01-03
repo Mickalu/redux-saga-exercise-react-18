@@ -2,13 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Beer from './Beer';
+import { getBeerById } from "../selector/currentBeer";
 
 const BeerContainer = () => {
   const beers = useSelector((state) => state.beers);
-  const currentIndex = useSelector((state) => state.currentIndex);
+  const currentBeer = useSelector((state) => state.currentBeer);
 
   if (beers.data){
-    let beer = beers.data[currentIndex.currentIndex];
+    let beer = getBeerById(beers.data, currentBeer.id);
 
     if(beer) {
       return (

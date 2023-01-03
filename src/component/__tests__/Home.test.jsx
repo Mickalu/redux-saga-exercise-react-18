@@ -53,7 +53,8 @@ it("Home should matchsnapshot", () => {
       beers: initListBeers,
       currentIndex: { currentIndex: 0 },
       beersLiked: { data: [] },
-      session: { session : {}}
+      session: { session : {} },
+      currentBeer: { id: "82" },
     });
   });
 

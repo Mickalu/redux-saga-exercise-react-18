@@ -20,12 +20,12 @@ import loadingBeerReducer from "../slice/loadingBeer";
 import beersLikedReducer from "../slice/beersLiked";
 import registerUserReducer from "../slice/Authentification/registerSlice";
 import tokenAuthentificationReducer from "../slice/Authentification/tokenAuthentificationSlice";
+import currentBeerReducer from "../slice/currentBeerSlice";
 
 const persistConfig = {
   key: 'root',
   storage: storage,
 };
-
 
 const sagaMiddleWare = createSagaMiddleware();
 
@@ -37,6 +37,7 @@ const rootReducers = combineReducers({
   beersLiked: beersLikedReducer,
   registerUser: registerUserReducer,
   tokenAuthentification: tokenAuthentificationReducer,
+  currentBeer: currentBeerReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducers)

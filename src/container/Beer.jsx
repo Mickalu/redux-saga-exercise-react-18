@@ -9,7 +9,7 @@ import BeerAttributes from '../component/Game/BeerAttributes';
 
 const Beer = ({ beer }) => {
   const dispach = useDispatch();
-  const currentIndex = useSelector((state) => state.currentIndex);
+  const currentBeer = useSelector((state) => state.currentBeer);
 
   let img_height = "auto";
 
@@ -23,7 +23,7 @@ const Beer = ({ beer }) => {
       _beerImgRef.current.style.width = `${_beerImgWrapperRef.current.offsetWidth}px`;
     }
   },
-  [currentIndex]);
+  [currentBeer]);
 
   const imageLoaded = () => {
     if(img_height === 'auto'){
