@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot 1`] = `
+<div>
+  <header>
+    <div
+      class="container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-lg-12"
+        >
+          <img
+            alt="beer"
+            class="img-responsive logo-academy"
+            role="presentation"
+            src="/img/logo.png"
+          />
+          <div
+            class="intro-text"
+          >
+            <span
+              class="name"
+            >
+              Beer Game
+            </span>
+            <hr
+              class="star-light hr-title"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+`;

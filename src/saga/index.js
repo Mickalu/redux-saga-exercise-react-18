@@ -9,6 +9,8 @@ import * as currentIndexSaga from "./currentIndexSaga";
 
 export default function* rootSaga(){
   yield takeLeading(sessionActions.SESSION_START, sessionSaga.startSession)
-  yield takeLeading(beersActions.FETCH_BERRS, beersSaga.fetchBeersSaga)
+  yield takeLeading(beersActions.FETCH_BEERS, beersSaga.fetchBeersSaga)
   yield takeLeading(currentIndexActions.INCREMENT_CURRENT_INDEX, currentIndexSaga.incrementCurrentIndexBeers)
+  yield takeLeading(currentIndexActions.ADD_BEER_LIKED_BEERS, currentIndexSaga.addBeerToLikedBeers)
+  yield takeLeading(currentIndexActions.REMOVE_BEER_LIKED_BEERS, currentIndexSaga.removeBeerToLikedBeers)
 };

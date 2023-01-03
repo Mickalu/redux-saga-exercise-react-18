@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`image beer should match snapshot 1`] = `
+<div>
+  <div
+    class="container"
+    data-testid="beer-container"
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="col-sm-4"
+      />
+      <div
+        class="col-sm-4 text-center beer-col"
+      >
+        <div
+          class="beer-img"
+          data-testid="div-image-beer"
+        >
+          <img
+            alt="beer"
+            class="img-responsive"
+            data-testid="beer-image"
+            height="autopx"
+            name="beerImg"
+            role="presentation"
+            src="https://img.saveur-biere.com/img/p/104-16465-thickbox_sb3.jpg"
+            style="height: auto; color: red; width: 0px;"
+          />
+        </div>
+        <h3
+          class="beer_title"
+          name="beerTitle"
+        >
+          Kwak
+        </h3>
+      </div>
+      <div
+        class="col-sm-4 hidden-xs hidden-sm"
+      >
+        <ul
+          class="beer_details"
+        >
+          <li>
+            <span>
+              Belgium
+            </span>
+             Country
+          </li>
+          <li>
+            <span>
+              Belgian Pale ale / Blonde
+            </span>
+             Style
+          </li>
+          <li>
+            <span>
+              Amber
+            </span>
+             Colour
+          </li>
+          <li>
+            <span>
+              33 
+            </span>
+             cl
+          </li>
+          <li>
+            <span>
+              8 %
+            </span>
+             °Alcohol
+          </li>
+          <li>
+            <span>
+              2,10
+            </span>
+             
+            <span>
+              £
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

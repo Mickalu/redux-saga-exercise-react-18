@@ -1,0 +1,232 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should match with the snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="container"
+        data-testid="beer-container"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-sm-4"
+          />
+          <div
+            class="col-sm-4 text-center beer-col"
+          >
+            <div
+              class="beer-img"
+              data-testid="div-image-beer"
+            >
+              <img
+                alt="beer"
+                class="img-responsive"
+                data-testid="beer-image"
+                height="autopx"
+                name="beerImg"
+                role="presentation"
+                src="https://img.saveur-biere.com/img/p/126-14990-thickbox_sb3.jpg"
+                style="height: auto; color: red; width: 0px;"
+              />
+            </div>
+            <h3
+              class="beer_title"
+              name="beerTitle"
+            >
+              Cuvée des trolls
+            </h3>
+          </div>
+          <div
+            class="col-sm-4 hidden-xs hidden-sm"
+          >
+            <ul
+              class="beer_details"
+            >
+              <li>
+                <span>
+                  Belgium
+                </span>
+                 Country
+              </li>
+              <li>
+                <span>
+                  Belgian Pale ale / Blonde
+                </span>
+                 Style
+              </li>
+              <li>
+                <span>
+                  Blond
+                </span>
+                 Colour
+              </li>
+              <li>
+                <span>
+                  25 
+                </span>
+                 cl
+              </li>
+              <li>
+                <span>
+                  8 %
+                </span>
+                 °Alcohol
+              </li>
+              <li>
+                <span>
+                  1,60
+                </span>
+                 
+                <span>
+                  £
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="container"
+      data-testid="beer-container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-sm-4"
+        />
+        <div
+          class="col-sm-4 text-center beer-col"
+        >
+          <div
+            class="beer-img"
+            data-testid="div-image-beer"
+          >
+            <img
+              alt="beer"
+              class="img-responsive"
+              data-testid="beer-image"
+              height="autopx"
+              name="beerImg"
+              role="presentation"
+              src="https://img.saveur-biere.com/img/p/126-14990-thickbox_sb3.jpg"
+              style="height: auto; color: red; width: 0px;"
+            />
+          </div>
+          <h3
+            class="beer_title"
+            name="beerTitle"
+          >
+            Cuvée des trolls
+          </h3>
+        </div>
+        <div
+          class="col-sm-4 hidden-xs hidden-sm"
+        >
+          <ul
+            class="beer_details"
+          >
+            <li>
+              <span>
+                Belgium
+              </span>
+               Country
+            </li>
+            <li>
+              <span>
+                Belgian Pale ale / Blonde
+              </span>
+               Style
+            </li>
+            <li>
+              <span>
+                Blond
+              </span>
+               Colour
+            </li>
+            <li>
+              <span>
+                25 
+              </span>
+               cl
+            </li>
+            <li>
+              <span>
+                8 %
+              </span>
+               °Alcohol
+            </li>
+            <li>
+              <span>
+                1,60
+              </span>
+               
+              <span>
+                £
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

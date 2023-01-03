@@ -1,0 +1,499 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should matchsnapshot 1`] = `
+<div>
+  <div
+    id="page-wrap"
+  >
+    <div>
+      <div
+        class="bm-overlay"
+        style="position: fixed; z-index: 1000; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.3); opacity: 0; transform: translate3d(100%, 0, 0); transition: opacity 0.3s, transform 0s 0.3s;"
+      />
+      <div>
+        <div
+          class="bm-burger-button"
+          style="z-index: 1000;"
+        >
+          <button
+            id="react-burger-menu-btn"
+            style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+            type="button"
+          >
+            Open Menu
+          </button>
+          <span>
+            <span
+              class="bm-burger-bars"
+              style="position: absolute; height: 20%; left: 0px; right: 0px; top: 0%; opacity: 1;"
+            />
+            <span
+              class="bm-burger-bars"
+              style="position: absolute; height: 20%; left: 0px; right: 0px; top: 40%; opacity: 1;"
+            />
+            <span
+              class="bm-burger-bars"
+              style="position: absolute; height: 20%; left: 0px; right: 0px; top: 80%; opacity: 1;"
+            />
+          </span>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        class="bm-menu-wrap"
+        id=""
+        style="position: fixed; z-index: 1100; width: 300px; height: 100%; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+      >
+        <div
+          class="bm-menu"
+          style="height: 100%; box-sizing: border-box; overflow: auto;"
+        >
+          <nav
+            class="bm-item-list"
+            style="height: 100%;"
+          >
+            <h3
+              class="bm-item"
+              data-testid="side-menu-title"
+              style="display: block; padding-top: 50px;"
+              tabindex="-1"
+            >
+              Beers I like:
+            </h3>
+          </nav>
+        </div>
+        <div>
+          <div
+            class="bm-cross-button"
+            style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+          >
+            <button
+              id="react-burger-cross-btn"
+              style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+              tabindex="-1"
+              type="button"
+            >
+              Close Menu
+            </button>
+            <span
+              style="position: absolute; top: 6px; right: 14px;"
+            >
+              <span
+                class="bm-cross"
+                style="position: absolute; width: 3px; height: 14px; transform: rotate(45deg);"
+              />
+              <span
+                class="bm-cross"
+                style="position: absolute; width: 3px; height: 14px; transform: rotate(-45deg);"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav
+      class="navbar navbar-default navbar-fixed-top navbar-custom"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="navbar-header"
+        >
+          <a
+            class="navbar-brand"
+            href="https://reactjs.academy"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            ReactJS Academy
+          </a>
+        </div>
+        <ul
+          class="nav navbar-nav pull-right"
+        >
+          <li>
+            <button
+              class="btn btn-lg btn-outline"
+            >
+              <svg
+                aria-hidden="true"
+                class="svg-inline--fa fa-heart "
+                data-icon="heart"
+                data-prefix="fas"
+                focusable="false"
+                role="img"
+                viewBox="0 0 512 512"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <header>
+      <div
+        class="container"
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="col-lg-12"
+          >
+            <img
+              alt="beer"
+              class="img-responsive logo-academy"
+              role="presentation"
+              src="/img/logo.png"
+            />
+            <div
+              class="intro-text"
+            >
+              <span
+                class="name"
+              >
+                Beer Game
+              </span>
+              <hr
+                class="star-light hr-title"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section
+      id="beers"
+    >
+      <div
+        class="container"
+      >
+        <div
+          class="container"
+          data-testid="beer-container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-sm-4"
+            />
+            <div
+              class="col-sm-4 text-center beer-col"
+            >
+              <div
+                class="beer-img"
+                data-testid="div-image-beer"
+              >
+                <img
+                  alt="beer"
+                  class="img-responsive"
+                  data-testid="beer-image"
+                  height="autopx"
+                  name="beerImg"
+                  role="presentation"
+                  src="https://img.saveur-biere.com/img/p/82-14662-thickbox_sb3.jpg"
+                  style="height: auto; color: red; width: 0px;"
+                />
+              </div>
+              <h3
+                class="beer_title"
+                name="beerTitle"
+              >
+                Karmeliet Triple
+              </h3>
+            </div>
+            <div
+              class="col-sm-4 hidden-xs hidden-sm"
+            >
+              <ul
+                class="beer_details"
+              >
+                <li>
+                  <span>
+                    Belgium
+                  </span>
+                   Country
+                </li>
+                <li>
+                  <span>
+                    Tripel
+                  </span>
+                   Style
+                </li>
+                <li>
+                  <span>
+                    Blond
+                  </span>
+                   Colour
+                </li>
+                <li>
+                  <span>
+                    33 
+                  </span>
+                   cl
+                </li>
+                <li>
+                  <span>
+                    6 %
+                  </span>
+                   °Alcohol
+                </li>
+                <li>
+                  <span>
+                    2,50
+                  </span>
+                   
+                  <span>
+                    £
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="container"
+          data-testid="actions-container"
+          style="background: white; border-radius: 0 0 25px 25px;"
+        >
+          <ul
+            class="list-unstyled list-inline text-center game-actions"
+          >
+            <li>
+              <button
+                class="btn btn-danger btn-circle btn-xl"
+                data-testid="dislike-button"
+                name="dislikeBtn"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-xmark "
+                  data-icon="xmark"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 320 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </li>
+            <li />
+            <li>
+              <button
+                class="btn btn-success btn-circle btn-xl"
+                data-testid="like-button"
+                name="likeBtn"
+                type="button"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="svg-inline--fa fa-heart "
+                  data-icon="heart"
+                  data-prefix="fas"
+                  focusable="false"
+                  role="img"
+                  viewBox="0 0 512 512"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="text-center"
+    >
+      <div
+        class="footer-above"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="footer-col col-md-4"
+            >
+              <h3>
+                Main Location
+              </h3>
+              <p>
+                <span>
+                  1 Fore Stree
+                </span>
+                <br />
+                <span>
+                  London, EC2Y 5EJ
+                </span>
+                <br />
+                <span
+                  class="fa fa-map-marker"
+                />
+                <a
+                  href="https://reactjs.academy/react-redux-training"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                   Other Locations 
+                </a>
+              </p>
+            </div>
+            <div
+              class="footer-col col-md-4"
+            >
+              <h3>
+                Around the Web
+              </h3>
+              <ul
+                class="list-inline"
+              >
+                <li>
+                  <a
+                    class="btn-social btn-outline"
+                    href="https://github.com/reactjs-academy"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="svg-inline--fa fa-heart "
+                      data-icon="heart"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      viewBox="0 0 512 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M47.6 300.4L228.3 469.1c7.5 7 17.4 10.9 27.7 10.9s20.2-3.9 27.7-10.9L464.4 300.4c30.4-28.3 47.6-68 47.6-109.5v-5.8c0-69.9-50.5-129.5-119.4-141C347 36.5 300.6 51.4 268 84L256 96 244 84c-32.6-32.6-79-47.5-124.6-39.9C50.5 55.6 0 115.2 0 185.1v5.8c0 41.5 17.2 81.2 47.6 109.5z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="btn-social btn-outline"
+                    href="https://twitter.com/reactjsacademy"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="svg-inline--fa fa-hashtag "
+                      data-icon="hashtag"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="btn-social btn-outline"
+                    href="https://www.instagram.com/reactjsacademy/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                     
+                    <svg
+                      aria-hidden="true"
+                      class="svg-inline--fa fa-hashtag "
+                      data-icon="hashtag"
+                      data-prefix="fas"
+                      focusable="false"
+                      role="img"
+                      viewBox="0 0 448 512"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M181.3 32.4c17.4 2.9 29.2 19.4 26.3 36.8L197.8 128h95.1l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3s29.2 19.4 26.3 36.8L357.8 128H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H347.1L325.8 320H384c17.7 0 32 14.3 32 32s-14.3 32-32 32H315.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8l9.8-58.7H155.1l-11.5 69.3c-2.9 17.4-19.4 29.2-36.8 26.3s-29.2-19.4-26.3-36.8L90.2 384H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l21.3-128H64c-17.7 0-32-14.3-32-32s14.3-32 32-32h68.9l11.5-69.3c2.9-17.4 19.4-29.2 36.8-26.3zM187.1 192L165.8 320h95.1l21.3-128H187.1z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="footer-col col-md-4"
+            >
+              <h3>
+                About ReactJS Academy
+              </h3>
+              <p>
+                <a
+                  href="https://reactjs.academy/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  ReactJS Academy 
+                </a>
+                <span>
+                  is devoted to teach ReactJS across Europe, providing free workshops and private trainings.
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer-below"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="row"
+          >
+            <div
+              class="col-lg-12"
+            >
+              <span>
+                Copyright ©
+              </span>
+               
+              <a
+                href="https://reactjs.academy/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                ReactJS Academy
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>
+`;
