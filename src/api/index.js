@@ -9,6 +9,17 @@ const defaultHeaders = {
   'Content-Type': 'application/json',
 };
 
+const defaultHeaderWithToken = (token) => {
+  const header = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Request-Method': ['POST', "GET"],
+    'Content-Type': 'application/json',
+    'Authorization': "Token " + token,
+  };
+
+  return header;
+};
+
 export const startSessionApi = () => (
   fetch(`${API_BASE_URL}/data/session.json`, {
     method: 'GET',
@@ -18,10 +29,10 @@ export const startSessionApi = () => (
   .then(session => session)
 );
 
-export const getBeers = () => (
+export const getBeers = (token) => (
   fetch(`http://127.0.0.1:8000/data/get_all_beers/`, {
     method: 'GET',
-    headers: defaultHeaders,
+    headers: defaultHeaderWithToken(token),
   }).then(response => (
     response.json()
   ))
