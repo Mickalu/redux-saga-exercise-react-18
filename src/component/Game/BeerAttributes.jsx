@@ -12,7 +12,7 @@ const BeerAttributes = ({ beer }) => (
       <span>{beer.colour}</span>&nbsp;Colour
     </li>
     <li>
-      <span>{beer.size ? beer.size.toLowerCase().replace('cl', '') : ' '}</span>&nbsp;cl
+      <span>{beer.size ? beer.size.toString().toLowerCase().replace('cl', '') : ' '}</span>&nbsp;cl
     </li>
     <li>
       <span>{beer.graduation}</span>&nbsp;°Alcohol

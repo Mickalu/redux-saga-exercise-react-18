@@ -1,0 +1,9 @@
+.group_button_form {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.row_form__button {
+  margin-left: 0;
+  margin-right: 0;
+}
