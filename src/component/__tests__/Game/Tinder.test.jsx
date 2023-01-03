@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { debug } from "jest-preview";
 
 import Tinder from "../../Game/Tinder";
 import { getByTestId, render } from "../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
@@ -24,7 +23,6 @@ it("Should contain BeerContainer", () => {
   });
 
   render(<Tinder />);
-  debug();
   expect(getByTestId("beer-container")).toBeInTheDocument();
 });
 
