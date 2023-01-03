@@ -7,17 +7,17 @@ import Form from "react-bootstrap/Form";
 import Row from 'react-bootstrap/Row';
 import "../../../assets/css/FormLogin.css";
 
-const FormLogin = () => (
-  <Form >
+const FormLogin = ({ submitUserConnection, changeValueUsername, changeValuePassword }) => (
+  <Form onSubmit={submitUserConnection}>
     <Row>
       <Form.Group className="mb-3">
         <Form.Label>Username : </Form.Label>
-        <Form.Control type="text" />
+        <Form.Control onChange={(e) => changeValueUsername(e.target.value)} type="text" />
       </Form.Group>
 
       <Form.Group className="mb-3">
         <Form.Label>Password : </Form.Label>
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Control onChange={(e) => changeValuePassword(e.target.value)} type="password" placeholder="Password" />
       </Form.Group>
     </Row>
 

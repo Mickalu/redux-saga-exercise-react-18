@@ -1,4 +1,5 @@
 import { Promise } from "es6-promise";
+import { json } from "react-router-dom";
 
 Promise.polyfill();
 
@@ -10,6 +11,15 @@ const defaultHeaders = {
 
 export const registerUserApi = (valueData) => (
   fetch("http://127.0.0.1:8000/user/registration_user/", {
+    method: "POST",
+    headers: defaultHeaders,
+    body: JSON.stringify(valueData),
+  })
+  .then(response => response.json())
+);
+
+export const getTokenConnexion = (valueData) => (
+  fetch("http://127.0.0.1:8000/api-token-auth/", {
     method: "POST",
     headers: defaultHeaders,
     body: JSON.stringify(valueData),

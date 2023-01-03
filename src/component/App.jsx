@@ -5,7 +5,7 @@ import "../assets/css/main.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Home from "./Home";
-import AuthentificationMainPage from "./Authentification/AuthentificationMainPage";
+import AuthentificationMainPage from "../container/Authentification/AuthentificationMainPage";
 import Register from "../container/Authentification/Register";
 
 const App = () => (

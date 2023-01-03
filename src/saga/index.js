@@ -16,4 +16,5 @@ export default function* rootSaga(){
   yield takeLeading(currentIndexActions.ADD_BEER_LIKED_BEERS, currentIndexSaga.addBeerToLikedBeers)
   yield takeLeading(currentIndexActions.REMOVE_BEER_LIKED_BEERS, currentIndexSaga.removeBeerToLikedBeers)
   yield takeLeading(authentificationAction.REGISTER_USER, authentificationSaga.registerSaga)
+  yield takeLeading("SUBMIT_USER_CONNEXION", authentificationSaga.userConnectionSaga)
 };
