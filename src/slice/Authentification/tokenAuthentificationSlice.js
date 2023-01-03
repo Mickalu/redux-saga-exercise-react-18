@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   token: "",
   error: "",
+  status: null,
 };
 
 const updateTokenValueFunction = (state, action) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,6 +18,8 @@ const AuthentificationMainPage = () => {
     password: "",
   };
 
+  let display_error_message = useRef(false);
+
   const [connexionFormValues, setConnexionFormValues] = useState(connexionFormValuesInitValues);
 
   const changeValueUsername = (inputValue) => {
@@ -35,14 +37,27 @@ const AuthentificationMainPage = () => {
     dispatch({type:"SUBMIT_USER_CONNEXION", connexionFormValues});
   };
 
+  const error_message = () => {
+    if (display_error_message) {
+      return (
+        <p style={{"color": "red"}}>{tokenAuthentification.error}</p>
+      );
+    }
+    else {
+      return null;
+    }
+  };
+
   useEffect(() => {
     if (tokenAuthentification.token !== "") {
+      display_error_message.current = false;
       navigate("/home");
+    }
+    else {
+      display_error_message.current = true;
     }
   },
   [tokenAuthentification]);
-
-  console.log("tokenAuthentification : ", tokenAuthentification);
 
   return (
     <div className='formLogin__container'>
@@ -51,6 +66,7 @@ const AuthentificationMainPage = () => {
           submitUserConnection={submitUserConnection}
           changeValueUsername={changeValueUsername}
           changeValuePassword={changeValuePassword}
+          error_message={error_message}
         />
       </Col>
     </div>

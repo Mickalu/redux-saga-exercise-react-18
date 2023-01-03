@@ -7,7 +7,7 @@ import Form from "react-bootstrap/Form";
 import Row from 'react-bootstrap/Row';
 import "../../../assets/css/FormLogin.css";
 
-const FormLogin = ({ submitUserConnection, changeValueUsername, changeValuePassword }) => (
+const FormLogin = ({ submitUserConnection, changeValueUsername, changeValuePassword, error_message }) => (
   <Form onSubmit={submitUserConnection}>
     <Row>
       <Form.Group className="mb-3">
@@ -21,6 +21,10 @@ const FormLogin = ({ submitUserConnection, changeValueUsername, changeValuePassw
       </Form.Group>
     </Row>
 
+    <Row>
+
+    </Row>
+      {error_message()}
     <Row>
       <Col className='row_form__button'>
         <Button variant="primary" type="submit">
