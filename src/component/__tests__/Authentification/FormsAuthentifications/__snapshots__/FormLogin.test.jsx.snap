@@ -38,6 +38,9 @@ exports[`FormLogin should match snapshot 1`] = `
     </div>
     <div
       class="row"
+    />
+    <div
+      class="row"
     >
       <div
         class="row_form__button col"
