@@ -16,6 +16,7 @@ const ActionsContainer = () => {
    };
 
   const likeBeer = () => {
+    dispatch({type: "ADD_LIKE_BEER"}, currentBeer.id)
     passNextBeer();
    }
 

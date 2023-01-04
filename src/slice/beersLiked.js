@@ -5,7 +5,7 @@ const initialState = {
 };
 
 const addLikedBeersFunction = (state, action) => {
-  state.data = [...state.data, action.payload.beerId]
+  state.data = action.payload;
 };
 
 const removeLikedBeersFunction = (state, action) => {
