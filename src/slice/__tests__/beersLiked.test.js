@@ -4,11 +4,11 @@ import { INIT_BEERS_LIKED_STATE_VALUE, beersLikedStateWithIds } from "../../util
 it("addLikedBeers should add a beer into state liked beers", () => {
   const beerId = "82";
   const previousState = INIT_BEERS_LIKED_STATE_VALUE;
-  const stateExpected = beersLikedStateWithIds([beerId]);
+  const expectedState = beersLikedStateWithIds([beerId]);
 
-  const action = { beerId: beerId };
+  const action = [beerId];
 
-  expect(beersLikedReducer(previousState, addLikedBeers(action))).toEqual(stateExpected);
+  expect(beersLikedReducer(previousState, addLikedBeers(action))).toEqual(expectedState);
 });
 
 it("removeLikedBeers should remove beer id from beers liked", () => {
