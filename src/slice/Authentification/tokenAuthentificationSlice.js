@@ -14,7 +14,7 @@ const updateErrorValueFunction = (state, action) => {
   state.error = action.payload;
 }
 
-const resetErrorValueFunction = (state, action) => {
+const resetErrorValueFunction = (state) => {
   state.error = "";
 };
 

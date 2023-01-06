@@ -10,7 +10,6 @@ const BeerContainer = () => {
 
   if (beers.data){
     let beer = getBeerById(beers.data, currentBeer.id);
-
     if(beer) {
       return (
         <Beer beer={beer} />

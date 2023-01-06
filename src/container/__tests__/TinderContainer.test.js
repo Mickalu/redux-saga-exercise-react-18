@@ -9,6 +9,7 @@ import { beersActions } from "../../action/beersActions";
 const reactRedux = { useDispatch, useSelector };
 
 jest.mock("react-redux", () => ({
+  __esModule: true,
   ...jest.requireActual("react-redux"),
   useSelector: jest.fn(),
   useDispatch: jest.fn(),

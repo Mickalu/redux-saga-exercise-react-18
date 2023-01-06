@@ -14,7 +14,7 @@ const Actions = ({ passNextBeer, likeBeer }) => {
             type="button"
             className="btn btn-danger btn-circle btn-xl"
             name="dislikeBtn"
-            onClick={() => passNextBeer()}
+            onClick={() => passNextBeer(false)}
             data-testid="dislike-button"
           >
             <FontAwesomeIcon icon={faXmark} />

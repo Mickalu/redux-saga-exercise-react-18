@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { render, queryBytestId } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 import { initListBeers } from "../../utils/__testsTools__/initValues";
 import BeersLikedContainer from "../BeersLikedContainer";
-
+import * as ApiLikedBeer from "../../api/likeBeerApi";
 
 const reactRedux = { useDispatch, useSelector };
 
@@ -13,11 +13,20 @@ jest.mock("react-redux", () => ({
   useSelector: jest.fn()
 }));
 
+jest.mock("../../api/likeBeerApi.js", () => ({
+  ...jest.requireActual("../../api/likeBeerApi.js"),
+  getUserBeersLikedApi: jest.fn((value) => { return { data: [] }}),
+}));
+
+const getUserBeersLikedApiMock = jest.spyOn(ApiLikedBeer, "getUserBeersLikedApi");
+getUserBeersLikedApiMock.mockReturnValue((value) => { return { data: [] }});
+
 it("Should not have beer title at the beginning", () => {
   useSelector.mockImplementation(callback => {
     return callback({
       beersLiked: { data: [] },
       beers: initListBeers,
+      tokenAuthentification: { token: "1234" },
     });
   });
 
@@ -35,6 +44,7 @@ it("beersLikedContainer Should match snapshot", () => {
     return callback({
       beersLiked: { data: ["126"] },
       beers: initListBeers,
+      tokenAuthentification: { token: "1234" },
     });
   });
 
@@ -52,6 +62,7 @@ it("beersLikedContainer with multiple liked beer should display all title", () =
     return callback({
       beersLiked: { data: ["126", "82"] },
       beers: initListBeers,
+      tokenAuthentification: { token: "1234" },
     });
   });
 

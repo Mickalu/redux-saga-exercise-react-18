@@ -1,7 +1,23 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import FormRegister from "../../../Authentification/FormsAutentifications/FormRegister";
 import { render, getByTestId } from "../../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
+
+const reactRedux = { useDispatch };
+
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useDispatch: jest.fn(),
+}));
+
+const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
+useDispatchMock.mockReturnValue(jest.fn());
+
+const apiResponse = {
+  status: true,
+  data: {}
+};
 
 const initFormValue = {
   username: "",
@@ -10,11 +26,6 @@ const initFormValue = {
   first_name: "",
   last_name: "",
   email: "",
-};
-
-const apiResponse = {
-  status: true,
-  data: {}
 };
 
 it("formRegister should matchsnapshot", () => {

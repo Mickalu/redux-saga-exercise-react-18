@@ -37,6 +37,7 @@ it("Home should matchsnapshot", () => {
       beersLiked: { data: [] },
       session: { session : {} },
       currentBeer: { id: "82" },
+      tokenAuthentification: { token: "1234" }
     });
   });
 

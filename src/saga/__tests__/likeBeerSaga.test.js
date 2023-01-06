@@ -15,25 +15,27 @@ jest.mock("../../api/likeBeerApi", () => ({
 const getUserBeersLikedApiMock = jest.spyOn(apisLikedBeer, "getUserBeersLikedApi");
 const likeBeerApiMock = jest.spyOn(apisLikedBeer, "likeBeerApi");
 
-getUserBeersLikedApiMock.mockReturnValue(jest.fn());
+getUserBeersLikedApiMock.mockReturnValue(jest.fn((value) => { return { data: { token: "1234" } }}));
 likeBeerApiMock.mockReturnValue(jest.fn());
 
 it("getLikedBeer should call getUserBeersLikedApi", () => {
-  const tokenValue = "1234";
-   const getLikedBeerGenerator = getLikedBeer(tokenValue);
+  const data = { token: "1234" };
+  const getLikedBeerGenerator = getLikedBeer(data);
 
-   const callGetUserBeersLikeApi = getLikedBeerGenerator.next();
+  const callGetUserBeersLikeApi = getLikedBeerGenerator.next();
 
-   expect(callGetUserBeersLikeApi.value).toStrictEqual(call(apisLikedBeer.getUserBeersLikedApi, tokenValue));
+  expect(callGetUserBeersLikeApi.value).toStrictEqual(call(apisLikedBeer.getUserBeersLikedApi, data.token));
 });
 
 it("If status true getLikedBeer update liked beers in state", () => {
   const responseApi = {
     status: true,
-    data: {}
+    data: { token: "1234" },
   };
 
-  const getLikedBeerGenerator = getLikedBeer();
+  const data = { token: "1234" };
+
+  const getLikedBeerGenerator = getLikedBeer(data);
   getLikedBeerGenerator.next();
 
   const putAddLikedBeers = getLikedBeerGenerator.next(responseApi);
@@ -78,13 +80,11 @@ it("likeBeer should call getLikeBeer saga because user like beer have changed", 
   const responseApi = { status: true, data: {} };
   const likeBeerGenerator = likeBeer();
 
-  const token = tokenInfo["token"];
-
   likeBeerGenerator.next();
   likeBeerGenerator.next(currentBeer);
   likeBeerGenerator.next(tokenInfo);
 
   const callGetLikedBeer = likeBeerGenerator.next(responseApi);
 
-  expect(callGetLikedBeer.value).toStrictEqual(call(getLikedBeer, token));
+  expect(callGetLikedBeer.value).toStrictEqual(call(getLikedBeer, tokenInfo));
 });
