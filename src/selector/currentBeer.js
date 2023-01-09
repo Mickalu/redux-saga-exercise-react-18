@@ -1,4 +1,4 @@
-import { getBeersNotLiked } from "./beersNotLiked";
+import { getBeersNotInteracted } from "./beersNotLiked";
 
 export const currentBeerSelector = (state) => (
   state.currentBeer
@@ -18,7 +18,7 @@ export const returnFirstBeerOrNull = (listBeerNotLiked) => {
 };
 
 export const returnBeginningBeers = (listBeers, listBeersLiked) => {
-  const listNoLikedBeer = getBeersNotLiked(listBeers, listBeersLiked);
+  const listNoLikedBeer = getBeersNotInteracted(listBeers, listBeersLiked);
   return returnFirstBeerOrNull(listNoLikedBeer);
 };
 
@@ -35,7 +35,7 @@ export const getNextCurrentBeerNotLiked = (listBeers, listBeersLiked, id, likedO
 
     if (indexCurrentBeer + 1 < listBeers.length) {
       const endList = listBeers.slice(indexCurrentBeer + 1);
-      const restListBeerNotLiked = getBeersNotLiked(endList, listBeersLiked);
+      const restListBeerNotLiked = getBeersNotInteracted(endList, listBeersLiked);
 
       if (restListBeerNotLiked.length > 0) {
         return restListBeerNotLiked[0].id;
