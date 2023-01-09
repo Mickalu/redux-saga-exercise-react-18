@@ -1,5 +1,5 @@
-import { returnFirstBeerOrNull, returnBeginningBeers, getNextCurrentBeerNotLiked } from "../../manageState/currentBeer";
-import { stateBeers } from "../../__testsTools__/initValues/beersSliceInitValues";
+import { returnFirstBeerOrNull, returnBeginningBeers, getNextCurrentBeerNotLiked } from "../currentBeer";
+import { stateBeers } from "../../utils/__testsTools__/initValues/beersSliceInitValues";
 
 it("returnFirstBeerOrNull return id of first element", () => {
   const listBeerNotLiked = [

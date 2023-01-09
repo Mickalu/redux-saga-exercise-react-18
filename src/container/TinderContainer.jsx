@@ -7,6 +7,9 @@ const TinderContainer = () => {
   const dispach = useDispatch();
   const session = useSelector((state) => state.session).session;
 
+  // ! here get info beer
+  // TODO need currentBeer listBeer likedBeer
+
   useEffect(() => {
     if(session.id) {
         dispach({type: "FETCH_BEERS"});
@@ -17,6 +20,11 @@ const TinderContainer = () => {
   },
     [session],
   );
+
+  const actionButtonTinder = (isLiked) => {
+    // send like or dislike
+    // pass next
+  };
 
   return (
     <Tinder />

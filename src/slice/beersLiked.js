@@ -13,7 +13,7 @@ const removeLikedBeersFunction = (state, action) => {
 };
 
 export const beersLikedSlice = createSlice({
-  name:"beersLiked",
+  name: "beersLiked",
   initialState,
   reducers: {
     addLikedBeers: addLikedBeersFunction,

@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Actions from '../../component/Game/Actions';
+import Interractions from '../../component/Game/Interractions';
 import { updateCurrentbeerId } from '../../slice/currentBeerSlice';
-import { getNextCurrentBeerNotLiked } from "../../utils/manageState/currentBeer";
+import { getNextCurrentBeerNotLiked } from "../../selector/currentBeer";
 
-const ActionsContainer = () => {
+const InterractionsContainer = () => {
   const dispatch = useDispatch();
   const beers = useSelector((state) => state.beers);
   const currentBeer = useSelector((state) => state.currentBeer);
@@ -25,7 +25,7 @@ const ActionsContainer = () => {
 
   return (
     <>
-      <Actions
+      <Interractions
         passNextBeer={passNextBeer}
         likeBeer={likeBeer}
       />
@@ -33,4 +33,4 @@ const ActionsContainer = () => {
   );
 };
 
-export default ActionsContainer;
+export default InterractionsContainer;

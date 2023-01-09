@@ -2,7 +2,7 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 
-import Actions from "../../Game/Actions";
+import Interractions from "../../Game/Interractions";
 import { render, getByTestId, fireEvent } from "../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 import { initListBeers } from "../../../utils/__testsTools__/initValues";
 
@@ -34,7 +34,7 @@ useSelectorMock.mockImplementation(callback => {
 useDispatchMock.mockReturnValue(jest.fn(value => dispatchMock(value)));
 
 it("Should activate liked beers if click on like button", () => {
-  render(<Actions
+  render(<Interractions
     likeBeer={likeBeerFunction}
     passNextBeer={passNextBeer}
   />);
@@ -44,7 +44,7 @@ it("Should activate liked beers if click on like button", () => {
 });
 
 it("Should activate disliked beers if click on dislike button", () => {
-  render(<Actions
+  render(<Interractions
     likeBeer={likeBeerFunction}
     passNextBeer={passNextBeer}
   />);
@@ -58,7 +58,7 @@ it("Should match with snapShot", () => {
 
   useDispatchMock.mockReturnValue(jest.fn());
 
-  const view = render(<Actions />);
+  const view = render(<Interractions />);
 
   expect(view).toMatchSnapshot();
 });

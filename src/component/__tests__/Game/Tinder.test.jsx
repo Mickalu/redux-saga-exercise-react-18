@@ -27,7 +27,7 @@ it("Should contain BeerContainer", () => {
   expect(getByTestId("beer-container")).toBeInTheDocument();
 });
 
-it("Should contain Actions component", () => {
+it("Should contain Interractions component", () => {
   useSelectorMock.mockImplementation(callback => {
     return callback({
       beers: initListBeers,

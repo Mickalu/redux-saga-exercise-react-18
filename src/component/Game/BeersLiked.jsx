@@ -5,7 +5,8 @@ import { findBeerById } from "../../utils/findBeerById";
 const BeersLiked = ({ beersLiked, beers }) => {
   return (
     <>
-      {beersLiked.data.map((beerId) => {
+      {beersLiked.data.map((beer) => {
+        const beerId = beer.beer;
           const beerTitle = findBeerById(beerId, beers.data).title;
           return (
             <div data-testid="beer-title" key={`div-beer-liked-${beerId}`}> {beerTitle} </div>
