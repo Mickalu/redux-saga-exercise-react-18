@@ -1,4 +1,5 @@
 import { call, put } from "redux-saga/effects";
+
 import { getBeers } from "../api";
 
 import { updateIsFetching, addBeers } from "../slice/beersSlice";

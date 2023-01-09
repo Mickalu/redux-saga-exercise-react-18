@@ -3,7 +3,7 @@ import { call, put, select } from "redux-saga/effects";
 import { currentIndexSelector } from "../selector/currentIndex";
 import { beersSelector } from "../selector/beers";
 import { incrementCurrentIndex, resetCurrentIndex } from "../slice/currentIndexSlice";
-import { addLikedBeers } from "../slice/beersLiked";
+import { addLikedBeers, removeLikedBeers } from "../slice/beersLiked";
 
 export function* incrementCurrentIndexBeers() {
   const beers = yield select(beersSelector);
@@ -25,5 +25,16 @@ export function* addBeerToLikedBeers() {
   const action = { beerId: beerId };
 
   yield put(addLikedBeers(action));
+  yield call(incrementCurrentIndexBeers);
+};
+
+export function* removeBeerToLikedBeers() {
+  const beers = yield select(beersSelector);
+  const currentIndex = yield select(currentIndexSelector);
+
+  const beerId = beers.data[currentIndex.currentIndex].id;
+  const action = { beerId: beerId };
+
+  yield put(removeLikedBeers(action));
   yield call(incrementCurrentIndexBeers);
 };

@@ -11,7 +11,6 @@ import TinderContainer from '../container/TinderContainer';
 
 const Home = () => {
   const [menu, setMenu] = useState(true);
-
   const toggleMenu = () => (setMenu(!menu));
 
   return (

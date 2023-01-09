@@ -16,7 +16,7 @@ const Beer = ({ beer }) => {
   let _beerImgWrapperRef = useRef(null);
   let _beerImgRef = useRef(null);
 
-  const loadingBeerComponent = (<span><i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw" /></span>);
+  const loadingBeerComponent = (<span data-testid="circle-spin"><i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw" /></span>);
 
   useEffect(() => {
     if(_beerImgRef.current) {
@@ -49,6 +49,7 @@ const Beer = ({ beer }) => {
           alt="beer"
           role="presentation"
           name="beerImg"
+          data-testid="beer-image"
         />
       );
     }
@@ -58,11 +59,11 @@ const Beer = ({ beer }) => {
   };
 
   return (
-    <Container>
+    <Container data-testid="beer-container">
       <Row>
         <div className="col-sm-4" />
           <div className="col-sm-4 text-center beer-col">
-            <div ref={_beerImgWrapperRef} className="beer-img">
+            <div data-testid="div-image-beer" ref={_beerImgWrapperRef} className="beer-img">
              {imageBeerDisplayed()}
             </div>
             <h3 className="beer_title" name="beerTitle">{beer.title}</h3>
