@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import BeersLiked from '../component/Game/BeersLiked';
 
 export const BeersLikedContainer = () => {
-  const beerslikedState = useSelector((state) => state.beersLiked);
+  const beersInterractedState = useSelector((state) => state.beersInteracted);
   const beersState = useSelector((state) => state.beers);
   const token = useSelector((state) => state.tokenAuthentification).token;
 
@@ -17,7 +17,7 @@ export const BeersLikedContainer = () => {
   return (
     <>
       <BeersLiked
-        beersLiked={beerslikedState}
+        beersInteracted={beersInterractedState}
         beers={beersState}
       />
     </>

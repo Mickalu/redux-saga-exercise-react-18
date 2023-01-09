@@ -6,11 +6,11 @@ import BeersLiked from "../../Game/BeersLiked";
 import { initListBeers } from "../../../utils/__testsTools__/initValues";
 
 it("Should as number of title as beer in likedBeer", () => {
-  const beersLiked = {data: [initListBeers.data[0].id]};
+  const beersInteracted = { data: [ { beer: initListBeers.data[0].id }] };
 
   render(
     <BeersLiked
-      beersLiked={beersLiked}
+      beersInteracted={beersInteracted}
       beers={initListBeers}
   />);
 
@@ -18,11 +18,11 @@ it("Should as number of title as beer in likedBeer", () => {
 });
 
 it("Should not have any beer title if no liked beer", () => {
-  const beersLiked = { data: [] };
+  const beersInteracted = { data: [] };
 
   render(
     <BeersLiked
-      beersLiked={beersLiked}
+    beersInteracted={beersInteracted}
       beers={initListBeers}
   />);
 
@@ -30,10 +30,10 @@ it("Should not have any beer title if no liked beer", () => {
 });
 
 it("Should match with snapShot", () => {
-  const beersLiked = {data: [initListBeers.data[0].id]};
+  const beersInteracted = { data: [ { beer: initListBeers.data[0].id }] };
 
   const tree = renderer
-    .create(<BeersLiked beersLiked={beersLiked} beers={initListBeers} />)
+    .create(<BeersLiked beersInteracted={beersInteracted} beers={initListBeers} />)
     .toJSON();
 
   expect(tree).toMatchSnapshot();

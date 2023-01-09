@@ -43,7 +43,7 @@ it("Home should matchsnapshot", () => {
   useSelectorMock.mockImplementation(callback => {
     return callback({
       beers: initListBeers,
-      beersLiked: { data: [] },
+      beersInteracted: { data: [] },
       session: { session : {} },
       currentBeer: { id: "82" },
       tokenAuthentification: { token: "1234" },

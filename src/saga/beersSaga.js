@@ -3,7 +3,7 @@ import { call, put, select } from "redux-saga/effects";
 import { getBeers } from "../api";
 import { tokenAuthentificationSelector } from "../selector/tokenAuthentification";
 import { updateIsFetching, addBeers } from "../slice/beersSlice";
-import { initFirstBeerNotLiked } from "./likeBeerSaga";
+import { initFirstBeerNotInteracted } from "./interactedBeerSaga";
 
 export function* fetchBeersSaga() {
   try{
@@ -14,7 +14,7 @@ export function* fetchBeersSaga() {
     try {
       yield put(updateIsFetching(false));
       yield put(addBeers(beers));
-      yield call(initFirstBeerNotLiked);
+      yield call(initFirstBeerNotInteracted);
     }
     catch(error){
       console.log(error);
@@ -26,4 +26,3 @@ export function* fetchBeersSaga() {
     yield put(updateIsFetching(false));
   }
 };
-

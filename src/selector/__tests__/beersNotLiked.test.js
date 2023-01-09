@@ -4,7 +4,7 @@ import { stateBeers } from "../../utils/__testsTools__/initValues/beersSliceInit
 it("beersNotLikedSelector should return only beers not liked", () => {
   const initState = {
     beers: stateBeers,
-    beersLiked: { data: ['1', '2'] },
+    beersInteracted: { data: ['1', '2'] },
   };
 
   const responseExpected = [

@@ -2,33 +2,33 @@ import { call, put, select } from "redux-saga/effects";
 
 import { tokenAuthentificationSelector } from "../selector/tokenAuthentification";
 import { getUserBeersLikedApi, likeBeerApi } from "../api/likeBeerApi";
-import { addLikedBeers } from "../slice/beersLiked";
+import { addInteractedBeers } from "../slice/beersInteractedSlice";
 import { currentBeerSelector } from '../selector/currentBeer';
 import { updateCurrentbeerId } from "../slice/currentBeerSlice";
 import { beersNotLikedSelector } from "../selector/beersNotLiked";
 
-export function* getLikedBeer(data) {
-  const responseLikedBeers = yield call(getUserBeersLikedApi, data.token);
+export function* getInteractedBeer(data) {
+  const responseInteractedBeers = yield call(getUserBeersLikedApi, data.token);
 
-  if (responseLikedBeers.status) {
-    yield put(addLikedBeers(responseLikedBeers.data));
+  if (responseInteractedBeers.status) {
+    yield put(addInteractedBeers(responseInteractedBeers.data));
   }
 };
 
-export function* likeBeer() {
+export function* interactionLikeBeer(isLiked) {
   const currentBeer = yield select(currentBeerSelector);
 
   const tokenInfo = yield select(tokenAuthentificationSelector);
 
-  const dataSend = { beer: currentBeer.id };
+  const dataSend = { beer: currentBeer.id, is_liked: isLiked };
   const responseApi =  yield call(likeBeerApi, tokenInfo['token'], dataSend);
 
   if (responseApi.status) {
-    yield call(getLikedBeer, tokenInfo);
+    yield call(getInteractedBeer, tokenInfo);
   }
 };
 
-export function* initFirstBeerNotLiked() {
+export function* initFirstBeerNotInteracted() {
   const listBeerNotLiked = yield select(beersNotLikedSelector);
 
   if (listBeerNotLiked.length !== 0){

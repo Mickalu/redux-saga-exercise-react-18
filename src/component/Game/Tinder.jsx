@@ -1,7 +1,7 @@
 import React from 'react';
 
 import BeerContainer from '../../container/BeerContainer';
-import InterractionsContainer from '../../container/Game/InterractionsContainer';
+import InterractionsContainer from '../../container/Game/InteractionsContainer';
 
 const Tinder = () => (
   <>

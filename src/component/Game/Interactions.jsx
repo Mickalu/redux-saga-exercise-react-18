@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from 'react-bootstrap/Container';
 import { faHeart, faXmark } from '@fortawesome/free-solid-svg-icons';
 
-const Interractions = ({ passNextBeer, likeBeer }) => {
+const Interactions = ({ passNextBeer, likeBeer }) => {
 
   return (
     <Container data-testid="actions-container" style={{ background: 'white', borderRadius: '0 0 25px 25px' }}>
@@ -37,4 +37,4 @@ const Interractions = ({ passNextBeer, likeBeer }) => {
   );
 };
 
-export default Interractions;
+export default Interactions;

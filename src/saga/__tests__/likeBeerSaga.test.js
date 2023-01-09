@@ -1,8 +1,8 @@
 import { put, call, select } from "redux-saga/effects";
 
-import { getLikedBeer, likeBeer } from "../likeBeerSaga";
+import { getInteractedBeer, interactionLikeBeer } from "../interactedBeerSaga";
 import * as apisLikedBeer from "../../api/likeBeerApi";
-import { addLikedBeers } from "../../slice/beersLiked";
+import { addInteractedBeers } from "../../slice/beersInteractedSlice";
 import { currentBeerSelector } from "../../selector/currentBeer";
 import { tokenAuthentificationSelector } from "../../selector/tokenAuthentification";
 
@@ -18,16 +18,16 @@ const likeBeerApiMock = jest.spyOn(apisLikedBeer, "likeBeerApi");
 getUserBeersLikedApiMock.mockReturnValue(jest.fn((value) => { return { data: { token: "1234" } }}));
 likeBeerApiMock.mockReturnValue(jest.fn());
 
-it("getLikedBeer should call getUserBeersLikedApi", () => {
+it("getInteractedBeer should call getUserBeersLikedApi", () => {
   const data = { token: "1234" };
-  const getLikedBeerGenerator = getLikedBeer(data);
+  const getInteractedBeerGenerator = getInteractedBeer(data);
 
-  const callGetUserBeersLikeApi = getLikedBeerGenerator.next();
+  const callGetUserBeersLikeApi = getInteractedBeerGenerator.next();
 
   expect(callGetUserBeersLikeApi.value).toStrictEqual(call(apisLikedBeer.getUserBeersLikedApi, data.token));
 });
 
-it("If status true getLikedBeer update liked beers in state", () => {
+it("If status true getInteractedBeer update liked beers in state", () => {
   const responseApi = {
     status: true,
     data: { token: "1234" },
@@ -35,27 +35,27 @@ it("If status true getLikedBeer update liked beers in state", () => {
 
   const data = { token: "1234" };
 
-  const getLikedBeerGenerator = getLikedBeer(data);
-  getLikedBeerGenerator.next();
+  const getInteractedBeerGenerator = getInteractedBeer(data);
+  getInteractedBeerGenerator.next();
 
-  const putAddLikedBeers = getLikedBeerGenerator.next(responseApi);
+  const putAddLikedBeers = getInteractedBeerGenerator.next(responseApi);
 
-  expect(putAddLikedBeers.value).toStrictEqual(put(addLikedBeers(responseApi.data)));
+  expect(putAddLikedBeers.value).toStrictEqual(put(addInteractedBeers(responseApi.data)));
 });
 
-it("likeBeer call getCurrentSelector", () => {
-  const likeBeerGenerator = likeBeer();
+it("interactionLikeBeer call getCurrentSelector", () => {
+  const interactionLikeBeerGenerator = interactionLikeBeer();
 
-  const selectCurrentBeerSelector = likeBeerGenerator.next();
+  const selectCurrentBeerSelector = interactionLikeBeerGenerator.next();
 
   expect(selectCurrentBeerSelector.value).toStrictEqual(select(currentBeerSelector));
 });
 
-it("likeBeer should select all token information", () => {
-  const likeBeerGenerator = likeBeer();
-  likeBeerGenerator.next();
+it("interactionLike should select all token information", () => {
+  const interactionLikeBeerGenerator = interactionLikeBeer();
+  interactionLikeBeerGenerator.next();
 
-  const selectToken = likeBeerGenerator.next();
+  const selectToken = interactionLikeBeerGenerator.next();
 
   expect(selectToken.value).toStrictEqual(select(tokenAuthentificationSelector));
 });
@@ -63,13 +63,13 @@ it("likeBeer should select all token information", () => {
 it("likeBeerApi should call api likeBeerApi", () => {
   const currentBeer = { id: "2" };
   const tokenInfo = { token: "1234"};
-  const dataSend = { beer: currentBeer.id };
-  const likeBeerGenerator = likeBeer();
+  const dataSend = { beer: currentBeer.id, is_liked: undefined };
+  const interactionLikeBeerGenerator = interactionLikeBeer();
 
-  likeBeerGenerator.next();
-  likeBeerGenerator.next(currentBeer);
+  interactionLikeBeerGenerator.next();
+  interactionLikeBeerGenerator.next(currentBeer);
 
-  const callLikeBeerApi = likeBeerGenerator.next(tokenInfo);
+  const callLikeBeerApi = interactionLikeBeerGenerator.next(tokenInfo);
 
   expect(callLikeBeerApi.value).toStrictEqual(call(apisLikedBeer.likeBeerApi, tokenInfo['token'], dataSend));
 });
@@ -78,13 +78,13 @@ it("likeBeer should call getLikeBeer saga because user like beer have changed", 
   const currentBeer = { id: "2" };
   const tokenInfo = { token: "1234" };
   const responseApi = { status: true, data: {} };
-  const likeBeerGenerator = likeBeer();
+  const interactionLikeBeerGenerator = interactionLikeBeer();
 
-  likeBeerGenerator.next();
-  likeBeerGenerator.next(currentBeer);
-  likeBeerGenerator.next(tokenInfo);
+  interactionLikeBeerGenerator.next();
+  interactionLikeBeerGenerator.next(currentBeer);
+  interactionLikeBeerGenerator.next(tokenInfo);
 
-  const callGetLikedBeer = likeBeerGenerator.next(responseApi);
+  const callgetInteractedBeer = interactionLikeBeerGenerator.next(responseApi);
 
-  expect(callGetLikedBeer.value).toStrictEqual(call(getLikedBeer, tokenInfo));
+  expect(callgetInteractedBeer.value).toStrictEqual(call(getInteractedBeer, tokenInfo));
 });

@@ -2,10 +2,10 @@ import React from 'react';
 
 import { findBeerById } from "../../utils/findBeerById";
 
-const BeersLiked = ({ beersLiked, beers }) => {
+const BeersLiked = ({ beersInteracted, beers }) => {
   return (
     <>
-      {beersLiked.data.map((beer) => {
+      {beersInteracted.data.map((beer) => {
         const beerId = beer.beer;
           const beerTitle = findBeerById(beerId, beers.data).title;
           return (

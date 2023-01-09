@@ -1,3 +1,3 @@
-export const beersLikedSelector = (state) => (
-  state.beersLiked
+export const beersInteractedSelectorSelector = (state) => (
+  state.beersInteracted
 );

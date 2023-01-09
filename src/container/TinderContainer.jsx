@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Tinder from '../component/Game/Tinder';
 
 const TinderContainer = () => {
-  const dispach = useDispatch();
+  const dispatch = useDispatch();
   const session = useSelector((state) => state.session).session;
 
   // ! here get info beer
@@ -12,18 +12,19 @@ const TinderContainer = () => {
 
   useEffect(() => {
     if(session.id) {
-        dispach({type: "FETCH_BEERS"});
+      dispatch({type: "FETCH_BEERS"});
     }
     else {
-      dispach({type: "SESSION_START"});
+      dispatch({type: "SESSION_START"});
     }
   },
     [session],
   );
 
   const actionButtonTinder = (isLiked) => {
-    // send like or dislike
+    dispatch({ type: "INTERACTION_LIKE_BEER" });
     // pass next
+
   };
 
   return (

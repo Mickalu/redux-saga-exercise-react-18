@@ -24,7 +24,7 @@ getUserBeersLikedApiMock.mockReturnValue((value) => { return { data: [] }});
 it("Should not have beer title at the beginning", () => {
   useSelector.mockImplementation(callback => {
     return callback({
-      beersLiked: { data: [] },
+      beersInteracted: { data: [] },
       beers: initListBeers,
       tokenAuthentification: { token: "1234" },
     });
@@ -42,7 +42,7 @@ it("beersLikedContainer Should match snapshot", () => {
   useDispatchMock.mockReturnValue(jest.fn());
   useSelectorMock.mockImplementation(callback => {
     return callback({
-      beersLiked: { data: ["126"] },
+      beersInteracted: { data: [{ beer: "126" }] },
       beers: initListBeers,
       tokenAuthentification: { token: "1234" },
     });
@@ -60,7 +60,7 @@ it("beersLikedContainer with multiple liked beer should display all title", () =
   useDispatchMock.mockReturnValue(jest.fn());
   useSelectorMock.mockImplementation(callback => {
     return callback({
-      beersLiked: { data: ["126", "82"] },
+      beersInteracted: { data: [{ beer: "126" }, { beer: "82" }] },
       beers: initListBeers,
       tokenAuthentification: { token: "1234" },
     });
