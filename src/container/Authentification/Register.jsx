@@ -6,7 +6,6 @@ import "../../assets/css/Register.css";
 import Col from "react-bootstrap/Col";
 
 import FormRegister from '../../component/Authentification/FormsAutentifications/FormRegister';
-import { authentificationAction } from "../../action/authentificationAction.js";
 import { resetRegisterUser } from '../../slice/Authentification/registerSlice';
 
 const Register = () => {
