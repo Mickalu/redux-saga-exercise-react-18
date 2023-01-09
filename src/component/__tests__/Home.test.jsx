@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import * as api from "../../api/index";
@@ -6,6 +6,7 @@ import Home from "../Home";
 import { initListBeers } from "../../utils/__testsTools__/initValues";
 import { render } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 
+const reactUseEffect = { useEffect };
 const reactRedux = { useDispatch, useSelector };
 
 const dispatchMock = (value) => {jest.fn()};
@@ -21,6 +22,14 @@ jest.mock("react-redux", () => ({
   useDispatch: jest.fn(),
   useSelector: jest.fn(),
 }));
+
+jest.mock("react", () => ({
+  ...jest.requireActual("react"),
+  useEffect: jest.fn(),
+}));
+
+const useEffectMock = jest.spyOn(reactUseEffect, "useEffect");
+useEffectMock.mockReturnValue(jest.fn());
 
 it("Home should matchsnapshot", () => {
   const startSessionApiMock = jest.spyOn(api, "startSessionApi");

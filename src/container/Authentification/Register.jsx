@@ -28,7 +28,7 @@ const Register = () => {
 
   const submitRegisterUser = (event) => {
     event.preventDefault();
-    dispatch({ type: authentificationAction.REGISTER_USER, formRegisterValues });
+    dispatch({ type: "REGISTER_USER", formRegisterValues });
   };
 
   useEffect(() => {

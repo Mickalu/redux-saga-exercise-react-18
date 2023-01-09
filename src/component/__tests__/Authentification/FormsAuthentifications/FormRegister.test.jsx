@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import FormRegister from "../../../Authentification/FormsAutentifications/FormRegister";
 import { render, getByTestId } from "../../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 
 const reactRedux = { useDispatch };
+const reactUseEffect = { useEffect };
 
 jest.mock("react-redux", () => ({
   ...jest.requireActual("react-redux"),
   useDispatch: jest.fn(),
 }));
 
+jest.mock("react", () => ({
+  ...jest.requireActual("react"),
+  useEffect: jest.fn(),
+}));
+
 const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
 useDispatchMock.mockReturnValue(jest.fn());
+
+const useEffectMock = jest.spyOn(reactUseEffect, "useEffect");
+useEffectMock.mockReturnValue(jest.fn());
 
 const apiResponse = {
   status: true,

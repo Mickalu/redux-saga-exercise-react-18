@@ -1,4 +1,4 @@
-const getAllMessageForOneKeyError = (listMessages) => {
+export const getAllMessageForOneKeyError = (listMessages) => {
   let concaneAllMessageError = "";
 
   for (const message of listMessages) {
