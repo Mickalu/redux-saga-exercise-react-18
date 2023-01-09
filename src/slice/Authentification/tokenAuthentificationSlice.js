@@ -12,7 +12,7 @@ const updateTokenValueFunction = (state, action) => {
 
 const updateErrorValueFunction = (state, action) => {
   state.error = action.payload;
-}
+};
 
 const resetErrorValueFunction = (state) => {
   state.error = "";
@@ -26,7 +26,7 @@ export const tokenAuthentificationSlice = createSlice({
     updateErrorValue: updateErrorValueFunction,
     resetErrorValue: resetErrorValueFunction,
   }
-})
+});
 
 export const { updateTokenValue, updateErrorValue, resetErrorValue } = tokenAuthentificationSlice.actions;
 

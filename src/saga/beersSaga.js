@@ -22,8 +22,8 @@ export function* fetchBeersSaga() {
     }
   }
   catch(error){
-    yield put(updateIsFetching(false));
     console.log(error);
+    yield put(updateIsFetching(false));
   }
 };
 

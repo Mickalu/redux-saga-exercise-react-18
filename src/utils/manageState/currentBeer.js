@@ -1,7 +1,7 @@
 import { getBeersNotLiked } from "../../utils/getBeerNotLiked";
 
 export const returnFirstBeerOrNull = (listBeerNotLiked) => {
-  if (listBeerNotLiked.length > 0){
+  if (listBeerNotLiked.length > 0) {
     return listBeerNotLiked[0].id;
   }
   else {
@@ -30,7 +30,7 @@ export const getNextCurrentBeerNotLiked = (listBeers, listBeersLiked, id, likedO
       const restListBeerNotLiked = getBeersNotLiked(endList, listBeersLiked);
 
       if (restListBeerNotLiked.length > 0) {
-        return restListBeerNotLiked[0].id
+        return restListBeerNotLiked[0].id;
       }
       else {
         return returnBeginningBeers(listBeers, listBeersLiked);

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {session: {}};
+const initialState = { session: {} };
 
 const startSessionFunction = (state, action) => {
   state.session = action.payload;

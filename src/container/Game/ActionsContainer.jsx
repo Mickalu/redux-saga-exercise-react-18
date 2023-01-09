@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Actions from '../../component/Game/Actions';
@@ -18,7 +18,7 @@ const ActionsContainer = () => {
 
   const likeBeer = () => {
     if(currentBeer.id) {
-      dispatch({type: "ADD_LIKE_BEER"}, currentBeer.id)
+      dispatch({type: "ADD_LIKE_BEER"}, currentBeer.id);
       passNextBeer(true);
     }
   };

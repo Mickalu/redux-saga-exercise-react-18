@@ -10,7 +10,7 @@ const reactRedux = { useDispatch, useSelector };
 
 jest.mock("react-redux", () => ({
   ...jest.requireActual("react-redux"),
-  useSelector: jest.fn()
+  useSelector: jest.fn(),
 }));
 
 jest.mock("../../api/likeBeerApi.js", () => ({

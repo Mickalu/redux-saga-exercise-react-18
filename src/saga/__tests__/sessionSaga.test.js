@@ -6,8 +6,8 @@ import { startSession } from "../sessionSaga";
 
 jest.mock('../../api', () => ({
   ...(jest.requireActual('../../api')),
-  startSessionApi: jest.fn()
-}))
+  startSessionApi: jest.fn(),
+}));
 
 it("Should call start session Api", () => {
   startSessionApi.mockReturnValue({ id: "2" });

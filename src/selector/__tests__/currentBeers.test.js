@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { getNextBeerById } from "../currentBeer";
 import { initBeersSliceWithBeers } from "../../utils/__testsTools__/initValues/beersSliceInitValues";
 

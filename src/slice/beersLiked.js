@@ -9,7 +9,7 @@ const addLikedBeersFunction = (state, action) => {
 };
 
 const removeLikedBeersFunction = (state, action) => {
-  state.data = state.data.filter(item => item !== action.payload.beerId)
+  state.data = state.data.filter(item => item !== action.payload.beerId);
 };
 
 export const beersLikedSlice = createSlice({

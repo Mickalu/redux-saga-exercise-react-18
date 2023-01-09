@@ -105,4 +105,4 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
   );
 };
 
-export default FormRegister
+export default FormRegister;

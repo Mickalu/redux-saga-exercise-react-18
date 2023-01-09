@@ -13,7 +13,7 @@ export const getErrorMessageApi = (dictDataErrorMessage) => {
 
   for (const key of Object.keys(dictDataErrorMessage)) {
     strMessage += key + " : " + getAllMessageForOneKeyError(dictDataErrorMessage[key]);
-  };
+  }
 
   return strMessage;
 };

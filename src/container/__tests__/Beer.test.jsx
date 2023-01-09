@@ -1,3 +1,6 @@
+/* eslint-disable jest/valid-expect */
+/* eslint-disable testing-library/prefer-presence-queries */
+/* eslint-disable testing-library/prefer-screen-queries */
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 

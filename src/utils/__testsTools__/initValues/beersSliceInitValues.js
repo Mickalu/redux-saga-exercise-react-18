@@ -21,7 +21,7 @@ export const stateBeers = {
     { id: "4" },
   ],
   isFetching: false,
-}
+};
 
 export const stateIsFetchingTrue = {
   data: [],
