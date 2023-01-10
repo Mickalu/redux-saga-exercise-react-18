@@ -26,7 +26,7 @@ const Beer = ({ beer }) => {
   [currentIndex]);
 
   const imageLoaded = () => {
-    if(img_height === 'auto'){
+    if(img_height === "auto"){
       _beerImgRef.current.style.width = `${_beerImgWrapperRef.current.offsetWidth}px`;
       img_height = _beerImgRef.current.style.height;
     }
@@ -37,7 +37,7 @@ const Beer = ({ beer }) => {
     if(beer.photo_link){
       return (
         <img
-          height={`${img_height}px`} style={{ height: img_height, color: 'red' }}
+          height={`${img_height}px`} style={{ height: img_height, color: "red" }}
           className="img-responsive"
           ref={_beerImgRef}
           src={beer.photo_link}

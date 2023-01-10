@@ -40,7 +40,7 @@ const Register = () => {
   [dispatch, navigate, registerUser]);
 
   return (
-    <div className='register-container'>
+    <div className="register-container">
       <Col lg="5">
         <FormRegister
           submitRegisterUser={submitRegisterUser}

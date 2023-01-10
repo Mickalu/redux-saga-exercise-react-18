@@ -12,7 +12,7 @@ const Header = () => (
     <Container>
       <Row>
         <div className="col-lg-12">
-          <Image className="img-responsive logo-academy" alt='beer' role="presentation" src={"/img/logo.png"} />
+          <Image className="img-responsive logo-academy" alt="beer" role="presentation" src={"/img/logo.png"} />
           <div className="intro-text">
             <span className="name">Beer Game</span>
             <hr className="star-light hr-title" />

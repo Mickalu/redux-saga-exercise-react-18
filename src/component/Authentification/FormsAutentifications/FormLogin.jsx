@@ -22,15 +22,15 @@ const FormLogin = () => (
     </Row>
 
     <Row>
-      <Col className='row_form__button'>
+      <Col className="row_form__button">
         <Button variant="primary" type="submit">
             Submit
         </Button>
       </Col>
 
-      <Col className='row_form__button register_button'>
+      <Col className="row_form__button register_button">
         <Link to="/register">
-          <Button variant='link'>
+          <Button variant="link">
             Register
           </Button>
         </Link>
