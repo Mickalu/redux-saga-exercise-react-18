@@ -23,11 +23,10 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
     }
   };
 
-  const enableSubmit = () => {
-    return (formRegisterValues.password === formRegisterValues.password2 &&
+  const enableSubmit = () => (
+    (formRegisterValues.password === formRegisterValues.password2 &&
       formRegisterValues.password !== "")
-      ? true : false;
-  };
+  );
 
   return (
     <Form onSubmit={submitRegisterUser}>
