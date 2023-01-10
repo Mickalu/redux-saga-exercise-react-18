@@ -7,7 +7,7 @@ export const returnBeginningBeers = (listBeers, listBeersLiked) => {
 };
 
 const getListBeerNoInteracted = (listBeers, listBeerInteracted) => {
-  const listBeerNoInteracted = lodash.filter(listBeers, ((beer) => { return !listBeerInteracted.includes(beer.id) }));
+  const listBeerNoInteracted = listBeers.filter((beer) => { return !listBeerInteracted.includes(beer.id) });
   return listBeerNoInteracted;
 };
 
@@ -22,7 +22,7 @@ export const getNextBeerNotInteracted = (listBeers, listBeerInteracted, id) => {
     return returnBeginningBeers(listBeers, listBeerInteracted);
   }
   else {
-    const indexCurrentBeer = lodash.findIndex(listBeers, ((beer) => { return beer.id === id}));
+    const indexCurrentBeer = listBeers.findIndex((beer) => { return beer.id === id});
 
     if (indexCurrentBeer + 1 < listBeers.length) {
       const listBeerNoInteracted = getListBeerNoInteracted(listBeers, listIdsBeerInteracted);
