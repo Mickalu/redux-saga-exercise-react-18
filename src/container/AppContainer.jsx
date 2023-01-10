@@ -5,9 +5,7 @@ import App from '../component/App';
 
 const AppContainer = () => {
   const tokenInfo = useSelector((state) => state.tokenAuthentification);
-  const userConnected = () => {
-    return (tokenInfo.token) ? true : false ;
-  };
+  const userConnected = () => (tokenInfo.token);
 
   return (
     <>
