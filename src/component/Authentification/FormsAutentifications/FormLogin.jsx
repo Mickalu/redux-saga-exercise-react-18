@@ -29,7 +29,7 @@ const FormLogin = () => (
       </Col>
 
       <Col className='row_form__button register_button'>
-        <Link to="register">
+        <Link to="/register">
           <Button variant='link'>
             Register
           </Button>
