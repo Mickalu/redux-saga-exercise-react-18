@@ -51,7 +51,7 @@ const AuthentificationMainPage = () => {
   useEffect(() => {
     if (tokenAuthentification.token !== "") {
       display_error_message.current = false;
-      navigate("/home");
+      navigate("/");
     }
     else {
       display_error_message.current = true;
