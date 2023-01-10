@@ -1,3 +1,5 @@
+import lodash from "lodash";
+
 import { getBeersNotInteracted } from "./beersNotLiked";
 
 export const currentBeerSelector = (state) => (
@@ -23,13 +25,11 @@ export const returnBeginningBeers = (listBeers, listBeersLiked) => {
 };
 
 export const getNextCurrentBeerNotLiked = (listBeers, listBeersLiked, id, likedOrNot) => {
-  const _ = require("lodash");
-
-  if (_.isNull(id)) {
+  if (lodash.isNull(id)) {
     return returnBeginningBeers(listBeers, listBeersLiked);
   }
   else {
-    const indexCurrentBeer = _.findIndex(listBeers, ((beer) => { return beer.id === id}));
+    const indexCurrentBeer = lodash.findIndex(listBeers, ((beer) => { return beer.id === id}));
 
     if (likedOrNot) { listBeersLiked = [...listBeersLiked, id] };
 

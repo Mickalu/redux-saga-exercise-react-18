@@ -1,4 +1,4 @@
-import "lodash";
+import lodash from "lodash";
 
 export const beersNotLikedSelector = (state) => {
   const beers = state.beers;
@@ -8,16 +8,14 @@ export const beersNotLikedSelector = (state) => {
 };
 
 export const getListBeersNotLiked = (state) => {
-  const _ = require("lodash");
   const listBeers = state.beers.data;
   const listBeersInteracted = state.beersInteracted.data;
-  const listBeersNotLiked = _.filter(listBeers, ((beer) => {return !listBeersInteracted.includes(beer.id)}));
+  const listBeersNotLiked = lodash.filter(listBeers, ((beer) => {return !listBeersInteracted.includes(beer.id)}));
   return listBeersNotLiked
 };
 
 
 export const getBeersNotInteracted = (listBeers, listIdsBeersLiked) => {
-  const _ = require("lodash");
-  const listBeersNotLiked = _.filter(listBeers, ((beer) => {return !listIdsBeersLiked.includes(beer.id)}));
+  const listBeersNotLiked = lodash.filter(listBeers, ((beer) => {return !listIdsBeersLiked.includes(beer.id)}));
   return listBeersNotLiked
 };
