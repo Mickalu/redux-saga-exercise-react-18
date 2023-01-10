@@ -24,12 +24,9 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
   };
 
   const enableSubmit = () => {
-    if (formRegisterValues.password === formRegisterValues.password2 || formRegisterValues.password === "") {
-      return false;
-    }
-    else {
-      return true;
-    }
+    return (formRegisterValues.password === formRegisterValues.password2 &&
+      formRegisterValues.password !== "")
+      ? true : false;
   };
 
   return (
@@ -68,7 +65,7 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
 
       <Row>
         <Col>
-          <Button size="lg" type='submit' disabled={enableSubmit()} data-testid="submit-form-button"> Save </Button>
+          <Button size="lg" type='submit' disabled={!enableSubmit()} data-testid="submit-form-button"> Save </Button>
         </Col>
       </Row>
 
@@ -79,4 +76,4 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
   );
 };
 
-export default FormRegister
+export default FormRegister;

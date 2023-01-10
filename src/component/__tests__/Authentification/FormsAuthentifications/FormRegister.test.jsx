@@ -1,7 +1,7 @@
 import React from "react";
 
 import FormRegister from "../../../Authentification/FormsAutentifications/FormRegister";
-import { render, getByTestId, fireEventChange } from "../../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
+import { render, getByTestId } from "../../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 
 const initFormValue = {
   username: "",
