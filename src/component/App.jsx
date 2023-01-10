@@ -11,7 +11,7 @@ import Register from "../container/Authentification/Register";
 const App = () => (
   <Routes>
     <Route path="/home" element={<Home />} />
-    <Route path="/" element={<AuthentificationMainPage />} />
+    <Route path="/login" element={<AuthentificationMainPage />} />
     <Route path="/register" element={<Register />} />
   </Routes>
 );

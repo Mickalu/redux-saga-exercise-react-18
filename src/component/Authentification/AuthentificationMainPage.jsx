@@ -1,8 +1,9 @@
 import React from 'react';
 
+import Col from 'react-bootstrap/Col';
+
 import FormLogin from './FormsAutentifications/FormLogin';
 import "../../assets/css/AuthentificationMainPage.css";
-import Col from 'react-bootstrap/Col';
 
 const AuthentificationMainPage = () => (
   <div className='formLogin__container'>
@@ -12,4 +13,4 @@ const AuthentificationMainPage = () => (
   </div>
 );
 
-export default AuthentificationMainPage
+export default AuthentificationMainPage;
