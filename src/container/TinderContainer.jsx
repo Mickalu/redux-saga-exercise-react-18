@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Tinder from '../component/Game/Tinder';
+import { getNextBeerNotInteracted } from "../selector/beersNotInterracted";
 
 const TinderContainer = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ const TinderContainer = () => {
   const actionButtonTinder = (isLiked) => {
     dispatch({ type: "INTERACTION_LIKE_BEER" });
     // pass next
-
+    getNextBeerNotInteracted()
   };
 
   return (

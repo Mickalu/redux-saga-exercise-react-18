@@ -1,4 +1,4 @@
-import { getBeersNotInteracted } from "../getBeerNotLiked";
+import { getBeersNotLiked } from "../getBeerNotLiked";
 import { stateBeers } from "../__testsTools__/initValues/beersSliceInitValues";
 
 it("getBeersNotInteracted should return beers not liked", () => {
@@ -9,5 +9,5 @@ it("getBeersNotInteracted should return beers not liked", () => {
     { id: '4' },
   ];
 
-  expect(getBeersNotInteracted(listBeers, listIdsBeersLiked)).toEqual(resultExpected);
+  expect(getBeersNotLiked(listBeers, listIdsBeersLiked)).toEqual(resultExpected);
 });
