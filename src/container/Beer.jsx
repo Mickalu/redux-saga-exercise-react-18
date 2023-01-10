@@ -33,9 +33,9 @@ const Beer = ({ beer }) => {
     dispach(updateLoadingBeer(false));
   };
 
-  const imageBeerDisplayed = () => {
-    if(beer.photo_link){
-      return (
+  const imageBeerDisplayed = () => (
+    (beer.photo_link) ?
+      (
         <img
           height={`${img_height}px`} style={{ height: img_height, color: "red" }}
           className="img-responsive"
@@ -51,12 +51,9 @@ const Beer = ({ beer }) => {
           name="beerImg"
           data-testid="beer-image"
         />
-      );
-    }
-    else {
-      return loadingBeerComponent;
-    }
-  };
+      ) :
+      loadingBeerComponent
+  );
 
   return (
     <Container data-testid="beer-container">

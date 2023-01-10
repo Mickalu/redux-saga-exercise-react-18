@@ -12,16 +12,11 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
     changeInputFormIntoState(formRegisterValues, field, inputValue, setFormRegisterValues);
   };
 
-  const displayErrorMessage = () => {
-    if (!apiResponse.status) {
-      return (
-        <p style={{color: "red"}}>{apiResponse.data}</p>
-      );
-    }
-    else {
-      return (null);
-    }
-  };
+  const displayErrorMessage = () => (
+    (!apiResponse.status) ?
+      (<p style={{color: "red"}}>{apiResponse.data}</p>) :
+      null
+  );
 
   const enableSubmit = () => (
     (formRegisterValues.password === formRegisterValues.password2 &&
