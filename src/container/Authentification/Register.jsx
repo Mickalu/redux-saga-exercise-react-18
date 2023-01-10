@@ -34,7 +34,7 @@ const Register = () => {
   useEffect(() => {
     if(registerUser.status) {
       dispatch(resetRegisterUser());
-      navigate("/");
+      navigate("/login");
     };
   },
   [dispatch, navigate, registerUser]);
