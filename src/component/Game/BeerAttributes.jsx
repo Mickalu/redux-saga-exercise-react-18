@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const BeerAttributes = ({ beer }) => (
   <ul className="beer_details">
@@ -24,7 +24,7 @@ const BeerAttributes = ({ beer }) => (
             .toFixed(2)
             .toString()
             .replace('.', ',')}`
-          : ' '
+          : " "
         }
       </span>&nbsp;
       <span>&#163;</span>
@@ -32,4 +32,4 @@ const BeerAttributes = ({ beer }) => (
   </ul>
 );
 
-export default BeerAttributes
+export default BeerAttributes;
