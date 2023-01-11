@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const BeerAttributes = ({ beer }) => (
   <ul className="beer_details">
@@ -12,7 +12,7 @@ const BeerAttributes = ({ beer }) => (
       <span>{beer.colour}</span>&nbsp;Colour
     </li>
     <li>
-      <span>{beer.size ? beer.size.toString().toLowerCase().replace("cl", "") : " "}</span>&nbsp;cl
+      <span>{beer.size ? beer.size.toString().toLowerCase().replace('cl', '') : ' '}</span>&nbsp;cl
     </li>
     <li>
       <span>{beer.graduation}</span>&nbsp;°Alcohol
@@ -23,7 +23,7 @@ const BeerAttributes = ({ beer }) => (
           ? `${parseFloat(beer.price)
             .toFixed(2)
             .toString()
-            .replace(".", ",")}`
+            .replace('.', ',')}`
           : " "
         }
       </span>&nbsp;
@@ -32,4 +32,4 @@ const BeerAttributes = ({ beer }) => (
   </ul>
 );
 
-export default BeerAttributes
+export default BeerAttributes;

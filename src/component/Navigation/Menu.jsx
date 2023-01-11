@@ -10,7 +10,7 @@ export const Menu = ({ isOpen, toggleMenu }) => (
     data-testid="sideMenu"
   >
 
-    <h3 data-testid="side-menu-title" style={{ paddingTop: "50px" }}>Beers I like:</h3>
+    <h3 data-testid="side-menu-title" style={{ paddingTop: '50px' }}>Beers I like:</h3>
     <BeersLikedContainer />
 
   </SideMenu>

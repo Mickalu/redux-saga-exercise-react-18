@@ -1,7 +1,7 @@
 import React from 'react'
-import { v4 } from "uuid";
+import { v4 } from 'uuid';
 
-import { findBeerById } from "../../utils/findBeerById";
+import { findBeerById } from '../../utils/findBeerById';
 
 const BeersLiked = ({ beersLiked, beers }) => (
   <>

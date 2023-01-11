@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Container from 'react-bootstrap/Container';
-import Row from "react-bootstrap/Row";
+import Row from 'react-bootstrap/Row';
 
 import { updateLoadingBeer } from '../slice/loadingBeer';
 import BeerAttributes from '../component/Game/BeerAttributes';
@@ -11,7 +11,7 @@ const Beer = ({ beer }) => {
   const dispach = useDispatch();
   const currentIndex = useSelector((state) => state.currentIndex);
 
-  let img_height = "auto";
+  let img_height = 'auto';
 
   let _beerImgWrapperRef = useRef(null);
   let _beerImgRef = useRef(null);
@@ -26,7 +26,7 @@ const Beer = ({ beer }) => {
   [currentIndex]);
 
   const imageLoaded = () => {
-    if(img_height === "auto"){
+    if(img_height === 'auto'){
       _beerImgRef.current.style.width = `${_beerImgWrapperRef.current.offsetWidth}px`;
       img_height = _beerImgRef.current.style.height;
     }

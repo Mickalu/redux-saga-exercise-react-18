@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
 
-import Container from "react-bootstrap/Container";
+import Container from 'react-bootstrap/Container';
 
-import Header from "./Header";
-import Menu from "./Navigation/Menu";
-import TinderContainer from "../container/TinderContainer";
+import Header from './Header';
+import Menu from './Navigation/Menu';
+import TinderContainer from '../container/TinderContainer';
 
 const Home = () => {
   const [menu, setMenu] = useState(true);
@@ -29,7 +29,7 @@ const Home = () => {
           <ul className="nav navbar-nav pull-right">
             <li>
               <button onClick={toggleMenu} className="btn btn-lg btn-outline">
-                <FontAwesomeIcon icon={solid("heart")} />
+                <FontAwesomeIcon icon={solid('heart')} />
               </button>
             </li>
           </ul>
@@ -63,13 +63,13 @@ const Home = () => {
                   <h3>Around the Web</h3>
                   <ul className="list-inline">
                     <li>
-                      <a target="_blank" href="https://github.com/reactjs-academy" className="btn-social btn-outline" rel="noopener noreferrer"> <FontAwesomeIcon icon={solid("heart")} /></a>
+                      <a target="_blank" href="https://github.com/reactjs-academy" className="btn-social btn-outline" rel="noopener noreferrer"> <FontAwesomeIcon icon={solid('heart')} /></a>
                     </li>
                     <li>
-                      <a target="_blank" href="https://twitter.com/reactjsacademy" className="btn-social btn-outline" rel="noopener noreferrer"> <FontAwesomeIcon icon={solid("hashtag")} /></a>
+                      <a target="_blank" href="https://twitter.com/reactjsacademy" className="btn-social btn-outline" rel="noopener noreferrer"> <FontAwesomeIcon icon={solid('hashtag')} /></a>
                     </li>
                     <li>
-                      <a target="_blank" href="https://www.instagram.com/reactjsacademy/" className="btn-social btn-outline" rel="noopener noreferrer"> <FontAwesomeIcon icon={solid("hashtag")} /></a>
+                      <a target="_blank" href="https://www.instagram.com/reactjsacademy/" className="btn-social btn-outline" rel="noopener noreferrer"> <FontAwesomeIcon icon={solid('hashtag')} /></a>
                     </li>
                   </ul>
                 </div>
