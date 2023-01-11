@@ -8,7 +8,7 @@ import Row from 'react-bootstrap/Row';
 import "../../../assets/css/FormLogin.css";
 
 const FormLogin = ({ submitUserConnection, changeValueUsername, changeValuePassword, error_message }) => (
-  <Form onSubmit={submitUserConnection}>
+  <Form data-testid="form-login" onSubmit={submitUserConnection}>
     <Row>
       <Form.Group className="mb-3">
         <Form.Label>Username : </Form.Label>
