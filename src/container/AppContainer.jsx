@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 import App from '../component/App';
@@ -13,7 +13,7 @@ const AppContainer = () => {
         isUserConnected={userConnected()}
       />
     </>
-  )
+  );
 };
 
 export default AppContainer;
