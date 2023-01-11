@@ -8,6 +8,7 @@ const reactRedux = { useDispatch };
 const reactUseEffect = { useEffect };
 
 jest.mock("react-redux", () => ({
+  __esModule: true,
   ...jest.requireActual("react-redux"),
   useDispatch: jest.fn(),
 }));
@@ -40,6 +41,7 @@ const initFormValue = {
 it("formRegister should matchsnapshot", () => {
   const { container } = render(
     <FormRegister
+      submitRegisterUser={jest.fn()}
       formRegisterValues={initFormValue}
       apiResponse={apiResponse}
     />);
@@ -59,6 +61,7 @@ it("If input password and password2 not same value, button submit disabled", () 
 
   render(
     <FormRegister
+      submitRegisterUser={jest.fn()}
       formRegisterValues={formValueNotSamePassword}
       apiResponse={apiResponse}
     />
@@ -83,6 +86,7 @@ it("Should not dispable submit button if same password value", () => {
 
   render(
     <FormRegister
+      submitRegisterUser={jest.fn()}
       formRegisterValues={formValueSamePassword}
       apiResponse={apiResponse}
     />

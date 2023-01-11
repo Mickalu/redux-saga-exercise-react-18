@@ -13,7 +13,8 @@ jest.mock("react", () => ({
 
 jest.mock("react-redux", () => ({
   __esModule: true,
-  ...jest.requireActual('react-redux')
+  ...jest.requireActual('react-redux'),
+  useDispatch: jest.fn(),
 }));
 
 const useEffectMock = jest.spyOn(reactUseEffect, "useEffect");

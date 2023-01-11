@@ -16,6 +16,12 @@ jest.mock("../../api/likeBeerApi", () => ({
   likeBeerApi: jest.fn(),
 }));
 
+jest.mock("react-redux", () => ({
+  __esModule: true,
+  ...jest.requireActual("react-redux"),
+  useDispatch: jest.fn(),
+}));
+
 const getUserBeersInteractedApiMock = jest.spyOn(apisLikedBeer, "getUserBeersInteractedApi");
 const likeBeerApiMock = jest.spyOn(apisLikedBeer, "likeBeerApi");
 

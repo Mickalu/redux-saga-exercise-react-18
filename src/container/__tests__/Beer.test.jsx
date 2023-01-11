@@ -13,6 +13,7 @@ const reactRedux = { useDispatch, useSelector };
 const reactHooks = { useEffect };
 
 jest.mock("react-redux", () => ({
+  __esModule: true,
   ...jest.requireActual("react-redux"),
   useSelector: jest.fn(),
   useDispatch: jest.fn(),
