@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Home should matchsnapshot 1`] = `
+exports[`App return Home when user is connected 1`] = `
 <div>
   <div
     id="page-wrap"
@@ -175,90 +175,6 @@ exports[`Home should matchsnapshot 1`] = `
       <div
         class="container"
       >
-        <div
-          class="container"
-          data-testid="beer-container"
-        >
-          <div
-            class="row"
-          >
-            <div
-              class="col-sm-4"
-            />
-            <div
-              class="col-sm-4 text-center beer-col"
-            >
-              <div
-                class="beer-img"
-                data-testid="div-image-beer"
-              >
-                <img
-                  alt="beer"
-                  class="img-responsive"
-                  data-testid="beer-image"
-                  height="autopx"
-                  name="beerImg"
-                  role="presentation"
-                  src="https://img.saveur-biere.com/img/p/82-14662-thickbox_sb3.jpg"
-                  style="height: auto; color: red;"
-                />
-              </div>
-              <h3
-                class="beer_title"
-                name="beerTitle"
-              >
-                Karmeliet Triple
-              </h3>
-            </div>
-            <div
-              class="col-sm-4 hidden-xs hidden-sm"
-            >
-              <ul
-                class="beer_details"
-              >
-                <li>
-                  <span>
-                    Belgium
-                  </span>
-                   Country
-                </li>
-                <li>
-                  <span>
-                    Tripel
-                  </span>
-                   Style
-                </li>
-                <li>
-                  <span>
-                    Blond
-                  </span>
-                   Colour
-                </li>
-                <li>
-                  <span>
-                    33 
-                  </span>
-                   cl
-                </li>
-                <li>
-                  <span>
-                    6 %
-                  </span>
-                   °Alcohol
-                </li>
-                <li>
-                  <span>
-                    2,50
-                  </span>
-                   
-                  <span>
-                    £
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
         <div
           class="container"
           data-testid="actions-container"
@@ -495,6 +411,88 @@ exports[`Home should matchsnapshot 1`] = `
         </div>
       </div>
     </footer>
+  </div>
+</div>
+`;
+
+exports[`App should return login page if user not connected 1`] = `
+<div>
+  <div
+    class="formLogin__container"
+  >
+    <div
+      class="col-lg-4"
+    >
+      <form
+        class=""
+      >
+        <div
+          class="row"
+        >
+          <div
+            class="mb-3"
+          >
+            <label
+              class="form-label"
+            >
+              Username : 
+            </label>
+            <input
+              class="form-control"
+              type="text"
+            />
+          </div>
+          <div
+            class="mb-3"
+          >
+            <label
+              class="form-label"
+            >
+              Password : 
+            </label>
+            <input
+              class="form-control"
+              placeholder="Password"
+              type="password"
+            />
+          </div>
+        </div>
+        <div
+          class="row"
+        />
+        <p
+          style="color: red;"
+        />
+        <div
+          class="row"
+        >
+          <div
+            class="row_form__button col"
+          >
+            <button
+              class="btn btn-primary"
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+          <div
+            class="row_form__button register_button col"
+          >
+            <a
+              href="/register"
+            >
+              <button
+                class="btn btn-link"
+                type="button"
+              >
+                Register
+              </button>
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
 `;

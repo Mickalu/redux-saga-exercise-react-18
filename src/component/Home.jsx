@@ -21,7 +21,7 @@ const Home = () => {
         toggleMenu={toggleMenu}
       />
 
-      <nav className="navbar navbar-default navbar-fixed-top navbar-custom">
+      <nav data-testid="navbar-home" className="navbar navbar-default navbar-fixed-top navbar-custom">
         <div className="container">
           <div className="navbar-header">
             <a className="navbar-brand" href="https://reactjs.academy" target="_blank" rel="noopener noreferrer">ReactJS Academy</a>
