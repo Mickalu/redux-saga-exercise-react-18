@@ -14,8 +14,7 @@ jest.mock("react-redux", () => ({
   useSelector: jest.fn(),
 }));
 
-const likeBeerFunction = jest.fn();
-const passNextBeer = jest.fn();
+const likeOrDislikeBeer = jest.fn();
 
 const dispatchMock = (value) => (
   jest.fn()
@@ -35,22 +34,20 @@ useDispatchMock.mockReturnValue(jest.fn(value => dispatchMock(value)));
 
 it("Should activate liked beers if click on like button", () => {
   render(<Interactions
-    likeBeer={likeBeerFunction}
-    passNextBeer={passNextBeer}
+    likeOrDislikeBeer={likeOrDislikeBeer}
   />);
   fireEvent.click(getByTestId("like-button"));
 
-  expect(likeBeerFunction).toHaveBeenCalledTimes(1);
+  expect(likeOrDislikeBeer).toHaveBeenCalledTimes(1);
 });
 
 it("Should activate disliked beers if click on dislike button", () => {
   render(<Interactions
-    likeBeer={likeBeerFunction}
-    passNextBeer={passNextBeer}
+    likeOrDislikeBeer={likeOrDislikeBeer}
   />);
   fireEvent.click(getByTestId("dislike-button"));
 
-  expect(passNextBeer).toHaveBeenCalledTimes(1);
+  expect(likeOrDislikeBeer).toHaveBeenCalledTimes(1);
 });
 
 it("Should match with snapShot", () => {

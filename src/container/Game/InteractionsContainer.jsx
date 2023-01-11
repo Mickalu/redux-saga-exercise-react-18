@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import Interactions from '../../component/Game/Interactions';
 import { updateCurrentbeerId } from '../../slice/currentBeerSlice';
-import { getNextCurrentBeerNotLiked } from "../../selector/currentBeer";
+import { getNextBeerNotInteracted } from '../../selector/beersNotInteracted';
 
 const InteractionsContainer = () => {
   const dispatch = useDispatch();
@@ -11,23 +11,22 @@ const InteractionsContainer = () => {
   const currentBeer = useSelector((state) => state.currentBeer);
   const beersInteracted = useSelector((state) => state.beersInteracted);
 
-  const passNextBeer = (likedOrNot) => {
-    const nextBeerId = getNextCurrentBeerNotLiked(beers.data, beersInteracted.data, currentBeer.id, likedOrNot);
+  const passNextBeer = () => {
+    const nextBeerId = getNextBeerNotInteracted(beers.data, beersInteracted.data, currentBeer.id);
     dispatch(updateCurrentbeerId(nextBeerId));
   };
 
-  const likeBeer = () => {
+  const likeOrDislikeBeer = (isLike) => {
     if(currentBeer.id) {
-      dispatch({type: "ADD_LIKE_BEER"}, currentBeer.id);
-      passNextBeer(true);
+      dispatch({type: "INTERACTION_LIKE_BEER", payload: { isLiked: isLike }});
+      passNextBeer();
     }
   };
 
   return (
     <>
       <Interactions
-        passNextBeer={passNextBeer}
-        likeBeer={likeBeer}
+        likeOrDislikeBeer={likeOrDislikeBeer}
       />
     </>
   );

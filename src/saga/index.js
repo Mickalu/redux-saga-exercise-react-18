@@ -11,5 +11,5 @@ export default function* rootSaga(){
   yield takeLeading("REGISTER_USER", authentificationSaga.registerSaga)
   yield takeLeading("SUBMIT_USER_CONNEXION", authentificationSaga.userConnectionSaga)
   yield takeLeading("GET_LIKED_BEERS", interactedBeerSaga.getInteractedBeer)
-  yield takeLeading("INTERACTION_LIKE_BEER", interactedBeerSaga.interactionLikeBeer)
+  yield takeLeading("INTERACTION_LIKE_BEER", interactedBeerSaga.interactionLikeBeerSaga)
 };

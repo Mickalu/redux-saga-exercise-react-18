@@ -1,11 +1,5 @@
 import lodash from "lodash";
 
-export const returnBeginningBeers = (listBeers, listBeersLiked) => {
-  // const listNoLikedBeer = getBeersNotLiked(listBeers, listBeersLiked);
-  // return returnFirstBeerOrNull(listNoLikedBeer);
-  console.log("find first beer no interracted");
-};
-
 const getListBeerNoInteracted = (listBeers, listBeerInteracted) => {
   const listBeerNoInteracted = listBeers.filter((beer) => { return !listBeerInteracted.includes(beer.id) });
   return listBeerNoInteracted;
@@ -16,21 +10,20 @@ const getListOfIds = (listInfoBeer) => {
 };
 
 export const getNextBeerNotInteracted = (listBeers, listBeerInteracted, id) => {
-  let listIdsBeerInteracted = getListOfIds(listBeerInteracted);
-
   if (lodash.isNull(id)) {
-    return returnBeginningBeers(listBeers, listBeerInteracted);
+    return null;
+  }
+
+  let listIdsBeerInteracted = getListOfIds(listBeerInteracted);
+  listIdsBeerInteracted = [...listIdsBeerInteracted, id];
+
+  const listBeersNoInteracted = getListBeerNoInteracted(listBeers, listIdsBeerInteracted);
+
+  if (listBeersNoInteracted.length !== 0) {
+    return listBeersNoInteracted[0].id;
   }
   else {
-    const indexCurrentBeer = listBeers.findIndex((beer) => { return beer.id === id});
-
-    if (indexCurrentBeer + 1 < listBeers.length) {
-      const listBeerNoInteracted = getListBeerNoInteracted(listBeers, listIdsBeerInteracted);
-      return listBeerNoInteracted[0].id
-    }
-    else {
-      return null
-    }
+    return null;
   }
 };
 
@@ -38,6 +31,6 @@ export const getListBeersNoInteractedSelector = (state) => {
   const listBeers = state.beers.data;
   const listIdsBeersInteracted = state.beersInteracted.data.map(beer => beer.beer);
 
-  const listBeersNoInteracted = listBeers.filter((beer) => !listIdsBeersInteracted.includes(beer.id));
+  const listBeersNoInteracted = getListBeerNoInteracted(listBeers, listIdsBeersInteracted);
   return listBeersNoInteracted;
 };

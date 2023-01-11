@@ -16,12 +16,11 @@ export function* getInteractedBeer(data) {
   }
 };
 
-export function* interactionLikeBeer(isLiked) {
+export function* interactionLikeBeerSaga(request) {
   const currentBeer = yield select(currentBeerSelector);
-
   const tokenInfo = yield select(tokenAuthentificationSelector);
 
-  const dataSend = { beer: currentBeer.id, is_liked: isLiked };
+  const dataSend = { beer: currentBeer.id, is_liked: request.payload.isLiked };
   const responseApi =  yield call(likeBeerApi, tokenInfo['token'], dataSend);
 
   if (responseApi.status) {
@@ -29,7 +28,7 @@ export function* interactionLikeBeer(isLiked) {
   }
 };
 
-export function* initFirstBeerNotInteracted() {
+export function* initFirstBeerNotInteractedSaga() {
   const listBeerNotLiked = yield select(getListBeersNoInteractedSelector);
 
   if (listBeerNotLiked.length !== 0){
