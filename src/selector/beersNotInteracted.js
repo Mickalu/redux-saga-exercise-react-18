@@ -1,13 +1,12 @@
 import lodash from "lodash";
 
-const getListBeerNoInteracted = (listBeers, listBeerInteracted) => {
-  const listBeerNoInteracted = listBeers.filter((beer) => { return !listBeerInteracted.includes(beer.id) });
-  return listBeerNoInteracted;
-};
+const getListBeerNoInteracted = (listBeers, listBeerInteracted) => (
+  listBeers.filter((beer) => { return !listBeerInteracted.includes(beer.id) })
+);
 
-const getListOfIds = (listInfoBeer) => {
-  return lodash.map(listInfoBeer, ((beerInfo) => beerInfo.beer));
-};
+const getListOfIds = (listInfoBeer) => (
+  lodash.map(listInfoBeer, ((beerInfo) => beerInfo.beer))
+);
 
 export const getNextBeerNotInteracted = (listBeers, listBeerInteracted, id) => {
   if (lodash.isNull(id)) {
