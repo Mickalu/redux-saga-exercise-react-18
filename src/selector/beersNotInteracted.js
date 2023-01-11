@@ -33,3 +33,11 @@ export const getNextBeerNotInteracted = (listBeers, listBeerInteracted, id) => {
     }
   }
 };
+
+export const getListBeersNoInteractedSelector = (state) => {
+  const listBeers = state.beers.data;
+  const listIdsBeersInteracted = state.beersInteracted.data.map(beer => beer.beer);
+
+  const listBeersNoInteracted = listBeers.filter((beer) => !listIdsBeersInteracted.includes(beer.id));
+  return listBeersNoInteracted;
+};

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Tinder from '../component/Game/Tinder';
-import { getNextBeerNotInteracted } from "../selector/beersNotInterracted";
+import { getNextBeerNotInteracted } from "../selector/beersNotInteracted";
 
 const TinderContainer = () => {
   const dispatch = useDispatch();

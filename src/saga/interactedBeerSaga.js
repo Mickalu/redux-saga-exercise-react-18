@@ -5,7 +5,8 @@ import { getUserBeersInteractedApi, likeBeerApi } from "../api/likeBeerApi";
 import { addInteractedBeers } from "../slice/beersInteractedSlice";
 import { currentBeerSelector } from '../selector/currentBeer';
 import { updateCurrentbeerId } from "../slice/currentBeerSlice";
-import { beersNotLikedSelector } from "../selector/beersNotLiked";
+import { getListBeersNoInteractedSelector } from "../selector/beersNotInteracted";
+
 
 export function* getInteractedBeer(data) {
   const responseInteractedBeers = yield call(getUserBeersInteractedApi, data.token);
@@ -29,7 +30,7 @@ export function* interactionLikeBeer(isLiked) {
 };
 
 export function* initFirstBeerNotInteracted() {
-  const listBeerNotLiked = yield select(beersNotLikedSelector);
+  const listBeerNotLiked = yield select(getListBeersNoInteractedSelector);
 
   if (listBeerNotLiked.length !== 0){
     const idFirstBeerNotLikded = listBeerNotLiked[0].id;
