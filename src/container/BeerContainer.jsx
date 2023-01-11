@@ -9,7 +9,8 @@ const BeerContainer = () => {
   const currentBeer = useSelector((state) => state.currentBeer);
 
   if (beers.data) {
-    let beer = getBeerById(beers.data, currentBeer.id);
+    const beer = getBeerById(beers.data, currentBeer.id);
+
     if (beer) {
       return (
         <Beer beer={beer} />
@@ -19,9 +20,8 @@ const BeerContainer = () => {
       return null;
     }
   }
-  else {
-    return null;
-  }
+
+  return null;
 };
 
 export default BeerContainer;

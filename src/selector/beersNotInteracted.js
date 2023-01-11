@@ -1,7 +1,7 @@
 import lodash from "lodash";
 
 const getListBeerNoInteracted = (listBeers, listBeerInteracted) => (
-  listBeers.filter((beer) => { return !listBeerInteracted.includes(beer.id) })
+  listBeers.filter((beer) => !listBeerInteracted.includes(beer.id))
 );
 
 const getListOfBeersIds = (listInfoBeer) => (
@@ -21,9 +21,8 @@ export const getNextBeerNotInteracted = (listBeers, listBeerInteracted, id) => {
   if (listBeersNoInteracted.length !== 0) {
     return listBeersNoInteracted[0].id;
   }
-  else {
-    return null;
-  }
+
+  return null;
 };
 
 export const getListBeersNoInteractedSelector = (state) => {
@@ -31,5 +30,6 @@ export const getListBeersNoInteractedSelector = (state) => {
   const listIdsBeersInteracted = state.beersInteracted.data.map(beer => beer.beer);
 
   const listBeersNoInteracted = getListBeerNoInteracted(listBeers, listIdsBeersInteracted);
+
   return listBeersNoInteracted;
 };
