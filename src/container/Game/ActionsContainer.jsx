@@ -13,11 +13,11 @@ const ActionsContainer = () => {
   const passNextBeer = () => {
     const nextBeerId = getNextBeerById(beers.data, currentBeer.id);
     dispatch(updateCurrentbeerId(nextBeerId));
-   };
+  };
 
   const likeBeer = () => {
     passNextBeer();
-   }
+  };
 
   return (
     <>

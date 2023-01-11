@@ -14,7 +14,7 @@ const Actions = ({ passNextBeer, likeBeer }) => {
             type="button"
             className="btn btn-danger btn-circle btn-xl"
             name="dislikeBtn"
-            onClick={() => passNextBeer()}
+            onClick={passNextBeer}
             data-testid="dislike-button"
           >
             <FontAwesomeIcon icon={faXmark} />
@@ -26,7 +26,7 @@ const Actions = ({ passNextBeer, likeBeer }) => {
             type="button"
             className="btn btn-success btn-circle btn-xl"
             name="likeBtn"
-            onClick={() => likeBeer()}
+            onClick={likeBeer}
             data-testid="like-button"
           >
             <FontAwesomeIcon icon={faHeart} />

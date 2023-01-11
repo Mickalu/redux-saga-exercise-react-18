@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 import App from '../component/App';
@@ -8,11 +8,9 @@ const AppContainer = () => {
   const userConnected = () => (tokenInfo.token);
 
   return (
-    <>
-      <App
-        isUserConnected={userConnected()}
-      />
-    </>
+    <App
+      isUserConnected={userConnected()}
+    />
   )
 };
 

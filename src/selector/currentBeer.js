@@ -9,10 +9,9 @@ export const getBeerById = (beers, beerId) => {
 export const getNextBeerById = (beers, beerId) => {
   const beer = getBeerById(beers, beerId);
   const indexOfCurrentBeer = beers.indexOf(beer);
-  const lengthOfBeersList = beers.length;
   let nextBeerId;
 
-  if(indexOfCurrentBeer + 1 === lengthOfBeersList) {
+  if(!(indexOfCurrentBeer + 1 in beers)) {
     nextBeerId = beers[0].id;
   }
   else {
