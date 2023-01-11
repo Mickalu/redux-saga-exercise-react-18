@@ -1,6 +1,7 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { Provider } from "react-redux";
+import { MemoryRouter as Router } from 'react-router-dom';
 
 import { store } from "../../../store";
 
@@ -24,10 +25,16 @@ const getByDisplayValueCustom = (displayValue) => (
   screen.getByDisplayValue(displayValue)
 );
 
+export const fireEventChange = (input, inputValue) => {
+  fireEvent.change(input, {target: {value: inputValue}})
+};
+
 const renderWithProviders = ({ children }) => (
-  <Provider store={store}>
-    { children }
-  </Provider>
+  <Router>
+    <Provider store={store}>
+      { children }
+    </Provider>
+  </Router>
 );
 
 export const renderCustom = (ui, options = {}) => render(ui, { wrapper: renderWithProviders, ...options });

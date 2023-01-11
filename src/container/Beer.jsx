@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import Container from 'react-bootstrap/Container';
-import Row from "react-bootstrap/Row";
+import Row from 'react-bootstrap/Row';
 
 import { updateLoadingBeer } from '../slice/loadingBeer';
 import BeerAttributes from '../component/Game/BeerAttributes';
@@ -11,7 +11,7 @@ const Beer = ({ beer }) => {
   const dispach = useDispatch();
   const currentIndex = useSelector((state) => state.currentIndex);
 
-  let img_height = "auto";
+  let img_height = 'auto';
 
   let _beerImgWrapperRef = useRef(null);
   let _beerImgRef = useRef(null);
@@ -33,11 +33,11 @@ const Beer = ({ beer }) => {
     dispach(updateLoadingBeer(false));
   };
 
-  const imageBeerDisplayed = () => {
-    if(beer.photo_link){
-      return (
+  const imageBeerDisplayed = () => (
+    (beer.photo_link) ?
+      (
         <img
-          height={`${img_height}px`} style={{ height: img_height, color: 'red' }}
+          height={`${img_height}px`} style={{ height: img_height, color: "red" }}
           className="img-responsive"
           ref={_beerImgRef}
           src={beer.photo_link}
@@ -51,12 +51,9 @@ const Beer = ({ beer }) => {
           name="beerImg"
           data-testid="beer-image"
         />
-      );
-    }
-    else {
-      return loadingBeerComponent;
-    }
-  };
+      ) :
+      loadingBeerComponent
+  );
 
   return (
     <Container data-testid="beer-container">

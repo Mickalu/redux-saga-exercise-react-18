@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`formRegister should matchsnapshot 1`] = `
+<div>
+  <form
+    class=""
+  >
+    <div
+      class="row"
+    >
+      <div
+        class="mb-4"
+      >
+        <label
+          class="form-label"
+        >
+          Username : 
+        </label>
+        <input
+          class="form-control"
+          required=""
+          type="text"
+        />
+      </div>
+      <div
+        class="mb-4"
+      >
+        <label
+          class="form-label"
+        >
+          Password : 
+        </label>
+        <input
+          class="form-control"
+          data-testid="password"
+          required=""
+          type="password"
+        />
+      </div>
+      <div
+        class="mb-4"
+      >
+        <label
+          class="form-label"
+        >
+          Password again : 
+        </label>
+        <input
+          class="form-control"
+          data-testid="password2"
+          required=""
+          type="password"
+        />
+      </div>
+      <div
+        class="mb-4"
+      >
+        <label
+          class="form-label"
+        >
+          Email : 
+        </label>
+        <input
+          class="form-control"
+          required=""
+          type="email"
+        />
+      </div>
+      <div
+        class="mb-4"
+      >
+        <label
+          class="form-label"
+        >
+          First name: 
+        </label>
+        <input
+          class="form-control"
+          required=""
+          type="text"
+        />
+      </div>
+      <div
+        class="mb-4"
+      >
+        <label
+          class="form-label"
+        >
+          Last name: 
+        </label>
+        <input
+          class="form-control"
+          required=""
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      class="row"
+    >
+      <div
+        class="col"
+      >
+        <button
+          class="btn btn-primary btn-lg"
+          data-testid="submit-form-button"
+          disabled=""
+          type="submit"
+        >
+           Save 
+        </button>
+      </div>
+    </div>
+    <div
+      class="row"
+    />
+  </form>
+</div>
+`;

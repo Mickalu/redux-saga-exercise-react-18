@@ -5,7 +5,7 @@ Promise.polyfill();
 
 const defaultHeaders = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Request-Method': 'POST',
+  'Access-Control-Request-Method': ['POST', "GET"],
   'Content-Type': 'application/json',
 };
 
@@ -19,7 +19,7 @@ export const startSessionApi = () => (
 );
 
 export const getBeers = () => (
-  fetch(`${API_BASE_URL}/data/beers.json`, {
+  fetch(`http://127.0.0.1:8000/data/get_all_beers/`, {
     method: 'GET',
     headers: defaultHeaders,
   }).then(response => (
@@ -27,3 +27,4 @@ export const getBeers = () => (
   ))
   .then(beers => beers)
 );
+

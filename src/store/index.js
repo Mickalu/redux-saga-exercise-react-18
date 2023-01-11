@@ -7,6 +7,7 @@ import sessionReducer from "../slice/sessionSlice";
 import currentIndexReducer from "../slice/currentIndexSlice";
 import loadingBeerReducer from "../slice/loadingBeer";
 import beersLikedReducer from "../slice/beersLiked";
+import registerUserReducer from "../slice/Authentification/registerSlice";
 
 const sagaMiddleWare = createSagaMiddleware();
 
@@ -16,6 +17,7 @@ const rootReducer = combineReducers({
   currentIndex: currentIndexReducer,
   loadingBeer: loadingBeerReducer,
   beersLiked: beersLikedReducer,
+  registerUser: registerUserReducer,
 });
 
 export const store = configureStore({
