@@ -24,7 +24,7 @@ const BeerAttributes = ({ beer }) => (
             .toFixed(2)
             .toString()
             .replace('.', ',')}`
-          : ' '
+          : " "
         }
       </span>&nbsp;
       <span>&#163;</span>

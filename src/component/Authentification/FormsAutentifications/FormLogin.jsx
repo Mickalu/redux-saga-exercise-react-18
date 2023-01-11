@@ -32,9 +32,9 @@ const FormLogin = ({ submitUserConnection, changeValueUsername, changeValuePassw
         </Button>
       </Col>
 
-      <Col className='row_form__button register_button'>
-        <Link to="register">
-          <Button variant='link'>
+      <Col className="row_form__button register_button">
+        <Link to="/register">
+          <Button variant="link">
             Register
           </Button>
         </Link>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { findBeerById } from "../../utils/findBeerById";
+import { findBeerById } from '../../utils/findBeerById';
 
 const BeersLiked = ({ beersInteracted, beers }) => {
   return (

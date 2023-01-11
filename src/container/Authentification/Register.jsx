@@ -33,13 +33,13 @@ const Register = () => {
   useEffect(() => {
     if(registerUser.status) {
       dispatch(resetRegisterUser());
-      navigate("/");
+      navigate("/login");
     };
   },
   [dispatch, navigate, registerUser]);
 
   return (
-    <div className='register-container'>
+    <div className="register-container">
       <Col lg="5">
         <FormRegister
           submitRegisterUser={submitRegisterUser}
