@@ -8,23 +8,23 @@ import { tokenAuthentificationSelector } from "../../selector/tokenAuthentificat
 
 jest.mock("../../api/likeBeerApi", () => ({
   ...jest.requireActual("../../api/authentificationApi.js"),
-  getUserBeersLikedApi: jest.fn(),
+  getUserBeersInteractedApi: jest.fn(),
   likeBeerApi: jest.fn(),
 }));
 
-const getUserBeersLikedApiMock = jest.spyOn(apisLikedBeer, "getUserBeersLikedApi");
+const getUserBeersInteractedApiMock = jest.spyOn(apisLikedBeer, "getUserBeersInteractedApi");
 const likeBeerApiMock = jest.spyOn(apisLikedBeer, "likeBeerApi");
 
-getUserBeersLikedApiMock.mockReturnValue(jest.fn((value) => { return { data: { token: "1234" } }}));
+getUserBeersInteractedApiMock.mockReturnValue(jest.fn((value) => { return { data: { token: "1234" } }}));
 likeBeerApiMock.mockReturnValue(jest.fn());
 
-it("getInteractedBeer should call getUserBeersLikedApi", () => {
+it("getInteractedBeer should call getUserBeersInteractedApi", () => {
   const data = { token: "1234" };
   const getInteractedBeerGenerator = getInteractedBeer(data);
 
   const callGetUserBeersLikeApi = getInteractedBeerGenerator.next();
 
-  expect(callGetUserBeersLikeApi.value).toStrictEqual(call(apisLikedBeer.getUserBeersLikedApi, data.token));
+  expect(callGetUserBeersLikeApi.value).toStrictEqual(call(apisLikedBeer.getUserBeersInteractedApi, data.token));
 });
 
 it("If status true getInteractedBeer update liked beers in state", () => {

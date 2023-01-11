@@ -13,7 +13,7 @@ export const likeBeerApi = (token, dataValues) => (
   .then(response => response.json())
 );
 
-export const getUserBeersLikedApi = (token) => (
+export const getUserBeersInteractedApi = (token) => (
   fetch("http://127.0.0.1:8000/beer/get-likes/", {
     method: 'GET',
     headers: defaultHeaderWithToken(token),

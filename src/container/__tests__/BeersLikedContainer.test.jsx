@@ -15,11 +15,11 @@ jest.mock("react-redux", () => ({
 
 jest.mock("../../api/likeBeerApi.js", () => ({
   ...jest.requireActual("../../api/likeBeerApi.js"),
-  getUserBeersLikedApi: jest.fn((value) => { return { data: [] }}),
+  getUserBeersInteractedApi: jest.fn((value) => { return { data: [] }}),
 }));
 
-const getUserBeersLikedApiMock = jest.spyOn(ApiLikedBeer, "getUserBeersLikedApi");
-getUserBeersLikedApiMock.mockReturnValue((value) => { return { data: [] }});
+const getUserBeersInteractedApiMock = jest.spyOn(ApiLikedBeer, "getUserBeersInteractedApi");
+getUserBeersInteractedApiMock.mockReturnValue((value) => { return { data: [] }});
 
 it("Should not have beer title at the beginning", () => {
   useSelector.mockImplementation(callback => {

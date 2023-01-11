@@ -1,14 +1,14 @@
 import { call, put, select } from "redux-saga/effects";
 
 import { tokenAuthentificationSelector } from "../selector/tokenAuthentification";
-import { getUserBeersLikedApi, likeBeerApi } from "../api/likeBeerApi";
+import { getUserBeersInteractedApi, likeBeerApi } from "../api/likeBeerApi";
 import { addInteractedBeers } from "../slice/beersInteractedSlice";
 import { currentBeerSelector } from '../selector/currentBeer';
 import { updateCurrentbeerId } from "../slice/currentBeerSlice";
 import { beersNotLikedSelector } from "../selector/beersNotLiked";
 
 export function* getInteractedBeer(data) {
-  const responseInteractedBeers = yield call(getUserBeersLikedApi, data.token);
+  const responseInteractedBeers = yield call(getUserBeersInteractedApi, data.token);
 
   if (responseInteractedBeers.status) {
     yield put(addInteractedBeers(responseInteractedBeers.data));
