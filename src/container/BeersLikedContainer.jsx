@@ -11,8 +11,10 @@ export const BeersLikedContainer = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch({ type: "GET_LIKED_BEERS", token });
-  }, [token]);
+    dispatch({ type: "GET_LIKED_BEERS" });
+  },
+  [token]
+  );
 
   return (
     <>

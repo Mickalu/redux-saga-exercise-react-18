@@ -8,8 +8,9 @@ import { updateCurrentbeerId } from "../slice/currentBeerSlice";
 import { getListBeersNoInteractedSelector } from "../selector/beersNotInteracted";
 
 
-export function* getInteractedBeer(data) {
-  const responseInteractedBeers = yield call(getUserBeersInteractedApi, data.token);
+export function* getInteractedBeer() {
+  const tokenInfo = yield select(tokenAuthentificationSelector);
+  const responseInteractedBeers = yield call(getUserBeersInteractedApi, tokenInfo.token);
 
   if (responseInteractedBeers.status) {
     yield put(addInteractedBeers(responseInteractedBeers.data));
@@ -24,7 +25,7 @@ export function* interactionLikeBeerSaga(request) {
   const responseApi =  yield call(likeBeerApi, tokenInfo['token'], dataSend);
 
   if (responseApi.status) {
-    yield call(getInteractedBeer, tokenInfo);
+    yield call(getInteractedBeer);
   }
 };
 

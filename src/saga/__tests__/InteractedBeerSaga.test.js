@@ -28,11 +28,20 @@ const likeBeerApiMock = jest.spyOn(apisLikedBeer, "likeBeerApi");
 getUserBeersInteractedApiMock.mockReturnValue(jest.fn((value) => { return { data: { token: "1234" } }}));
 likeBeerApiMock.mockReturnValue(jest.fn());
 
+it("getInteractedBeer should select the authentification token", () => {
+  const getInteractedBeerGenerator = getInteractedBeer();
+
+  const selectAuthentificationToken = getInteractedBeerGenerator.next();
+
+  expect(selectAuthentificationToken.value).toStrictEqual(select(tokenAuthentificationSelector));
+});
+
 it("getInteractedBeer should call getUserBeersInteractedApi", () => {
   const data = { token: "1234" };
-  const getInteractedBeerGenerator = getInteractedBeer(data);
+  const getInteractedBeerGenerator = getInteractedBeer();
+  getInteractedBeerGenerator.next();
 
-  const callGetUserBeersLikeApi = getInteractedBeerGenerator.next();
+  const callGetUserBeersLikeApi = getInteractedBeerGenerator.next(data);
 
   expect(callGetUserBeersLikeApi.value).toStrictEqual(call(apisLikedBeer.getUserBeersInteractedApi, data.token));
 });
@@ -45,8 +54,9 @@ it("If status true getInteractedBeer update liked beers in state", () => {
 
   const data = { token: "1234" };
 
-  const getInteractedBeerGenerator = getInteractedBeer(data);
+  const getInteractedBeerGenerator = getInteractedBeer();
   getInteractedBeerGenerator.next();
+  getInteractedBeerGenerator.next(data);
 
   const putAddLikedBeers = getInteractedBeerGenerator.next(responseApi);
 
@@ -96,7 +106,7 @@ it("likeBeer should call getLikeBeer saga because user like beer have changed", 
 
   const callgetInteractedBeer = interactionLikeBeerSagaGenerator.next(responseApi);
 
-  expect(callgetInteractedBeer.value).toStrictEqual(call(getInteractedBeer, tokenInfo));
+  expect(callgetInteractedBeer.value).toStrictEqual(call(getInteractedBeer));
 });
 
 it("initFirstBeerNotInteractedSaga should return list of all beers aren't interacted", () => {
