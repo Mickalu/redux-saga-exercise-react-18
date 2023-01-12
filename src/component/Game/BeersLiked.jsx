@@ -8,9 +8,11 @@ const BeersLiked = ({ beersInteracted, beers }) => (
       const beerId = beer.beer;
       const beerInfo = findBeerById(beerId, beers.data);
 
-      return (beerInfo) ?
+      const returnBeerInteracted = (beerInfo) ?
         ( <div data-testid="beer-title" key={`div-beer-liked-${beerId}`}> {beerInfo.title} </div>) :
         null;
+
+      return returnBeerInteracted;
     })}
   </>
 );
