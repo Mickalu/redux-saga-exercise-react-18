@@ -16,12 +16,12 @@ export function* fetchBeersSaga() {
       yield put(addBeers(beers));
       yield call(initFirstBeerNotInteractedSaga);
     }
-    catch(error){
+    catch (error) {
       console.log(error);
       yield put(updateIsFetching(false));
     }
   }
-  catch(error){
+  catch (error) {
     console.log(error);
     yield put(updateIsFetching(false));
   }
