@@ -6,10 +6,11 @@ const BeersLiked = ({ beersInteracted, beers }) => (
   <>
     {beersInteracted.data.map((beer) => {
       const beerId = beer.beer;
-      const beerTitle = findBeerById(beerId, beers.data).title;
-      return (
-        <div data-testid="beer-title" key={`div-beer-liked-${beerId}`}> {beerTitle} </div>
-      );
+      const beerInfo = findBeerById(beerId, beers.data);
+
+      return (beerInfo) ?
+        ( <div data-testid="beer-title" key={`div-beer-liked-${beerId}`}> {beerInfo.title} </div>) :
+        null;
     })}
   </>
 );
