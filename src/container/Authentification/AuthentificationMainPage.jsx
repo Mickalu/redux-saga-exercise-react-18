@@ -22,15 +22,9 @@ const AuthentificationMainPage = () => {
 
   const [connexionFormValues, setConnexionFormValues] = useState(connexionFormValuesInitValues);
 
-  const changeValueUsername = (inputValue) => {
-    const field = "username";
+  const handleInputForm = (inputValue, field) => {
     changeInputFormIntoState(connexionFormValues, field, inputValue, setConnexionFormValues);
   };
-
-  const changeValuePassword = (inputValue) => {
-    const field = "password";
-    changeInputFormIntoState(connexionFormValues, field, inputValue, setConnexionFormValues);
-  }
 
   const submitUserConnection = (event) => {
     event.preventDefault();
@@ -43,9 +37,8 @@ const AuthentificationMainPage = () => {
         <p style={{"color": "red"}}>{tokenAuthentification.error}</p>
       );
     }
-    else {
-      return null;
-    }
+
+    return null;
   };
 
   useEffect(() => {
@@ -64,8 +57,7 @@ const AuthentificationMainPage = () => {
       <Col lg="4">
         <FormLogin
           submitUserConnection={submitUserConnection}
-          changeValueUsername={changeValueUsername}
-          changeValuePassword={changeValuePassword}
+          handleInputForm={handleInputForm}
           error_message={error_message}
         />
       </Col>

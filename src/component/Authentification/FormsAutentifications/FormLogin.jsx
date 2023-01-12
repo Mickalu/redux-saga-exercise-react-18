@@ -7,17 +7,17 @@ import Form from "react-bootstrap/Form";
 import Row from 'react-bootstrap/Row';
 import "../../../assets/css/FormLogin.css";
 
-const FormLogin = ({ submitUserConnection, changeValueUsername, changeValuePassword, error_message }) => (
-  <Form onSubmit={submitUserConnection}>
+const FormLogin = ({ submitUserConnection, handleInputForm, error_message }) => (
+  <Form data-testid="form-login" onSubmit={submitUserConnection}>
     <Row>
       <Form.Group className="mb-3">
         <Form.Label>Username : </Form.Label>
-        <Form.Control onChange={(e) => changeValueUsername(e.target.value)} type="text" />
+        <Form.Control onChange={(e) => handleInputForm(e.target.value, 'username')} type="text" />
       </Form.Group>
 
       <Form.Group className="mb-3">
         <Form.Label>Password : </Form.Label>
-        <Form.Control onChange={(e) => changeValuePassword(e.target.value)} type="password" placeholder="Password" />
+        <Form.Control onChange={(e) => handleInputForm(e.target.value, 'password')} type="password" placeholder="Password" />
       </Form.Group>
     </Row>
 
@@ -26,7 +26,7 @@ const FormLogin = ({ submitUserConnection, changeValueUsername, changeValuePassw
     </Row>
       {error_message()}
     <Row>
-      <Col className='row_form__button'>
+      <Col className="row_form__button">
         <Button variant="primary" type="submit">
             Submit
         </Button>

@@ -33,7 +33,7 @@ const Register = () => {
   useEffect(() => {
     if(registerUser.status) {
       dispatch(resetRegisterUser());
-      navigate("/login");
+      navigate("/");
     };
   },
   [dispatch, navigate, registerUser]);

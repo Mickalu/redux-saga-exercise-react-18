@@ -425,6 +425,7 @@ exports[`App should return login page if user not connected 1`] = `
     >
       <form
         class=""
+        data-testid="form-login"
       >
         <div
           class="row"
