@@ -16,9 +16,6 @@ const BeerContainer = () => {
         <Beer beer={beer} />
       );
     }
-    else {
-      return null;
-    }
   }
 
   return null;
