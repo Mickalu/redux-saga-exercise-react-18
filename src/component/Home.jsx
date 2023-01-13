@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { solid } from '@fortawesome/fontawesome-svg-core/import.macro';
-
+import Dropdown from 'react-bootstrap/Dropdown';
 import Container from 'react-bootstrap/Container';
 
 import Header from './Header';
 import Menu from './Navigation/Menu';
 import TinderContainer from '../container/TinderContainer';
+import '../assets/css/HomeNavBar.css';
 
 const Home = () => {
   const [menu, setMenu] = useState(true);
@@ -27,10 +28,18 @@ const Home = () => {
             <a className="navbar-brand" href="https://reactjs.academy" target="_blank" rel="noopener noreferrer">ReactJS Academy</a>
           </div>
           <ul className="nav navbar-nav pull-right">
-            <li>
+            <li className='d-flex'>
               <button onClick={toggleMenu} className="btn btn-lg btn-outline">
                 <FontAwesomeIcon icon={solid('heart')} />
               </button>
+              <Dropdown>
+                <Dropdown.Toggle>
+                  <FontAwesomeIcon icon={solid('user')} />
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item className="dropdown-item-profil" href="#/action-1">logout</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
             </li>
           </ul>
         </div>
