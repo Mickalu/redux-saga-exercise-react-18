@@ -1,12 +1,12 @@
 import React from 'react';
 
 import BeerContainer from '../../container/BeerContainer';
-import Actions from './Actions';
+import ActionsContainer from '../../container/Game/ActionsContainer';
 
 const Tinder = () => (
   <>
     <BeerContainer />
-    <Actions />
+    <ActionsContainer />
   </>
 );
 

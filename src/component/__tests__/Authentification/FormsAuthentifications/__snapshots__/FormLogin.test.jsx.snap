@@ -4,6 +4,7 @@ exports[`FormLogin should match snapshot 1`] = `
 <div>
   <form
     class=""
+    data-testid="form-login"
   >
     <div
       class="row"
@@ -36,6 +37,9 @@ exports[`FormLogin should match snapshot 1`] = `
         />
       </div>
     </div>
+    <div
+      class="row"
+    />
     <div
       class="row"
     >

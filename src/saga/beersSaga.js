@@ -1,16 +1,21 @@
-import { call, put } from "redux-saga/effects";
+import { call, put, select } from "redux-saga/effects";
 
 import { getBeers } from "../api";
 
+import { tokenAuthentificationSelector } from "../selector/tokenAuthentification";
 import { updateIsFetching, addBeers } from "../slice/beersSlice";
+import { updateCurrentbeerId } from "../slice/currentBeerSlice";
 
 export function* fetchBeersSaga() {
   try{
     yield put(updateIsFetching(true));
-    const beers = yield call(getBeers);
+    const tokenInfo = yield select(tokenAuthentificationSelector);
+    const beers = yield call(getBeers, tokenInfo.token);
+
     try {
       yield put(updateIsFetching(false));
       yield put(addBeers(beers));
+      yield put(updateCurrentbeerId(beers[0].id));
     }
     catch(error){
       yield put(updateIsFetching(false));

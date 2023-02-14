@@ -4,6 +4,6 @@ import { render } from "../../../../utils/__testsTools__/renderMethodRTL/customR
 import FormLogin from "../../../Authentification/FormsAutentifications/FormLogin";
 
 it("FormLogin should match snapshot", () => {
-  const { container } = render(<FormLogin />);
+  const { container } = render(<FormLogin error_message={jest.fn()} />);
   expect(container).toMatchSnapshot();
 });

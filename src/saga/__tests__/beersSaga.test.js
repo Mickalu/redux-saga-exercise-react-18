@@ -1,11 +1,13 @@
-import { call, put } from "redux-saga/effects";
+import { call, put, select } from "redux-saga/effects";
 
 import { getBeers } from "../../api";
 import { updateIsFetching, addBeers } from "../../slice/beersSlice";
 import { fetchBeersSaga } from "../beersSaga";
 import { initBeersState } from "../../utils/__testsTools__/initValues";
 
-it("fetchBeersSaga second function be put updateIsFetching", () => {
+import { tokenAuthentificationSelector } from "../../selector/tokenAuthentification";
+
+it("fetchBeersSaga first function be put updateIsFetching", () => {
   const beersSagaGenerator = fetchBeersSaga();
 
   const putUpdateIsFetching = beersSagaGenerator.next();
@@ -13,29 +15,44 @@ it("fetchBeersSaga second function be put updateIsFetching", () => {
   expect(putUpdateIsFetching.value).toStrictEqual(put(updateIsFetching(true)));
 });
 
-it("fetchBeersSaga third function be call getBeers", () => {
+it("fetchBeersSaga should select authentification token", () => {
   const beersSagaGenerator = fetchBeersSaga();
   beersSagaGenerator.next();
 
-  const callGettBeers = beersSagaGenerator.next();
+  const selectTokenAuthentification = beersSagaGenerator.next();
 
-  expect(callGettBeers.value).toStrictEqual(call(getBeers));
+  expect(selectTokenAuthentification.value).toStrictEqual(select(tokenAuthentificationSelector));
+});
+
+it("fetchBeersSaga third function be call getBeers", () => {
+  const tokenDictionnary = {token: "12345"}
+  const beersSagaGenerator = fetchBeersSaga();
+  beersSagaGenerator.next();
+  beersSagaGenerator.next();
+
+  const callGettBeers = beersSagaGenerator.next(tokenDictionnary);
+
+  expect(callGettBeers.value).toStrictEqual(call(getBeers, "12345"));
 });
 
 it("fetchBeersSaga fourth function is updating isFetching", () => {
+  const tokenDictionnary = {token: "12345"}
   const beersSagaGenerator = fetchBeersSaga();
   beersSagaGenerator.next();
   beersSagaGenerator.next();
+  beersSagaGenerator.next(tokenDictionnary);
 
-  const putUpdateIsFetching = beersSagaGenerator.next(initBeersState);
+  const putUpdateIsFetching = beersSagaGenerator.next();
 
   expect(putUpdateIsFetching.value).toStrictEqual(put(updateIsFetching(false)));
 });
 
 it("fetchBeersSaga fifth function is put addBeers", () => {
+  const tokenDictionnary = {token: "12345"}
   const beersSagaGenerator = fetchBeersSaga();
   beersSagaGenerator.next();
   beersSagaGenerator.next();
+  beersSagaGenerator.next(tokenDictionnary);
   beersSagaGenerator.next(initBeersState);
 
   const putAddBeers = beersSagaGenerator.next();

@@ -28,30 +28,30 @@ const FormRegister = ({ submitRegisterUser, formRegisterValues, setFormRegisterV
       <Row>
         <Form.Group className='mb-4'>
           <Form.Label>Username : </Form.Label>
-          <Form.Control type='text' onChange={(e) => handleInputForm(e.target.value, 'username')} required/>
+          <Form.Control type="text" onChange={(e) => handleInputForm(e.target.value, 'username')} required/>
         </Form.Group>
 
-        <Form.Group className='mb-4'>
+        <Form.Group className="mb-4">
           <Form.Label>Password : </Form.Label>
           <Form.Control data-testid="password" type="password" onChange={(e) => handleInputForm(e.target.value, 'password')} required/>
         </Form.Group>
 
-        <Form.Group className='mb-4'>
+        <Form.Group className="mb-4">
           <Form.Label>Password again : </Form.Label>
           <Form.Control data-testid="password2" type="password" onChange={(e) => handleInputForm(e.target.value, 'password2')} required/>
         </Form.Group>
 
-        <Form.Group className='mb-4'>
+        <Form.Group className="mb-4">
           <Form.Label>Email : </Form.Label>
           <Form.Control type="email" onChange={(e) => handleInputForm(e.target.value, 'email')} required/>
         </Form.Group>
 
-        <Form.Group className='mb-4'>
+        <Form.Group className="mb-4">
           <Form.Label>First name: </Form.Label>
           <Form.Control type="text" onChange={(e) => handleInputForm(e.target.value, 'first_name')} required/>
         </Form.Group>
 
-        <Form.Group className='mb-4'>
+        <Form.Group className="mb-4">
           <Form.Label>Last name: </Form.Label>
           <Form.Control type="text" onChange={(e) => handleInputForm(e.target.value, 'last_name')} required/>
         </Form.Group>

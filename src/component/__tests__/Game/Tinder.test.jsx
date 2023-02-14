@@ -1,20 +1,39 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import Tinder from "../../Game/Tinder";
 import { getByTestId, render } from "../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
-import { store } from "../../../store";
-import { addBeers } from "../../../slice/beersSlice";
 import { initListBeers } from "../../../utils/__testsTools__/initValues";
 
+const reactRedux = { useSelector };
+
+jest.mock("react-redux", () => ({
+  ...jest.requireActual("react-redux"),
+  useSelector: jest.fn(),
+}));
+
+const useSelectorMock = jest.spyOn(reactRedux, "useSelector");
+
 it("Should contain BeerContainer", () => {
-  store.dispatch(addBeers(initListBeers.data));
+  useSelectorMock.mockImplementation(callback => {
+    return callback({
+      beers: initListBeers,
+      currentBeer: { id: "82" },
+    });
+  });
 
   render(<Tinder />);
-
   expect(getByTestId("beer-container")).toBeInTheDocument();
 });
 
 it("Should contain Actions component", () => {
+  useSelectorMock.mockImplementation(callback => {
+    return callback({
+      beers: initListBeers,
+      currentBeer: { id: "82" },
+    });
+  });
+
   render(<Tinder />);
 
   expect(getByTestId("actions-container")).toBeInTheDocument();

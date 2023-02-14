@@ -40,7 +40,7 @@ it("Should use session start if no session id", () => {
     return callback({
       session: { session: {} },
       beers: { data: [] },
-      currentIndex: { currentIndex: 0 }
+      currentBeer: { id: "1" },
     });
   });
 
@@ -56,7 +56,7 @@ it("Should call feetch beer if got session id", () => {
     return callback({
       session: { session: { id: 1 } },
       beers: { data: [] },
-      currentIndex: {currentIndex: 0}
+      currentBeer: { id: "1" },
     });
   });
 
