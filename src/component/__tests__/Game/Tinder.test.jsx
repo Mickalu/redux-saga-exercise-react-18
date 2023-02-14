@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/prefer-screen-queries */
 import React from "react";
 import { useSelector } from "react-redux";
 
@@ -26,7 +27,7 @@ it("Should contain BeerContainer", () => {
   expect(getByTestId("beer-container")).toBeInTheDocument();
 });
 
-it("Should contain Actions component", () => {
+it("Should contain Interractions component", () => {
   useSelectorMock.mockImplementation(callback => {
     return callback({
       beers: initListBeers,

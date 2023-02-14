@@ -1,5 +1,7 @@
 import Promise from 'es6-promise';
+
 import { API_BASE_URL } from "../config";
+import { defaultHeaderWithToken } from "../utils/apiFunction/api_configuration";
 
 Promise.polyfill();
 
@@ -7,17 +9,6 @@ const defaultHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Request-Method': ['POST', "GET"],
   'Content-Type': 'application/json',
-};
-
-const defaultHeaderWithToken = (token) => {
-  const header = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Request-Method': ['POST', "GET"],
-    'Content-Type': 'application/json',
-    'Authorization': "Token " + token,
-  };
-
-  return header;
 };
 
 export const startSessionApi = () => (

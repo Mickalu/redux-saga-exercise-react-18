@@ -3,12 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { render } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 import TinderContainer from "../TinderContainer";
-import { sessionActions } from "../../action/sessionAction";
-import { beersActions } from "../../action/beersActions";
 
 const reactRedux = { useDispatch, useSelector };
 
 jest.mock("react-redux", () => ({
+  __esModule: true,
   ...jest.requireActual("react-redux"),
   useSelector: jest.fn(),
   useDispatch: jest.fn(),
@@ -22,11 +21,11 @@ const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
 
 const dispatchMock = (value) => {
   switch (value.type){
-    case sessionActions.SESSION_START:
+    case "SESSION_START":
       sessionStart();
       break;
 
-    case beersActions.FETCH_BEERS:
+    case "FETCH_BEERS":
       fetchBeerMock();
       break;
 

@@ -2,7 +2,7 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 
-import Actions from "../../Game/Actions";
+import Interactions from "../../Game/Interactions";
 import { render, getByTestId, fireEvent } from "../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 import { initListBeers } from "../../../utils/__testsTools__/initValues";
 
@@ -14,8 +14,7 @@ jest.mock("react-redux", () => ({
   useSelector: jest.fn(),
 }));
 
-const likeBeerFunction = jest.fn();
-const passNextBeer = jest.fn();
+const likeOrDislikeBeer = jest.fn();
 
 const dispatchMock = (value) => (
   jest.fn()
@@ -27,30 +26,28 @@ const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
 useSelectorMock.mockImplementation(callback => {
   return callback({
     beers: initListBeers,
-    beersLiked: [],
+    beersInteracted: [],
   });
 });
 
 useDispatchMock.mockReturnValue(jest.fn(value => dispatchMock(value)));
 
 it("Should activate liked beers if click on like button", () => {
-  render(<Actions
-    likeBeer={likeBeerFunction}
-    passNextBeer={passNextBeer}
+  render(<Interactions
+    likeOrDislikeBeer={likeOrDislikeBeer}
   />);
   fireEvent.click(getByTestId("like-button"));
 
-  expect(likeBeerFunction).toHaveBeenCalledTimes(1);
+  expect(likeOrDislikeBeer).toHaveBeenCalledTimes(1);
 });
 
 it("Should activate disliked beers if click on dislike button", () => {
-  render(<Actions
-    likeBeer={likeBeerFunction}
-    passNextBeer={passNextBeer}
+  render(<Interactions
+    likeOrDislikeBeer={likeOrDislikeBeer}
   />);
   fireEvent.click(getByTestId("dislike-button"));
 
-  expect(passNextBeer).toHaveBeenCalledTimes(1);
+  expect(likeOrDislikeBeer).toHaveBeenCalledTimes(1);
 });
 
 it("Should match with snapShot", () => {
@@ -58,7 +55,7 @@ it("Should match with snapShot", () => {
 
   useDispatchMock.mockReturnValue(jest.fn());
 
-  const view = render(<Actions />);
+  const view = render(<Interactions />);
 
   expect(view).toMatchSnapshot();
 });

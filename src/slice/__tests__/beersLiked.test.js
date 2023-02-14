@@ -1,14 +1,14 @@
-import beersLikedReducer, { addLikedBeers, removeLikedBeers } from "../beersLiked";
+import beersInteractedReducer, { addInteractedBeers, removeInteractedBeers } from "../beersInteractedSlice";
 import { INIT_BEERS_LIKED_STATE_VALUE, beersLikedStateWithIds } from "../../utils/__testsTools__/initValues/beersLikedInitValues";
 
 it("addLikedBeers should add a beer into state liked beers", () => {
   const beerId = "82";
   const previousState = INIT_BEERS_LIKED_STATE_VALUE;
-  const stateExpected = beersLikedStateWithIds([beerId]);
+  const expectedState = beersLikedStateWithIds([beerId]);
 
-  const action = { beerId: beerId };
+  const action = [beerId];
 
-  expect(beersLikedReducer(previousState, addLikedBeers(action))).toEqual(stateExpected);
+  expect(beersInteractedReducer(previousState, addInteractedBeers(action))).toEqual(expectedState);
 });
 
 it("removeLikedBeers should remove beer id from beers liked", () => {
@@ -17,5 +17,5 @@ it("removeLikedBeers should remove beer id from beers liked", () => {
 
   const action = { beerId: "82" };
 
-  expect(beersLikedReducer(previousState, removeLikedBeers(action))).toEqual(stateExpected);
+  expect(beersInteractedReducer(previousState, removeInteractedBeers(action))).toEqual(stateExpected);
 });

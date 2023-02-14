@@ -4,20 +4,29 @@ import { useDispatch, useSelector } from 'react-redux';
 import { render, queryBytestId } from "../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
 import { initListBeers } from "../../utils/__testsTools__/initValues";
 import BeersLikedContainer from "../BeersLikedContainer";
-
+import * as ApiLikedBeer from "../../api/likeBeerApi";
 
 const reactRedux = { useDispatch, useSelector };
 
 jest.mock("react-redux", () => ({
   ...jest.requireActual("react-redux"),
-  useSelector: jest.fn()
+  useSelector: jest.fn(),
 }));
+
+jest.mock("../../api/likeBeerApi.js", () => ({
+  ...jest.requireActual("../../api/likeBeerApi.js"),
+  getUserBeersInteractedApi: jest.fn((value) => { return { data: [] }}),
+}));
+
+const getUserBeersInteractedApiMock = jest.spyOn(ApiLikedBeer, "getUserBeersInteractedApi");
+getUserBeersInteractedApiMock.mockReturnValue((value) => { return { data: [] }});
 
 it("Should not have beer title at the beginning", () => {
   useSelector.mockImplementation(callback => {
     return callback({
-      beersLiked: { data: [] },
+      beersInteracted: { data: [] },
       beers: initListBeers,
+      tokenAuthentification: { token: "1234" },
     });
   });
 
@@ -33,8 +42,9 @@ it("beersLikedContainer Should match snapshot", () => {
   useDispatchMock.mockReturnValue(jest.fn());
   useSelectorMock.mockImplementation(callback => {
     return callback({
-      beersLiked: { data: ["126"] },
+      beersInteracted: { data: [{ beer: "126" }] },
       beers: initListBeers,
+      tokenAuthentification: { token: "1234" },
     });
   });
 
@@ -50,8 +60,9 @@ it("beersLikedContainer with multiple liked beer should display all title", () =
   useDispatchMock.mockReturnValue(jest.fn());
   useSelectorMock.mockImplementation(callback => {
     return callback({
-      beersLiked: { data: ["126", "82"] },
+      beersInteracted: { data: [{ beer: "126" }, { beer: "82" }] },
       beers: initListBeers,
+      tokenAuthentification: { token: "1234" },
     });
   });
 

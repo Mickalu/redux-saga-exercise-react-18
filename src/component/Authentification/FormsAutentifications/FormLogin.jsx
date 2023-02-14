@@ -43,4 +43,4 @@ const FormLogin = ({ submitUserConnection, handleInputForm, error_message }) => 
   </Form>
 );
 
-export default FormLogin
+export default FormLogin;

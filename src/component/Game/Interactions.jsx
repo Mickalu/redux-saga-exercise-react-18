@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Container from 'react-bootstrap/Container';
 import { faHeart, faXmark } from '@fortawesome/free-solid-svg-icons';
 
-const Actions = ({ passNextBeer, likeBeer }) => {
+const Interactions = ({ likeOrDislikeBeer }) => {
 
   return (
     <Container data-testid="actions-container" style={{ background: "white", borderRadius: "0 0 25px 25px" }}>
@@ -14,7 +14,7 @@ const Actions = ({ passNextBeer, likeBeer }) => {
             type="button"
             className="btn btn-danger btn-circle btn-xl"
             name="dislikeBtn"
-            onClick={passNextBeer}
+            onClick={() => likeOrDislikeBeer(false)}
             data-testid="dislike-button"
           >
             <FontAwesomeIcon icon={faXmark} />
@@ -26,7 +26,7 @@ const Actions = ({ passNextBeer, likeBeer }) => {
             type="button"
             className="btn btn-success btn-circle btn-xl"
             name="likeBtn"
-            onClick={likeBeer}
+            onClick={() => likeOrDislikeBeer(true)}
             data-testid="like-button"
           >
             <FontAwesomeIcon icon={faHeart} />
@@ -37,4 +37,4 @@ const Actions = ({ passNextBeer, likeBeer }) => {
   );
 };
 
-export default Actions;
+export default Interactions;

@@ -1,7 +1,7 @@
 import { faker } from "@faker-js/faker";
 
-export const createRandomBeer = () => {
-  return {
+export const createRandomBeer = () => (
+  {
     id: faker.datatype.uuid(),
     title: faker.commerce.product(),
     description: faker.commerce.productDescription(),
@@ -13,8 +13,8 @@ export const createRandomBeer = () => {
     size: faker.random.numeric(2) + " cl",
     price: faker.commerce.price(0, 50),
     photo_link: faker.image.imageUrl,
-  };
-};
+  }
+);
 
 export const listRandomBeers = (numberOfBeer) => {
   let BEERS = [];
