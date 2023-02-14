@@ -200,7 +200,7 @@ exports[`Home should matchsnapshot 1`] = `
                   name="beerImg"
                   role="presentation"
                   src="https://img.saveur-biere.com/img/p/82-14662-thickbox_sb3.jpg"
-                  style="height: auto; color: red; width: 0px;"
+                  style="height: auto; color: red;"
                 />
               </div>
               <h3

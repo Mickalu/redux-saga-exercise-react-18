@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 import FormRegister from "../../../Authentification/FormsAutentifications/FormRegister";
 import { render, getByTestId } from "../../../../utils/__testsTools__/renderMethodRTL/customRenderMethod";
+
+const reactRedux = { useDispatch };
+const reactUseEffect = { useEffect };
+
+jest.mock("react-redux", () => ({
+  __esModule: true,
+  ...jest.requireActual("react-redux"),
+  useDispatch: jest.fn(),
+}));
+
+jest.mock("react", () => ({
+  ...jest.requireActual("react"),
+  useEffect: jest.fn(),
+}));
+
+const useDispatchMock = jest.spyOn(reactRedux, "useDispatch");
+useDispatchMock.mockReturnValue(jest.fn());
+
+const useEffectMock = jest.spyOn(reactUseEffect, "useEffect");
+useEffectMock.mockReturnValue(jest.fn());
+
+const apiResponse = {
+  status: true,
+  data: {}
+};
 
 const initFormValue = {
   username: "",
@@ -12,14 +38,10 @@ const initFormValue = {
   email: "",
 };
 
-const apiResponse = {
-  status: true,
-  data: {}
-};
-
 it("formRegister should matchsnapshot", () => {
   const { container } = render(
     <FormRegister
+      submitRegisterUser={jest.fn()}
       formRegisterValues={initFormValue}
       apiResponse={apiResponse}
     />);
@@ -39,6 +61,7 @@ it("If input password and password2 not same value, button submit disabled", () 
 
   render(
     <FormRegister
+      submitRegisterUser={jest.fn()}
       formRegisterValues={formValueNotSamePassword}
       apiResponse={apiResponse}
     />
@@ -63,6 +86,7 @@ it("Should not dispable submit button if same password value", () => {
 
   render(
     <FormRegister
+      submitRegisterUser={jest.fn()}
       formRegisterValues={formValueSamePassword}
       apiResponse={apiResponse}
     />

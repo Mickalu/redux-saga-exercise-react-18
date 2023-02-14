@@ -8,10 +8,12 @@ const AppContainer = () => {
   const userConnected = () => (tokenInfo.token);
 
   return (
-    <App
-      isUserConnected={userConnected()}
-    />
-  )
+    <>
+      <App
+        isUserConnected={userConnected()}
+      />
+    </>
+  );
 };
 
 export default AppContainer;

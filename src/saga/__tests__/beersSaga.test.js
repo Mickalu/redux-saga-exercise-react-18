@@ -1,11 +1,19 @@
 import { call, put, select } from "redux-saga/effects";
 
-import { getBeers } from "../../api";
+import * as api from "../../api";
 import { updateIsFetching, addBeers } from "../../slice/beersSlice";
 import { fetchBeersSaga } from "../beersSaga";
 import { initBeersState } from "../../utils/__testsTools__/initValues";
 
 import { tokenAuthentificationSelector } from "../../selector/tokenAuthentification";
+
+jest.mock("../../api", () => ({
+  ...jest.requireActual("../../api"),
+  getBeers: jest.fn(),
+}));
+
+const getBeersMock = jest.spyOn(api, "getBeers");
+getBeersMock.mockReturnValue(jest.fn());
 
 it("fetchBeersSaga first function be put updateIsFetching", () => {
   const beersSagaGenerator = fetchBeersSaga();
@@ -32,7 +40,7 @@ it("fetchBeersSaga third function be call getBeers", () => {
 
   const callGettBeers = beersSagaGenerator.next(tokenDictionnary);
 
-  expect(callGettBeers.value).toStrictEqual(call(getBeers, "12345"));
+  expect(callGettBeers.value).toStrictEqual(call(api.getBeers, "12345"));
 });
 
 it("fetchBeersSaga fourth function is updating isFetching", () => {

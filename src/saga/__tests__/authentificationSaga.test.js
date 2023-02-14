@@ -36,7 +36,7 @@ it("RegisterSaga should call api", () => {
   const registerSagaGenerator = registerSaga(formsValues);
 
   const callRegisterUserApi = registerSagaGenerator.next();
-  expect(callRegisterUserApi.value).toStrictEqual(call(authentificationApiUser.registerUserApi, formsValues.formRegisterValues))
+  expect(callRegisterUserApi.value).toStrictEqual(call(authentificationApiUser.registerUserApi, formsValues.formRegisterValues));
 });
 
 it("Should update api response status in state", () => {
@@ -49,7 +49,7 @@ it("Should update api response status in state", () => {
 
 it("If response status is false should call getErrorMessageApi", () => {
   const registerSagaGenerator = registerSaga(formsValues);
-  registerSagaGenerator.next()
+  registerSagaGenerator.next();
   registerSagaGenerator.next(returnApiRegisterStatusFalse);
 
   const callGetErrorMessageApi = registerSagaGenerator.next();

@@ -1,12 +1,12 @@
 import registerUserReducer, {
   updateStatusRegisterUser,
   updateDataRegisterUser,
-  resetRegisterUser
+  resetRegisterUser,
 } from "../../Authentification/registerSlice";
 import {
   INIT_VALUE_REGISTER_STATE,
   STATE_REGISTER_TRUE_STATUS,
-  STATE_REGISTER_GOOD_RESPONSE
+  STATE_REGISTER_GOOD_RESPONSE,
 } from "../../../utils/__testsTools__/initValues/registerSliceInitValues";
 
 it("updateStatusRegisterUser should update status state value", () => {

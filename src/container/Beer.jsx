@@ -19,14 +19,14 @@ const Beer = ({ beer }) => {
   const loadingBeerComponent = (<span data-testid="circle-spin"><i className="fa fa-circle-o-notch fa-spin fa-3x fa-fw" /></span>);
 
   useEffect(() => {
-    if(_beerImgRef.current) {
+    if (_beerImgRef.current) {
       _beerImgRef.current.style.width = `${_beerImgWrapperRef.current.offsetWidth}px`;
     }
   },
   [currentBeer]);
 
   const imageLoaded = () => {
-    if(img_height === 'auto'){
+    if (img_height === 'auto') {
       _beerImgRef.current.style.width = `${_beerImgWrapperRef.current.offsetWidth}px`;
       img_height = _beerImgRef.current.style.height;
     }

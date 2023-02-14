@@ -1,16 +1,23 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import BeersLiked from '../component/Game/BeersLiked';
 
 export const BeersLikedContainer = () => {
-  const beerslikedState = useSelector((state) => state.beersLiked);
+  const beersInterractedState = useSelector((state) => state.beersInteracted);
   const beersState = useSelector((state) => state.beers);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({ type: "GET_LIKED_BEERS" });
+  },
+  []);
 
   return (
     <>
       <BeersLiked
-        beersLiked={beerslikedState}
+        beersInteracted={beersInterractedState}
         beers={beersState}
       />
     </>

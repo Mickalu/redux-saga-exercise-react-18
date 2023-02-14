@@ -16,7 +16,7 @@ import rootSaga from "../saga";
 import beersReducer from "../slice/beersSlice";
 import sessionReducer from "../slice/sessionSlice";
 import loadingBeerReducer from "../slice/loadingBeer";
-import beersLikedReducer from "../slice/beersLiked";
+import beersInteractedReducer from "../slice/beersInteractedSlice";
 import registerUserReducer from "../slice/Authentification/registerSlice";
 import tokenAuthentificationReducer from "../slice/Authentification/tokenAuthentificationSlice";
 import currentBeerReducer from "../slice/currentBeerSlice";
@@ -32,7 +32,7 @@ const rootReducers = combineReducers({
   beers: beersReducer,
   session: sessionReducer,
   loadingBeer: loadingBeerReducer,
-  beersLiked: beersLikedReducer,
+  beersInteracted: beersInteractedReducer,
   registerUser: registerUserReducer,
   tokenAuthentification: tokenAuthentificationReducer,
   currentBeer: currentBeerReducer,

@@ -1,4 +1,4 @@
-const getAllMessageForOneKeyError = (listMessages) => {
+export const getAllMessageForOneKeyError = (listMessages) => {
   let concaneAllMessageError = "";
 
   for (const message of listMessages) {
@@ -13,7 +13,7 @@ export const getErrorMessageApi = (dictDataErrorMessage) => {
 
   for (const key of Object.keys(dictDataErrorMessage)) {
     strMessage += key + " : " + getAllMessageForOneKeyError(dictDataErrorMessage[key]);
-  };
+  }
 
   return strMessage;
 };

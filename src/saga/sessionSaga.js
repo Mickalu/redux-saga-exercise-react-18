@@ -4,11 +4,12 @@ import { startSessionSaga } from "../slice/sessionSlice";
 import { startSessionApi } from "../api";
 
 export function* startSession() {
-  try{
+  try {
     const session = yield call(startSessionApi);
     yield put(startSessionSaga(session));
   }
-  catch(error){
+  catch (error) {
+    yield put(startSessionSaga(null));
     console.log(error);
   }
 };

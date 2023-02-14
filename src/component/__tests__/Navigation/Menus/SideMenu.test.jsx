@@ -5,7 +5,7 @@ import SideMenu from "../../../Navigation/Menus/SideMenu";
 it("Should match snapshot when open", () => {
   const tree = renderer
     .create((<SideMenu isOpen={false}/>))
-    .toJSON()
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });
@@ -13,7 +13,7 @@ it("Should match snapshot when open", () => {
 it("Should match snapshot when it closed", () => {
   const tree = renderer
     .create((<SideMenu isOpen={true}/>))
-    .toJSON()
+    .toJSON();
 
   expect(tree).toMatchSnapshot();
 });
